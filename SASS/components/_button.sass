@@ -1,0 +1,128 @@
+.button
+    cursor: pointer
+    +flex-center
+    padding: wm(16) wm(32)
+    border-radius: wm(36)
+    background: $clr-primary
+    color: $clr-white
+    font-size: wm(20)
+    font-weight: 600
+    line-height: 1
+    width: fit-content
+    min-width: wm(276)
+    border: wm(1) solid $clr-primary
+    +transition
+
+
+    +media(m)
+        min-width: fit-content
+        font-size: wm(16)
+        padding: wm(9) wm(30)
+
+    +hover-only
+        &:hover
+            background: $clr-white
+            color: $clr-primary
+
+        &:active
+            transform: scale(.96)
+
+    +touch-only
+        &:active
+                transform: scale(.96)
+
+
+    &_outline
+        background: $clr-primary-light
+        color: $clr-primary
+
+        +hover-only
+            &:hover
+                background: $clr-primary
+                color: $clr-white
+
+            &:active
+                transform: scale(.96)
+
+
+    &_dark
+        background: $clr-dark
+        color: $clr-white
+        border-color: $clr-dark
+
+        +hover-only
+            &:hover
+                background: $clr-dark
+                color: $clr-white
+
+            &:active
+                transform: scale(.96)
+
+
+.swiper-btn-arrow
+    cursor: pointer
+    width: wm(60)
+    height: wm(60)
+    border-radius: 50%
+    border: wm(1) solid $clr-white
+    user-select: none
+    +flex-center
+    +transition
+
+    &_dark
+        background: $clr-dark
+
+        &.swiper-button-disabled
+            background: rgba(43, 44, 44, 0.50)
+
+    &_blue
+        background: $clr-primary
+        border-color: $clr-primary 
+
+        path
+            fill: $clr-white !important
+
+        &.swiper-button-disabled
+            background: $clr-white
+            border-color: $clr-white 
+            
+            path
+                fill: $clr-dark !important
+
+    &_white
+        background: $clr-white
+        border: none
+
+        &.swiper-button-disabled
+            background: rgba(255, 255, 255, 0.50)
+            
+            path
+                fill: $clr-white
+
+
+    +media(m)
+        width: wm(25)
+        height: wm(25)
+
+    svg
+        +media(m)
+            width: wm(15)
+            height: wm(15)
+
+    path
+        +transition
+
+    +hover-only
+        &:hover
+            border-color: $clr-primary
+            box-shadow: $box-shadow-orange
+
+            path
+                fill: $clr-primary
+
+        &:active
+            scale: .9
+
+    +touch-only
+        &:active
+            scale: .96

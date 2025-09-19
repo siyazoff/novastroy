@@ -1,0 +1,130 @@
+.modal
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    width: 100%
+    height: 100%
+    align-items: center
+    justify-content: center
+    z-index: 1100
+    background: rgba(0, 0, 0, 0.3)
+    display: none
+    overflow-y: auto
+    overflow-x: hidden
+    cursor: url("data:image/svg+xml,%3Csvg width='19' height='19' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.514.535l-6.42 6.42L2.677.536a1.517 1.517 0 00-2.14 0 1.517 1.517 0 000 2.14l6.42 6.419-6.42 6.419a1.517 1.517 0 000 2.14 1.517 1.517 0 002.14 0l6.419-6.42 6.419 6.42a1.517 1.517 0 002.14 0 1.517 1.517 0 000-2.14l-6.42-6.42 6.42-6.418a1.517 1.517 0 000-2.14 1.516 1.516 0 00-2.14 0z' fill='%23FFF' fill-rule='nonzero'/%3E%3C/svg%3E"),auto
+    visibility: hidden
+
+
+    @media (max-width: 768px)
+        padding: 16px
+
+    &.is_active
+        display: flex
+        visibility: visible
+        .modal-inner
+            animation: scaleModal .2s cubic-bezier(.68, -.55, .265, 1.55) forwards
+
+        .modal-inner__bg
+            animation: scaleModal .5s cubic-bezier(.68, -.55, .265, 1.55) forwards, float2 3s ease-in-out .8s infinite
+            animation-delay: .3s
+
+            &_bottom
+                animation: scaleModal .5s cubic-bezier(.68, -.55, .265, 1.55) forwards, float1 3s ease-in-out .8s infinite
+
+
+    &__close
+        position: absolute
+        right: wm(25)
+        top: wm(25)
+        cursor: pointer
+        width: wm(34)
+        height: wm(34)
+        display: flex
+        align-items: center
+        justify-content: center
+        z-index: 10
+        transition: scale .3s ease
+
+        +media(m)
+            right: wm(15)
+            top: wm(15)
+
+        svg
+            +media(m)
+                width: wm(24)
+                height: wm(24)
+
+        &:hover
+            scale: 1.1
+        
+        &:active
+            scale: .9
+
+    &__title
+        font-size: wm(38)
+        font-weight: 700
+        line-height: 100%
+        text-align: center
+
+
+
+.modal-inner
+    position: relative
+    display: flex
+    background: #fff
+    border-radius: wm(8)
+    max-width: wm(480)
+    width: 100%
+    margin: auto
+    cursor: auto
+    overflow: hidden
+    will-change: scale, opacity, transform
+
+    +media(m)
+        border: wm(16)
+
+    &__box
+        width: 100%
+        padding: wm(42)
+        display: flex
+        flex-direction: column
+        gap: wm(25)
+
+        +media(m)
+            padding: wm(20)
+            gap: wm(20)
+
+
+.modal-form
+    +flex-column
+    gap: wm(8)
+
+    +media(m)
+        gap: wm(10)
+
+    &__submit
+        margin-top: wm(26)
+        min-width: 100%
+
+        +media(m)
+        margin-top: wm(12)
+
+
+.modal-input
+    padding: wm(15) 0
+    color: $clr-dark
+    font-size: wm(16)
+    font-weight: 400
+    line-height: 1
+    border-bottom: wm(1) solid rgba(0, 0, 0, 0.1)
+
+
+
+@keyframes scaleModal
+    0%
+        opacity: 0
+        transform: scale(.9)
+    100%
+        opacity: 1
+        transform: scale(1)

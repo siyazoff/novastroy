@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Involve";
+  src: url("Involve-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Involve";
+  src: url("Involve-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Involve";
+  src: url("Involve-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Involve";
+  src: url("Involve-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}

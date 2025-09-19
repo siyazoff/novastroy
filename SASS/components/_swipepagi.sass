@@ -1,0 +1,26 @@
+.swipepagi
+    +flex-center
+    gap: wm(4)
+
+    .swiper-pagination-bullet
+        margin: 0 !important
+        flex-shrink: 0
+
+        width: wm(8) !important
+        height: wm(8) !important
+        border: wm(1) solid $clr-white
+        opacity: 1 !important
+        background: transparent !important
+        +transition
+
+        +media(m)
+            width: wm(6) !important
+            height: wm(6) !important
+
+        &.swiper-pagination-bullet-active
+            width: wm(18) !important
+            background: $clr-white !important
+            border-radius: wm(16)
+
+            +media(m)
+                height: wm(14) !important

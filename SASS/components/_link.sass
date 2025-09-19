@@ -1,0 +1,52 @@
+.link
+    position: relative
+    width: fit-content
+    +transition(color)
+
+    &::before
+        content: ''
+        position: absolute
+        height: wm(1)
+        width: 0
+        left: 50%
+        transform: translateX(-50%)
+        bottom: 0
+        background: $clr-primary
+        +transition(width)
+
+    +hover-only
+        &:hover
+            color: $clr-primary
+
+        &:active
+            &::before
+                width: 100%
+
+    +touch-only
+        &:active
+            color: $clr-primary
+
+            &::before
+                width: 100%
+
+
+.link_icon
+    cursor: pointer
+    display: flex
+
+    svg
+        +transition
+
+    +hover-only
+        &:hover
+            svg
+                scale: 1.2
+
+        &:active
+            svg
+                scale: 1
+
+    +touch-only
+        &:active
+            svg
+                scale: .96

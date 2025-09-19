@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novastroy</title>
+
+    <!-- FAVICON -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/src/icons/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/src/icons/favicon.svg" />
+    <link rel="shortcut icon" href="/src/icons/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/src/icons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/src/icons/site.webmanifest" />
+
+    <!-- FONTS -->
+    <!-- Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Involve -->
+    <link rel="stylesheet" href="src/fonts/Involve/stylesheet.css" />
+
+    <!-- FANCYBOX -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+
+    <!-- TABBY -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12.0.0/dist/css/tabby-ui.min.css"
+    />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="hero first-section">
+        <div class="container">
+          <div class="swiper-hero">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="hero__box">
+                  <div class="hero-left">
+                    <img src="src/img/hero-left.png" class="hero-left__bg" />
+                    <h2 class="t46 t-white hero-left__title">
+                      Выбирайте стильные обои с поклейкой
+                    </h2>
+                  </div>
+                  <div class="hero-right">
+                    <img src="src/img/hero-right.png" class="hero-right__bg" />
+                    <div class="hero-right__content">
+                      <img src="src/img/mi.png" class="hero-right__icon" />
+                      <div class="hero-right__subtitle">Скидка до</div>
+                      <div class="hero-right__title">50%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="hero__box">
+                  <div class="hero-left">
+                    <img src="src/img/hero-left.png" class="hero-left__bg" />
+                    <h2 class="t46 t-white hero-left__title">
+                      Выбирайте стильные обои с поклейкой
+                    </h2>
+                  </div>
+                  <div class="hero-right">
+                    <img src="src/img/hero-right.png" class="hero-right__bg" />
+                    <div class="hero-right__content">
+                      <img src="src/img/mi.png" class="hero-right__icon" />
+                      <div class="hero-right__subtitle">Скидка до</div>
+                      <div class="hero-right__title">50%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="hero__box">
+                  <div class="hero-left">
+                    <img src="src/img/hero-left.png" class="hero-left__bg" />
+                    <h2 class="t46 t-white hero-left__title">
+                      Выбирайте стильные обои с поклейкой
+                    </h2>
+                  </div>
+                  <div class="hero-right">
+                    <img src="src/img/hero-right.png" class="hero-right__bg" />
+                    <div class="hero-right__content">
+                      <img src="src/img/mi.png" class="hero-right__icon" />
+                      <div class="hero-right__subtitle">Скидка до</div>
+                      <div class="hero-right__title">50%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-hero-pagi swiper-hero-pagi-1"></div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal" data-modal="modal-1">
+      <div class="modal-inner">
+        <div class="modal-inner__box">
+          <div class="modal__head">
+            <h2 class="modal__title">Оставить заявку</h2>
+            <div class="modal__close" data-modal-close="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+              >
+                <path
+                  d="M8.53366 25.3333L6.66699 23.4667L14.1337 16L6.66699 8.53333L8.53366 6.66667L16.0003 14.1333L23.467 6.66667L25.3337 8.53333L17.867 16L25.3337 23.4667L23.467 25.3333L16.0003 17.8667L8.53366 25.3333Z"
+                  fill="#1D1B20"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <div class="modal__body">
+            <form class="modal-form">
+              <input type="text" placeholder="Имя" class="modal-input" />
+              <input
+                type="text"
+                placeholder="Телефон"
+                class="modal-input tel-input"
+                required
+              />
+              <input type="text" placeholder="Почта" class="modal-input" />
+              <input
+                type="submit"
+                class="button modal-form__submit"
+                value="Отправить"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/imask.js"></script>
+    <script src="js/tabby.polyfills.min.js"></script>
+    <script src="js/fancybox.umd.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/swipers.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

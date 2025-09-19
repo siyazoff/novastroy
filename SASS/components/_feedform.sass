@@ -1,0 +1,90 @@
+.feedform
+    +flex-column
+    gap: wm(15)
+
+    +media(m)
+        gap: wm(10)
+
+
+.feedform-input
+    padding: wm(15) wm(20)
+    border-radius: wm(18)
+    border-top: wm(1) solid $clr-white
+    border-bottom: wm(1) solid $clr-white
+    color: $clr-white
+    font-size: wm(15)
+    font-weight: 400
+    line-height: 1
+
+    +media(m)
+        padding: wm(15)
+
+    &::placeholder
+        color: rgba(255, 255, 255, 0.60)
+
+
+.feedform-textarea
+    padding: wm(15) wm(20)
+    background: transparent
+    border-radius: wm(18)
+    border: none
+    outline: none
+    resize: none
+    border-top: wm(1) solid $clr-white
+    border-bottom: wm(1) solid $clr-white
+    color: $clr-white
+    font-size: wm(15)
+    font-weight: 400
+    line-height: 1
+    height: wm(70)
+
+    &::placeholder
+        color: rgba(255, 255, 255, 0.60)
+
+
+
+.feedform-agree
+    cursor: pointer
+    +flex-start
+    gap: wm(10)
+    margin-left: wm(15)
+
+    +media(m)
+        margin: wm(10) 0
+
+    &__checkbox
+        display: none
+
+        &:checked + label::before
+            transform: scale(1)
+
+    &__label
+        position: relative
+        width: wm(20)
+        height: wm(20)
+        border-radius: wm(4)
+        border: wm(1) solid $clr-white
+        display: flex
+        flex-shrink: 0
+
+        &::before
+            content: ''
+            +abs-fill
+            width: 100%
+            height: 100%
+            transform: scale(0)
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M11.6667 3.5L5.25 9.91667L2.33333 7' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+            background-repeat: no-repeat
+            background-size: 70% 70%
+            background-position: center
+            transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75)
+
+    &__desc
+        color: $clr-white
+        font-size: wm(14)
+        font-weight: 400
+        line-height: 1.2
+        user-select: none
+
+.feedform-btn
+    margin-top: wm(10)

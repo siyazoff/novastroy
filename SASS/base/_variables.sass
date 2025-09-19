@@ -1,0 +1,166 @@
+$clr-primary:       #EF7F1B
+$clr-dark:          #0F0E0E
+$clr-white:         #FFFFFF
+$clr-light-gray:    #F5F5F5
+$clr-dark-gray:     #515151
+$clr-gray:          #D9D9D9
+$clr-primary-light: #EEF9FF
+$clr-dark-muted:    rgba(0, 0, 0, 0.50)
+$clr-yellow: #FBDE1B
+$clr-green: #809A4D
+
+$width-base: 1440
+$width-current: 100vw
+
+@media(max-width:768px)
+
+$box-shadow-orange: 0px 0px 20px 0px #ef7e1b9f
+
+
+:root
+    --color-primary:       #{$clr-primary}
+    --color-dark:          #{$clr-dark}
+    --color-white:         #{$clr-white}
+    --color-gray:          #{$clr-gray}
+    --color-light-gray:    #{$clr-light-gray}
+    --clr-dark-gray:       #{$clr-dark-gray}
+    --color-primary-light: #{$clr-primary-light}
+    --color-dark-muted:    #{$clr-dark-muted}
+    --color-yellow:        #{$clr-yellow}
+    --color-green:         #{$clr-green}
+    --width-base:          #{$width-base}
+    --width-current:       #{$width-current}
+    --width-multiplier:    calc(var(--width-current) / var(--width-base))
+
+@media(max-width:768px)
+    :root
+        --width-base: 375
+        --width-current: 100vmin
+
+@function wm($value, $force-multiplier: false)
+    @if unit($value) == '%' and $force-multiplier == false
+        @return $value
+
+    $converted-value: if(type-of($value) == 'number', #{$value}, $value)
+
+    @return unquote("calc(#{$converted-value} * var(--width-multiplier))")
+
+
+=r12
+    border-radius: wm(12)
+
+=r8
+    border-radius: wm(8)
+
+
+=t-center
+    text-align: center
+
+=p24
+    padding: wm(24)
+
+=p32
+    padding: wm(32)
+
+=flex-center
+    display: flex
+    justify-content: center
+    align-items: center
+
+=flex-column
+    display: flex
+    flex-direction: column
+
+=flex-between
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+=flex-around
+    display: flex
+    justify-content: space-around
+    align-items: center
+
+=flex-start
+    display: flex
+    justify-content: flex-start
+    align-items: center
+
+=flex-end
+    display: flex
+    justify-content: flex-end
+    align-items: center
+
+=grid-center
+    display: grid
+    place-items: center
+
+=grid-columns($count, $gap: 0)
+    display: grid
+    grid-template-columns: repeat($count, 1fr)
+    gap: $gap
+
+=center-absolute
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+=text-truncate
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+=abs-fill
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+
+=abs-reset
+    position: relative
+    top: unset
+    left: unset
+    right: unset
+    bottom: unset
+
+=bg-img
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+    z-index: -3
+
+
+=media($breakpoint)
+    @if $breakpoint == m
+        @media (max-width: 768px)
+            @content
+
+    @if $breakpoint == xl
+        @media (min-width: 769px)
+            @content
+
+=transition($props: all, $time: 0.3s, $ease: ease)
+    transition: $props $time $ease
+
+=hover-only
+    @media (hover: hover) and (pointer: fine)
+        @content
+
+=touch-only
+    @media (hover: none)
+        @content
+
+=cover-black-bg
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.40) 71.93%)
+
+=involve
+    font-family: 'Involve', sans-serif
+
+=reset-mp
+    margin: 0
+    padding: 0
