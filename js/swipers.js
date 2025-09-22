@@ -1,12 +1,49 @@
 const swiperHero = new Swiper(`.swiper-hero`, {
   speed: 1200,
   slidesPerView: 1,
-  spaceBetween: 24,
   autoplay: true,
   pagination: {
     el: ".swiper-hero-pagi-1",
     clickable: true,
   },
+
+  breakpoints: {
+    320: {
+      spaceBetween: 12,
+    },
+    768: {
+      spaceBetween: 24,
+    },
+  },
+});
+
+const swiperPartners = new Swiper(`.swiper-partners`, {
+  speed: 9000,
+  slidesPerView: "auto",
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  },
+  allowTouchMove: false,
+
+  breakpoints: {
+    320: {
+      spaceBetween: 12,
+    },
+    768: {
+      spaceBetween: 24,
+    },
+  },
+});
+
+const swiperReviews = new Swiper(`.swiper-reviews`, {
+  speed: 8000,
+  slidesPerView: "auto",
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  },
+  allowTouchMove: false,
 
   breakpoints: {
     320: {
