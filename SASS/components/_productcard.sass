@@ -1,0 +1,135 @@
+.productcard
+    position: relative
+    +flex-column
+    gap: wm(16)
+
+    &__img
+        width: 100%
+        height: wm(290)
+        object-fit: cover
+        +r8
+        overflow: hidden
+
+        +media(m)
+            height: wm(200)
+
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+
+    &__content
+        +flex-column
+        gap: wm(16)
+
+        +media(m)
+            gap: wm(8)
+
+    &__title
+        color: $clr-dark
+        font-size: wm(18)
+        font-weight: 500
+        line-height: 1.2
+
+        +media(m)
+            font-size: wm(16)
+
+    &__pricebox
+        display: flex
+        align-items: end
+        gap: wm(8)
+        flex-wrap: wrap
+            
+
+
+    &__price
+        &_actual
+            color: $clr-dark
+            font-size: wm(16)
+            font-weight: 600
+            line-height: 1
+
+            +media(m)
+                font-size: 14px
+
+        &_old
+            color: $clr-dark-muted
+            font-size: wm(13)
+            font-weight: 400
+            line-height: 1
+            text-decoration: line-through
+
+            +media(m)
+                font-size: 10px
+
+        &_has-discount
+            color: #FF6161
+
+
+    &__markdis
+        +flex-center
+        gap: wm(8)
+        padding: wm(4)
+        border-radius: wm(4)
+        background: rgba(0, 0, 0, 0.03)
+        width: fit-content
+
+        img
+            width: wm(16)
+            height: wm(16)
+            object-fit: contain
+            object-position: center
+
+            +media(m)
+                width: 10px
+                height: 10px
+
+        span
+            color: $clr-dark
+            font-size: wm(13)
+            font-weight: 400
+            line-height: 1
+
+            +media(m)
+                font-size: wm(12)
+
+    &__like
+        position: absolute
+        top: wm(20)
+        right: wm(20)
+        z-index: 1
+        +flex-center
+        cursor: pointer
+        z-index: 2
+        +transition
+        user-select: none
+
+        +media(m)
+            top: wm(10)
+            right: wm(10)
+
+        svg
+            +transition
+
+        &:hover
+            transform: scale(1.1)
+
+        &:active
+            transform: scale(.96)
+
+
+    &__btnbox
+        margin-top: auto
+
+    &.in-cart
+        .add-to-card
+            background: $clr-primary-hover
+
+    &.in-favs
+        .productcard__like
+            svg
+                fill: $clr-primary
+
+

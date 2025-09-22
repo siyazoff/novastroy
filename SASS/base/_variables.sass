@@ -1,4 +1,5 @@
 $clr-primary:       #EF7F1B
+$clr-primary-hover: #D27726
 $clr-dark:          #0F0E0E
 $clr-white:         #FFFFFF
 $clr-light-gray:    #F5F5F5
@@ -61,6 +62,9 @@ $box-shadow-orange: 0px 0px 20px 0px #ef7e1b9f
 
 =p32
     padding: wm(32)
+
+=p12
+    padding: wm(12)
 
 =flex-center
     display: flex
@@ -164,3 +168,13 @@ $box-shadow-orange: 0px 0px 20px 0px #ef7e1b9f
 =reset-mp
     margin: 0
     padding: 0
+
+
+.gr-5-24
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+    gap: wm(24)
+
+    +media(m)
+        grid-template-columns: repeat(2, 1fr)
+        gap: wm(12)

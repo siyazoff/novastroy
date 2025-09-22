@@ -5,11 +5,24 @@
         gap: wm(24)
         min-height: wm(400)
 
+        +media(m)
+            grid-template-columns: 100%
+            gap: 0
+            min-height: fit-content
+            +r12
+            overflow: hidden
+            height: 100%
+
     &-left
         position: relative
         +p32
         +r12
         overflow: hidden
+
+        +media(m)
+            +p12
+            min-height: wm(150)
+            border-radius: 0
 
         &::before
             content: ''
@@ -30,6 +43,12 @@
         +r12
         overflow: hidden
 
+        +media(m)
+            +p12
+            min-height: wm(150)
+            border-radius: 0
+
+
         &::before
             content: ''
             +abs-fill
@@ -43,10 +62,17 @@
             +flex-column
             gap: wm(18)
 
+            +media(m)
+                gap: wm(6)
+
         &__icon
             width: wm(42)
             height: wm(42)
             object-fit: contain
+
+            +media(m)
+                width: wm(32)
+                height: wm(32)
 
         &__subtitle
             +involve
@@ -56,6 +82,9 @@
             line-height: 1
             text-transform: uppercase
 
+            +media(m)
+                font-size: wm(16)
+
         &__title
             +involve
             color: $clr-white
@@ -64,9 +93,15 @@
             line-height: 1
             text-transform: uppercase
 
+            +media(m)
+                font-size: wm(50)
+
 .swiper-hero
     overflow: hidden
     +r12
+
+    .swiper-slide
+        height: auto
 
 
 .swiper-hero-pagi
@@ -83,6 +118,9 @@
     background: #F5F4F1
     margin-inline: auto
     margin-top: wm(26)
+    
+    +media(m)
+        margin-top: wm(12)
 
     .swiper-pagination-bullet
         margin: 0 !important
@@ -91,3 +129,80 @@
 
     .swiper-pagination-bullet-active
         background: $clr-primary
+
+
+
+.hero-products
+    &__title
+        margin-bottom: wm(26)
+
+        +media(m)
+            margin-bottom: wm(20)
+
+
+
+.willfollow
+    &__box
+        position: relative
+        display: flex
+        align-items: center
+        gap: wm(100)
+        +p32
+        +r12
+        background: linear-gradient(93deg, #FA8D07 1.17%, #AE251F 50.37%, #1F0F02 99.56%)
+
+        +media(m)
+            gap: wm(20)
+            overflow: hidden
+            flex-direction: column
+            +p24
+
+    &__left
+        +flex-column
+        gap: wm(25)
+        max-width: wm(540)
+
+        +media(m)
+            gap: wm(15)
+            max-width: 100%
+
+    &__right
+        +media(m)
+            display: none
+
+
+    &__img
+        position: absolute
+        top: wm(-58)
+        right: wm(160)
+        height: calc(100% + wm(60))
+        max-width: wm(480)
+        object-fit: cover
+        width: 100%
+        z-index: 1
+
+    &__title
+        color: $clr-white
+        font-size: wm(32)
+        font-weight: 600
+        line-height: 1.2
+
+        +media(m)
+            font-size: wm(24)
+
+    &__desc
+        color: $clr-white
+        font-size: wm(18)
+        font-weight: 400
+        line-height: 1.2
+
+        +media(m)
+            font-size: wm(16)
+
+    &__btn
+        width: fit-content
+        padding: wm(16) wm(46)
+        border-radius: wm(12)
+
+        +media(m)
+            width: 100%

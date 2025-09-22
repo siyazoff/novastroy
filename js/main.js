@@ -135,202 +135,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  //SUBMENU LOGIC
-  (() => {
-    const MOBILE_MAX_WIDTH = 768;
-    const mql = window.matchMedia(`(max-width: ${MOBILE_MAX_WIDTH}px)`);
-    const isMobile = () => mql.matches;
+  //PRODUCT CARDS
+  const productcard = document.querySelectorAll(".productcard");
 
-    function closeAll(root = document) {
-      root.querySelectorAll(".menu-lvl1 ul.active").forEach((ul) => {
-        ul.classList.remove("active");
-        ul.style.maxHeight = null; // сброс высоты для анимации
-      });
-      root
-        .querySelectorAll(".menu-lvl1 a[aria-expanded]")
-        .forEach((a) => a.setAttribute("aria-expanded", "false"));
-    }
+  productcard.forEach((card) => {
+    let addToCard = card.querySelector(".add-to-card");
+    let span = addToCard.querySelector("span");
+    let likeBtn = card.querySelector(".productcard__like");
 
-    // вспомогательная: открыть/закрыть конкретное submenu с анимацией (только мобилка)
-    function setSubmenuOpen(submenu, link, open) {
-      if (open) {
-        submenu.classList.add("active");
-        // сначала сброс, затем выставляем текущую фактическую высоту
-        submenu.style.maxHeight = null;
-        submenu.style.maxHeight = submenu.scrollHeight + "px";
-        link.setAttribute("aria-expanded", "true");
-      } else {
-        submenu.classList.remove("active");
-        submenu.style.maxHeight = null;
-        link.setAttribute("aria-expanded", "false");
-      }
-      // после любого изменения пересчитаем высоту всех активных родителей (для вложенных меню)
-      bubbleRecalc(submenu);
-    }
-
-    // пересчитать max-height у всех активных родительских UL
-    function bubbleRecalc(el) {
-      let parentUL = el.parentElement?.closest("ul");
-      while (parentUL && parentUL.classList.contains("active")) {
-        parentUL.style.maxHeight = parentUL.scrollHeight + "px";
-        parentUL = parentUL.parentElement?.closest("ul");
-      }
-    }
-
-    // --- Мобильная логика (по клику) + анимация ---
-    document.addEventListener("click", (e) => {
-      const link = e.target.closest("a.menu__link");
-      if (!link) return;
-
-      const li = link.closest("li");
-      if (!li) return;
-
-      const submenu = li.querySelector(":scope > ul");
-      if (!submenu) return;
-
-      if (!isMobile()) return; // на десктопе не вмешиваемся
-
+    likeBtn.addEventListener("click", function (e) {
       e.preventDefault();
-
-      const levelContainer = li.parentElement;
-
-      // Закрыть соседние подменю на этом уровне (с анимацией)
-      levelContainer
-        .querySelectorAll(":scope > li > ul.active")
-        .forEach((ul) => {
-          if (ul !== submenu) {
-            const parentLink = ul.parentElement.querySelector(
-              ":scope > a.menu__link"
-            );
-            setSubmenuOpen(ul, parentLink, false);
-          }
-        });
-
-      // Сброс aria у соседей
-      levelContainer
-        .querySelectorAll(':scope > li > a[aria-expanded="true"]')
-        .forEach((a) => {
-          if (a !== link) a.setAttribute("aria-expanded", "false");
-        });
-
-      // Тоггл текущего подменю (с анимацией)
-      const willOpen = !submenu.classList.contains("active");
-      setSubmenuOpen(submenu, link, willOpen);
+      this.classList.toggle("in-favs");
+      card.classList.toggle("in-favs");
     });
 
-    // --- Десктопная логика (по hover) ---
-    document.querySelectorAll(".menu-lvl1 li").forEach((li) => {
-      const link = li.querySelector(":scope > a.menu__link");
-      const submenu = li.querySelector(":scope > ul");
-      if (link && submenu) {
-        li.addEventListener("mouseenter", () => {
-          if (isMobile()) return;
-          submenu.classList.add("active");
-          link.setAttribute("aria-expanded", "true");
-        });
+    addToCard.addEventListener("click", function (e) {
+      e.preventDefault();
+      this.classList.toggle("in-cart");
+      card.classList.toggle("in-cart");
 
-        li.addEventListener("mouseleave", () => {
-          if (isMobile()) return;
-          submenu.classList.remove("active");
-          link.setAttribute("aria-expanded", "false");
-        });
+      // Меняем текст в зависимости от состояния
+      if (this.classList.contains("in-cart")) {
+        span.textContent = "В корзине";
+      } else {
+        span.textContent = "В корзину";
       }
     });
-
-    // При переходе с мобилки на десктоп — очистить состояния + инлайновые max-height
-    mql.addEventListener("change", (ev) => {
-      if (!ev.matches) closeAll();
-    });
-
-    // ARIA
-    document.querySelectorAll(".menu-lvl1 li").forEach((li) => {
-      const link = li.querySelector(":scope > a.menu__link");
-      const submenu = li.querySelector(":scope > ul");
-      if (link && submenu) {
-        link.setAttribute("aria-haspopup", "true");
-        link.setAttribute("aria-expanded", "false");
-      }
-    });
-  })();
-
-  // SEARCH BUTTON LOGIC
-  (() => {
-    const header = document.querySelector(".header");
-    const headerSearchCaller = document.querySelector(".header-search-caller");
-    const headerSearchContainer = document.querySelector(
-      ".header-search-container"
-    );
-
-    if (header) {
-      headerSearchCaller.addEventListener("click", function (e) {
-        e.stopPropagation(); // чтобы клик по кнопке не закрыл сразу
-        headerSearchContainer.classList.toggle("active");
-        header.classList.toggle("search-active");
-      });
-
-      // Клик внутри контейнера не закрывает его
-      headerSearchContainer.addEventListener("click", function (e) {
-        e.stopPropagation();
-      });
-
-      // Клик вне контейнера — убираем active
-      document.addEventListener("click", function () {
-        headerSearchContainer.classList.remove("active");
-        header.classList.remove("search-active");
-      });
-    }
-  })();
-
-  // DIRECTION CARDS HOVER
-
-  const cards = document.querySelectorAll(".direction-card");
-
-  if (cards.length > 0) {
-    const MOBILE_MAX_WIDTH = 768;
-    const isMobile = () =>
-      window.matchMedia(`(max-width: ${MOBILE_MAX_WIDTH}px)`).matches;
-
-    // изначально активна первая
-    cards[0].classList.add("active");
-
-    cards.forEach((card) => {
-      // Десктопная логика
-      card.addEventListener("mouseenter", () => {
-        if (isMobile()) return; // на мобилке не работаем по ховеру
-        cards.forEach((c) => c.classList.remove("active"));
-        card.classList.add("active");
-      });
-
-      card.addEventListener("mouseleave", () => {
-        if (isMobile()) return;
-        cards.forEach((c) => c.classList.remove("active"));
-        cards[0].classList.add("active");
-      });
-
-      // Мобильная логика (по клику)
-      card.addEventListener("click", () => {
-        if (!isMobile()) return; // на десктопе не работаем по клику
-        cards.forEach((c) => c.classList.remove("active"));
-        card.classList.add("active");
-      });
-    });
-  }
-
-  const awardsCard = document.querySelectorAll(".awards-card");
-
-  if (awardsCard.length > 0) {
-    awardsCard.forEach((card) => {
-      card.addEventListener("click", (e) => {
-        const isActive = card.classList.contains("active");
-
-        awardsCard.forEach((c) => {
-          c.classList.remove("active");
-        });
-
-        if (!isActive) {
-          card.classList.add("active");
-        }
-      });
-    });
-  }
+  });
 });

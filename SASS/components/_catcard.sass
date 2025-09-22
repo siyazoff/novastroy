@@ -1,0 +1,57 @@
+.catcard
+    position: relative
+    border-radius: 9.5px
+    background: #F5F4F1
+    overflow: hidden
+    +p24
+    min-height: wm(230)
+    z-index: 0
+    +transition
+
+    +media(m)
+        min-height: wm(100)
+        aspect-ratio: 1
+        +p12
+
+    &__title
+        color: $clr-dark
+        font-size: 18px
+        font-weight: 600
+        line-height: 1
+        max-width: wm(120)
+
+        +media(m)
+            font-size: wm(16)
+
+    &__img
+        position: absolute
+        bottom: 0
+        right: 0
+        height: wm(200)
+        max-width: wm(190)
+        width: 100%
+        object-fit: contain
+        object-position: bottom right
+        z-index: -1
+        +transition(transform, 1s)
+
+        +media(m)
+            width: 80%
+            height: 80%
+    
+    +hover-only
+        &:hover
+            transform: scale(1.05)
+
+            .catcard__img
+                transform: scale(1.1)
+
+        &:active
+            transform: scale(1)
+
+    +touch-only
+        &:active
+            transform: scale(.96)
+            
+            .catcard__img
+                transform: scale(1.1)

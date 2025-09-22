@@ -5,6 +5,16 @@ const swiperHero = new Swiper(`.swiper-hero`, {
   autoplay: true,
   pagination: {
     el: ".swiper-hero-pagi-1",
+    clickable: true,
+  },
+
+  breakpoints: {
+    320: {
+      spaceBetween: 12,
+    },
+    768: {
+      spaceBetween: 24,
+    },
   },
 });
 

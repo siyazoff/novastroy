@@ -1,39 +1,31 @@
 .button
     cursor: pointer
     +flex-center
-    padding: wm(16) wm(32)
-    border-radius: wm(36)
+    padding: wm(12)
+    border-radius: wm(8)
     background: $clr-primary
     color: $clr-white
-    font-size: wm(20)
+    font-size: wm(16)
     font-weight: 600
     line-height: 1
-    width: fit-content
-    min-width: wm(276)
-    border: wm(1) solid $clr-primary
+    width: 100%
+    gap: wm(12)
     +transition
 
-
     +media(m)
-        min-width: fit-content
-        font-size: wm(16)
-        padding: wm(9) wm(30)
+        padding: wm(10)
 
     +hover-only
         &:hover
-            background: $clr-white
-            color: $clr-primary
-
-        &:active
-            transform: scale(.96)
+            background: $clr-primary-hover
 
     +touch-only
         &:active
-                transform: scale(.96)
+            background: $clr-primary-hover
 
 
     &_outline
-        background: $clr-primary-light
+        background: #EF7F1B1A
         color: $clr-primary
 
         +hover-only
@@ -41,22 +33,25 @@
                 background: $clr-primary
                 color: $clr-white
 
+        +touch-only
             &:active
-                transform: scale(.96)
+                background: $clr-primary
+                color: $clr-white
 
 
-    &_dark
-        background: $clr-dark
-        color: $clr-white
-        border-color: $clr-dark
+    &_white
+        background: $clr-white
+        color: $clr-dark
 
         +hover-only
             &:hover
                 background: $clr-dark
                 color: $clr-white
 
+        +touch-only
             &:active
-                transform: scale(.96)
+                background: $clr-dark
+                color: $clr-white
 
 
 .swiper-btn-arrow
