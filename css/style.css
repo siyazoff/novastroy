@@ -1981,6 +1981,10 @@ main {
   display: flex;
 }
 
+.related__title {
+  margin-bottom: calc(26 * var(--width-multiplier));
+}
+
 .banner {
   border-radius: calc(12 * var(--width-multiplier));
   background: linear-gradient(93deg, #C5D5CA 1.17%, #D1D9CE 50.37%, #E0DCD1 99.56%);
