@@ -170,4 +170,16 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  const stocartBtnAdd = document.getElementById("stocart-btn-add");
+
+  if (stocartBtnAdd) {
+    const stocartAfterAdded = document.getElementById("stocart-after-added");
+
+    stocartBtnAdd.addEventListener("click", function (e) {
+      e.preventDefault();
+      stocartAfterAdded.classList.add("show");
+      this.classList.add("hidden");
+    });
+  }
 });

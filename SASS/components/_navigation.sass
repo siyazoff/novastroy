@@ -1,7 +1,27 @@
 .navigation
-    display: flex
-    align-items: center
-    gap: wm(14)
+    +flex-center
+    gap: wm(22)
 
     +media(m)
         gap: wm(10)
+    
+    &__btn
+        width: wm(26)
+        height: wm(26)
+        +flex-center
+        background: $clr-primary
+        border-radius: wm(4)
+
+    &__pages
+        +flex-center
+        gap: wm(6)
+
+    &__page
+        color: $clr-dark
+        font-size: wm(16)
+        font-weight: 400
+        line-height: 1
+
+        &.active
+            font-weight: 600
+            color: $clr-primary

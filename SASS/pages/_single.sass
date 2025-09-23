@@ -1,0 +1,273 @@
+.single
+    &__box
+        display: grid
+        grid-template-columns: wm(540) wm(430) 1fr
+        gap: wm(24)
+
+        +media(m)
+            grid-template-columns: 100%
+
+
+
+    &__gallery-box
+        +flex-column
+        gap: wm(10)
+
+        +media(m)
+            gap: wm(6)
+
+    &__info-column
+        +flex-column
+
+    &__heading
+        display: flex
+        align-items: start
+        justify-content: space-between
+        gap: wm(12)
+        margin-bottom: wm(24)
+
+        +media(m)
+            margin-bottom: wm(20)
+
+    &__title
+        color: $clr-dark
+        font-size: wm(24)
+        font-weight: 600
+        line-height: 1.2
+
+        +media(m)
+            font-size: wm(20)
+
+    &__fav
+        +flex-center
+        width: wm(24)
+        height: wm(24)
+
+        svg
+            width: 100%
+            height: 100%
+
+    &__descbox
+        +flex-column
+        gap: wm(18)
+        margin-bottom: wm(32)
+
+        +media(m)
+            gap: wm(6)
+            margin-bottom: wm(20)
+
+        &-title
+            color: $clr-dark-muted
+            font-size: wm(16)
+            font-weight: 600
+            line-height: 1
+
+    &__desc
+        color: $clr-dark
+        font-size: wm(16)
+        font-weight: 400
+        line-height: 1.2
+
+    &__specifbox
+        +flex-column
+        gap: wm(18)
+        margin-bottom: wm(27)
+
+        +media(m)
+            margin-bottom: wm(20)
+            gap: wm(6)
+
+    &__specif-title
+        color: $clr-dark-muted
+        font-size: wm(16)
+        font-weight: 600
+        line-height: 1
+
+
+    &__specif
+        +flex-between
+        gap: wm(12)
+        padding: wm(12) 0
+        border-bottom: wm(1) solid rgba(0, 0, 0, 0.10)
+
+        +media(m)
+            padding: wm(10) 0
+            
+
+.single-tabs
+    &__box
+        +flex-column
+        gap: wm(12)
+
+        +media(m)
+            gap: wm(8)
+
+    &__content
+        +flex-column
+        gap: wm(5)
+
+    &__title
+        color: $clr-dark
+        font-size: wm(16)
+        font-weight: 600
+        line-height: 1.2
+
+    &__desc
+        color: $clr-dark
+        font-size: wm(16)
+        font-weight: 400
+        line-height: 1.2
+
+
+.swiper-single-gallery
+    height: wm(500)
+    +r8
+    overflow: hidden
+
+    +media(m)
+        aspect-ratio: 1
+        height: auto
+
+    &__img
+        display: flex
+        width: 100%
+        height: 100%
+        overflow: hidden
+        +r8
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+
+.thumbs-single-gallery
+    overflow: hidden
+    +r8
+
+    .swiper-slide
+        cursor: pointer
+        overflow: hidden
+        +r8
+        aspect-ratio: 1
+
+        &:hover
+            .thumbs-single-gallery__img
+                transform: scale(1.1)
+
+        &.swiper-slide-thumb-active
+            .thumbs-single-gallery__img
+                transform: scale(1.3)
+
+        
+    &__img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        +transition
+
+.stocart
+    +flex-column
+    gap: wm(8)
+
+    &__top
+        +flex-center
+        gap: wm(10)
+        padding: wm(14)
+        border-radius: wm(12)
+        background: rgba(0, 0, 0, 0.03)
+
+        img
+            width: wm(28)
+            height: wm(28)
+            object-fit: cover
+
+        span
+            color: $clr-dark-muted
+            font-size: wm(14)
+            font-weight: 400
+            line-height: 1.2
+
+
+    &__bottom
+        padding: wm(16)
+        border-radius: wm(16)
+        background: rgba(0, 0, 0, 0.03)
+
+    &__price
+        display: flex
+        align-items: end
+        gap: wm(10)
+        margin-bottom: wm(24)
+
+        .actual
+            color: $clr-dark
+            font-size: wm(20)
+            font-weight: 600
+            line-height: 1
+
+        .old
+            color: $clr-dark-muted
+            font-size: wm(14)
+            font-weight: 400
+            line-height: 1
+            text-decoration: line-through
+
+    &__btns
+        +flex-column
+        gap: wm(12)
+
+    &__btn
+        &_add
+            &.hidden
+                display: none
+
+.stocart-after-added
+    +flex-column
+    gap: wm(24)
+
+    &__title
+        color: $clr-dark
+        font-size: wm(16)
+        font-weight: 600
+        line-height: 1
+
+.stocart-form
+    display: flex
+    align-items: center
+    gap: wm(12)
+
+    &__btn
+        width: wm(48)
+        height: wm(48)
+        background: $clr-primary
+        +r8
+        aspect-ratio: 1
+        border: none
+        outline: none
+        +flex-center
+
+
+.stocart-form-input
+    text-align: center
+    border-radius: 12px
+    background: rgba(0, 0, 0, 0.03)
+    height: wm(48)
+    color: $clr-dark
+    font-size: wm(16)
+    font-weight: 400
+    line-height: 1
+    appearance: none
+    -moz-appearance: textfield
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button
+        -webkit-appearance: none
+        margin: 0
+
+
+.stocart-after-added
+    display: none
+
+    &.show
+        display: flex

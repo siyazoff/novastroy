@@ -1,0 +1,27 @@
+[data-tabs].tabs
+    border: none
+    display: flex
+    align-items: center
+    gap: wm(8)
+    margin-bottom: wm(30)
+    flex-wrap: wrap
+
+    +media(m)
+        margin-bottom: wm(20)
+
+    li
+        display: flex
+
+    a[role=tab]
+        border: none
+        border-radius: wm(4)
+        background: rgba(0, 0, 0, 0.03)
+        color: $clr-dark
+        font-size: wm(16)
+        font-weight: 400
+        line-height: 1.2
+        +transition 
+
+        &[aria-selected=true]
+            background: $clr-dark
+            color: $clr-white

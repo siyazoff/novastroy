@@ -55,6 +55,32 @@ const swiperReviews = new Swiper(`.swiper-reviews`, {
   },
 });
 
+const thumbSingleGallery = new Swiper(`.thumbs-single-gallery`, {
+  speed: 800,
+  watchSlidesProgress: true,
+
+  breakpoints: {
+    320: {
+      slidesPerView: 3,
+      spaceBetween: 6,
+    },
+    768: {
+      slidesPerView: 4,
+      spaceBetween: 12,
+    },
+  },
+});
+
+const swiperSingleGallery = new Swiper(`.swiper-single-gallery`, {
+  speed: 800,
+  slidesPerView: 1,
+  spaceBetween: 8,
+
+  thumbs: {
+    swiper: thumbSingleGallery,
+  },
+});
+
 // const wordofmonthDescSwiper = new Swiper(`.wordofmonth-desc-swiper`, {
 //   speed: 1000,
 //   slidesPerView: 1,
@@ -374,39 +400,6 @@ const swiperReviews = new Swiper(`.swiper-reviews`, {
 
 // // allSwiperProjectDistrict.forEach((slider) =>
 // //   buildAllSwiperProjectDistrict(slider)
-// // );
-
-// // const swiperProjectsDistrictThumbs = new Swiper(
-// //   `.swiper-projects-district-thumbs`,
-// //   {
-// //     speed: 800,
-
-// //     watchSlidesProgress: true,
-
-// //     breakpoints: {
-// //       320: {
-// //         slidesPerView: 3,
-// //         spaceBetween: 2,
-// //       },
-// //       768: {
-// //         slidesPerView: 3,
-// //         spaceBetween: 12,
-// //       },
-// //     },
-// //   }
-// // );
-
-// // const swiperProjectsDistrictWrapper = new Swiper(
-// //   `.swiper-projects-district-wrapper`,
-// //   {
-// //     speed: 800,
-// //     slidesPerView: 1,
-// //     spaceBetween: 8,
-
-// //     thumbs: {
-// //       swiper: swiperProjectsDistrictThumbs,
-// //     },
-// //   }
 // // );
 
 // // const swiperProjectsDistrictWrapperNav = new Swiper(
