@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novastroy</title>
+
+    <!-- FAVICON -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/src/icons/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/src/icons/favicon.svg" />
+    <link rel="shortcut icon" href="/src/icons/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/src/icons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/src/icons/site.webmanifest" />
+
+    <!-- FONTS -->
+    <!-- Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Involve -->
+    <link rel="stylesheet" href="src/fonts/Involve/stylesheet.css" />
+
+    <!-- FANCYBOX -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+
+    <!-- TABBY -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12.0.0/dist/css/tabby-ui.min.css"
+    />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__top">
+        <div class="container">
+          <div class="header__top-box">
+            <div class="burger">
+              <div class="burger__line"></div>
+              <div class="burger__line"></div>
+              <div class="burger__line"></div>
+            </div>
+            <a href="tel:+7 777 777 25 12" class="header__phonecall"
+              >+7 777 777 25 12</a
+            >
+            <div class="menu">
+              <div class="menu__nav">
+                <a href="#" class="menu__link link">О компании</a>
+                <a href="#" class="menu__link link">Новости</a>
+                <a href="#" class="menu__link menu__link_away link"
+                  >Программа подписки</a
+                >
+                <a href="#" class="menu__link menu__link_away link"
+                  >Покупка сертификата</a
+                >
+                <a href="#" class="menu__link link">Контакты</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__box">
+        <div class="container">
+          <div class="header__box-inner">
+            <a href="\" class="header__logo">
+              <img src="src/img/header-logo.svg" />
+            </a>
+            <div class="catalog-call button" id="catalog-call">
+              <div class="catalog-call__burger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span>Каталог</span>
+            </div>
+            <form class="search-form" id="search-form">
+              <input type="search" id="search-input" placeholder="Поиск" />
+              <button class="search-form__submit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M10.1097 16.2183C8.9013 16.2185 7.72003 15.8602 6.71526 15.1888C5.71049 14.5174 4.92737 13.5629 4.46497 12.4462C4.00256 11.3296 3.88164 10.1008 4.1175 8.91532C4.35336 7.72987 4.93541 6.64103 5.79002 5.78652C8.17107 3.40449 12.0454 3.40449 14.4268 5.78652C16.8082 8.16856 16.8078 12.0437 14.4268 14.4257C13.8603 14.9937 13.1875 15.4444 12.4467 15.752C11.7059 16.0596 10.9117 16.218 10.1097 16.2183ZM10.1097 5.56304C9.13424 5.56398 8.185 5.87875 7.40218 6.46083C6.61937 7.04292 6.04451 7.86145 5.76253 8.79549C5.48056 9.72952 5.50644 10.7295 5.83635 11.6477C6.16625 12.5659 6.78268 13.3536 7.59456 13.8944C7.84907 14.064 8.12025 14.2072 8.40386 14.3216C9.23116 14.6571 10.139 14.7412 11.0138 14.5633C11.8886 14.3854 12.6915 13.9534 13.3222 13.3214C15.0942 11.5489 15.0942 8.66428 13.3222 6.89237C12.9005 6.46982 12.3995 6.13477 11.848 5.90649C11.2965 5.6782 10.7053 5.56116 10.1084 5.5621L10.1097 5.56304Z"
+                    fill="#0F0E0E"
+                  />
+                  <path
+                    d="M19.2187 19.9995C19.1161 19.9996 19.0145 19.9795 18.9197 19.9402C18.8249 19.901 18.7387 19.8434 18.6662 19.7707L13.323 14.4259C13.1764 14.2794 13.0941 14.0806 13.0941 13.8733C13.0941 13.666 13.1764 13.4673 13.323 13.3207C13.4695 13.1741 13.6682 13.0918 13.8754 13.0918C14.0826 13.0918 14.2813 13.1741 14.4279 13.3207L19.7712 18.6655C19.8804 18.7748 19.9549 18.914 19.985 19.0656C20.0152 19.2172 19.9997 19.3744 19.9406 19.5172C19.8814 19.66 19.7813 19.782 19.6528 19.8679C19.5243 19.9537 19.3732 19.9995 19.2187 19.9995Z"
+                    fill="#0F0E0E"
+                  />
+                </svg>
+              </button>
+            </form>
+            <div class="header__usrpieces">
+              <a href="#" class="user-link favs-link">
+                <div class="user-link__icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="14"
+                    viewBox="0 0 16 14"
+                    fill="none"
+                  >
+                    <path
+                      d="M8 14C7.85457 14 7.709 13.9436 7.59771 13.8308L1.257 7.41314C0.446429 6.59299 0 5.50155 0 4.34068C0 3.17952 0.446429 2.08822 1.257 1.26778C2.92714 -0.422107 5.64429 -0.422983 7.31443 1.26807L8 1.96177L8.68557 1.26807C10.356 -0.422399 13.0731 -0.422983 14.743 1.26807C15.5536 2.08822 16 3.17952 16 4.34068C16 5.50155 15.5536 6.59284 14.743 7.41328L8.40229 13.8308C8.291 13.9436 8.14543 14 8 14ZM4.28571 1.16583C3.48014 1.16583 2.67471 1.47606 2.06171 2.09654C1.469 2.69615 1.14286 3.49325 1.14286 4.34068C1.14286 5.18796 1.469 5.98491 2.06171 6.58438L8 12.595L13.9383 6.58467C14.5309 5.98506 14.8571 5.18796 14.8571 4.34068C14.8571 3.49311 14.531 2.69615 13.9383 2.09668C12.7123 0.855154 10.7161 0.855446 9.49014 2.09639L8.40229 3.19746C8.17957 3.4231 7.82029 3.4231 7.59757 3.19746L6.50971 2.09639C5.89671 1.47606 5.09129 1.16583 4.28571 1.16583Z"
+                      fill="#0F0E0E"
+                    />
+                  </svg>
+                </div>
+                <span>Избранное</span>
+              </a>
+              <a href="#" class="user-link cart-link">
+                <div class="user-link__icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M8.96151 14.9227H9.39117H16.7008H17.638C18.3579 14.9227 19.015 14.431 19.2721 13.6997L20.8839 9.12129C21.0903 8.5357 21.0185 7.87789 20.692 7.36123C20.365 6.84458 19.8261 6.53602 19.2498 6.53602H7.04193L6.54227 5.20926C6.26529 4.47464 5.61476 4 4.88519 4H3.54311C3.24319 4 3 4.26457 3 4.59084C3 4.91712 3.24319 5.18168 3.54311 5.18168H4.88579C5.17304 5.18168 5.4283 5.36878 5.53752 5.65764L8.60005 13.7883C7.87469 13.9682 7.33038 14.6726 7.33038 15.5162C7.33038 16.4943 8.06237 17.2907 8.96212 17.2907H8.99289C8.90057 17.525 8.84867 17.783 8.84867 18.0542C8.84867 19.1269 9.65066 20 10.6367 20C11.6227 20 12.4247 19.1269 12.4247 18.0542C12.4247 17.783 12.3728 17.525 12.2805 17.2907H16.4178C16.3255 17.525 16.2736 17.783 16.2736 18.0542C16.2736 19.1269 17.0755 20 18.0616 20C19.0476 20 19.8502 19.1269 19.8502 18.0542C19.8502 16.9815 19.0476 16.1083 18.0616 16.1083H8.96151C8.66039 16.1083 8.41599 15.8431 8.41599 15.5162C8.41599 15.1892 8.66039 14.9227 8.96151 14.9227ZM7.48667 7.71771H19.2498C19.4719 7.71771 19.671 7.83194 19.7965 8.03085C19.922 8.22977 19.9486 8.47267 19.8695 8.69851L18.2577 13.2769C18.16 13.5546 17.9107 13.7404 17.638 13.7404H16.7008H9.75506L7.48667 7.71771ZM11.3385 18.0542C11.3385 18.4756 11.0235 18.8177 10.6361 18.8177C10.2487 18.8177 9.93368 18.4756 9.93368 18.0542C9.93368 17.6327 10.2487 17.2907 10.6361 17.2907C11.0235 17.2907 11.3385 17.6327 11.3385 18.0542ZM18.061 18.8177C17.6736 18.8177 17.3586 18.4756 17.3586 18.0542C17.3586 17.6327 17.6736 17.2907 18.061 17.2907C18.4484 17.2907 18.7634 17.6327 18.7634 18.0542C18.7634 18.4756 18.4484 18.8177 18.061 18.8177Z"
+                      fill="#0F0E0E"
+                    />
+                  </svg>
+                </div>
+                <span>Корзина</span>
+              </a>
+              <a href="#" class="user-link account-link">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.9999 4C9.72117 4 7.87173 5.91698 7.87173 8.27898C7.87173 10.641 9.72117 12.558 11.9999 12.558C14.2787 12.558 16.1281 10.641 16.1281 8.27898C16.1281 5.91698 14.2787 4 11.9999 4ZM11.9999 5.11626C13.6842 5.11626 15.0512 6.53316 15.0512 8.27898C15.0512 10.0248 13.6842 11.4417 11.9999 11.4417C10.3156 11.4417 8.94866 10.0248 8.94866 8.27898C8.94866 6.53316 10.3156 5.11626 11.9999 5.11626Z"
+                    fill="#0F0E0E"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M19 17.9528C19 16.6208 18.4895 15.343 17.5806 14.4009C16.6717 13.4588 15.439 12.9297 14.1538 12.9297C12.7675 12.9297 11.2325 12.9297 9.84615 12.9297C8.56103 12.9297 7.32831 13.4588 6.41938 14.4009C5.51046 15.343 5 16.6208 5 17.9528C5 18.4953 5.20821 19.0163 5.57795 19.4003C5.94841 19.7835 6.45097 19.9993 6.97436 19.9993H17.0256C17.549 19.9993 18.0516 19.7835 18.4221 19.4003C18.7918 19.0163 19 18.4953 19 17.9528ZM17.9231 17.9528C17.9231 18.1999 17.8283 18.4358 17.6603 18.6107C17.4916 18.7848 17.264 18.8831 17.0256 18.8831H6.97436C6.736 18.8831 6.50841 18.7848 6.33969 18.6107C6.17169 18.4358 6.07692 18.1999 6.07692 17.9528C6.07692 16.917 6.47395 15.9227 7.18113 15.1905C7.88759 14.4575 8.84677 14.0459 9.84615 14.0459H14.1538C15.1532 14.0459 16.1124 14.4575 16.8189 15.1905C17.5261 15.9227 17.9231 16.917 17.9231 17.9528Z"
+                    fill="#0F0E0E"
+                  />
+                </svg>
+                <span>Дмитрий К.</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="catanav" id="catanav">
+        <div class="catanav__box">
+          <div class="catanav-parent">
+            <div class="catanav-parent__icon">
+              <img src="src/img/catanav-parent-1.svg" />
+            </div>
+            <div class="catanav-parent__content">
+              <div class="catanav-parent__title">Обои</div>
+              <div class="catanav-parent__inner">.catanav-parent__inner</div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </header>
+
+    <main>
+      <section class="hero first-section">
+        <div class="container">
+          <div class="swiper-hero">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="hero__box">
+                  <div class="hero-left">
+                    <img src="src/img/hero-left.png" class="hero-left__bg" />
+                    <h2 class="t46 t-white hero-left__title">
+                      Выбирайте стильные обои с поклейкой
+                    </h2>
+                  </div>
+                  <div class="hero-right">
+                    <img src="src/img/hero-right.png" class="hero-right__bg" />
+                    <div class="hero-right__content">
+                      <img src="src/img/mi.png" class="hero-right__icon" />
+                      <div class="hero-right__subtitle">Скидка до</div>
+                      <div class="hero-right__title">50%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="hero__box">
+                  <div class="hero-left">
+                    <img src="src/img/hero-left.png" class="hero-left__bg" />
+                    <h2 class="t46 t-white hero-left__title">
+                      Выбирайте стильные обои с поклейкой
+                    </h2>
+                  </div>
+                  <div class="hero-right">
+                    <img src="src/img/hero-right.png" class="hero-right__bg" />
+                    <div class="hero-right__content">
+                      <img src="src/img/mi.png" class="hero-right__icon" />
+                      <div class="hero-right__subtitle">Скидка до</div>
+                      <div class="hero-right__title">50%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="hero__box">
+                  <div class="hero-left">
+                    <img src="src/img/hero-left.png" class="hero-left__bg" />
+                    <h2 class="t46 t-white hero-left__title">
+                      Выбирайте стильные обои с поклейкой
+                    </h2>
+                  </div>
+                  <div class="hero-right">
+                    <img src="src/img/hero-right.png" class="hero-right__bg" />
+                    <div class="hero-right__content">
+                      <img src="src/img/mi.png" class="hero-right__icon" />
+                      <div class="hero-right__subtitle">Скидка до</div>
+                      <div class="hero-right__title">50%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-hero-pagi swiper-hero-pagi-1"></div>
+        </div>
+      </section>
+
+      <section class="hero-cats">
+        <div class="container">
+          <div class="hero-cats__box gr-5-24">
+            <a href="#" class="catcard">
+              <div class="catcard__title">Обои</div>
+              <img src="src/img/catcard-1.png" class="catcard__img" />
+            </a>
+            <a href="#" class="catcard">
+              <div class="catcard__title">Садовая техника</div>
+              <img src="src/img/catcard-2.png" class="catcard__img" />
+            </a>
+            <a href="#" class="catcard">
+              <div class="catcard__title">Двери</div>
+              <img src="src/img/catcard-3.png" class="catcard__img" />
+            </a>
+            <a href="#" class="catcard">
+              <div class="catcard__title">Кафель</div>
+              <img src="src/img/catcard-4.png" class="catcard__img" />
+            </a>
+            <a href="#" class="catcard">
+              <div class="catcard__title">Обои</div>
+              <img src="src/img/catcard-1.png" class="catcard__img" />
+            </a>
+            <a href="#" class="catcard">
+              <div class="catcard__title">Садовая техника</div>
+              <img src="src/img/catcard-2.png" class="catcard__img" />
+            </a>
+            <a href="#" class="catcard">
+              <div class="catcard__title">Двери</div>
+              <img src="src/img/catcard-3.png" class="catcard__img" />
+            </a>
+            <a href="#" class="catcard">
+              <div class="catcard__title">Кафель</div>
+              <img src="src/img/catcard-4.png" class="catcard__img" />
+            </a>
+            <a href="#" class="catcard">
+              <div class="catcard__title">Обои</div>
+              <img src="src/img/catcard-1.png" class="catcard__img" />
+            </a>
+            <a href="#" class="catcard">
+              <div class="catcard__title">Садовая техника</div>
+              <img src="src/img/catcard-2.png" class="catcard__img" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="hero-products">
+        <div class="container">
+          <div class="hero-products__title t26">Товары</div>
+          <div class="hero-products__box gr-5-24">
+            <div class="productcard">
+              <div class="productcard__like">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="20"
+                  viewBox="0 0 24 20"
+                  fill="none"
+                >
+                  <path
+                    d="M23.9958 6.46922C23.9958 11.3333 16.6528 17.2052 13.4555 19.5297C12.5963 20.1568 11.4037 20.1568 10.5445 19.5297C7.35191 17.2052 0.00415914 11.3333 0.00415914 6.46922C-0.131997 3.03838 3.09819 0.0599058 6.25796 0.00168004C9.03743 -0.0520668 10.9342 1.18859 12 3.02942C13.0658 1.18859 14.9626 -0.0520668 17.742 0.00168004C20.9018 0.0599058 24.132 3.03838 23.9958 6.46922Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M0.503906 6.44922C0.442479 4.89999 1.14131 3.42752 2.24805 2.3252C3.28764 1.28977 4.65234 0.616589 5.99805 0.514648L6.26758 0.501953C8.86813 0.451666 10.5942 1.59936 11.5674 3.28027L12 4.02734L12.4326 3.28027C13.345 1.70444 14.919 0.596701 17.2549 0.505859L17.7324 0.501953C19.1636 0.528326 20.643 1.22065 21.752 2.3252C22.8587 3.42752 23.5575 4.89999 23.4961 6.44922V6.46875C23.4961 7.56288 23.0807 8.75352 22.3662 9.9834C21.6539 11.2094 20.6637 12.4415 19.5615 13.6084C17.3569 15.9423 14.7494 17.9703 13.1611 19.125V19.126C12.5204 19.5936 11.6413 19.6229 10.9707 19.2139L10.8389 19.126C9.25266 17.9711 6.64568 15.9424 4.44043 13.6084C3.33787 12.4415 2.34751 11.2095 1.63477 9.9834C0.919789 8.75342 0.503906 7.56287 0.503906 6.46875V6.44922Z"
+                    stroke="#EF7F1B"
+                    stroke-opacity="0.5"
+                  />
+                </svg>
+              </div>
+              <a href="#" class="productcard__img">
+                <img src="src/img/productcard-1.png" />
+              </a>
+              <div class="productcard__content">
+                <a href="#" class="productcard__title">Диван TESTRUT</a>
+                <div class="productcard__pricebox">
+                  <div
+                    class="productcard__price_actual productcard__price_has-discount"
+                  >
+                    200 000 тг
+                  </div>
+                  <div class="productcard__price_old">200 000 тг</div>
+                </div>
+                <div class="productcard__markdis">
+                  <img src="src/img/productcard__markdis.svg" />
+                  <span>Персональная скидка</span>
+                </div>
+              </div>
+              <div class="productcard__btnbox">
+                <a href="#" class="productcard__btn button add-to-card">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="16"
+                    viewBox="0 0 17 16"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_2027_1658)">
+                      <path
+                        d="M5.6875 10.3439H14.1564C14.3661 10.3439 14.55 10.2052 14.6068 10.0038L16.4819 3.44116C16.5222 3.29968 16.4946 3.1477 16.4059 3.03015C16.317 2.91296 16.1788 2.84375 16.0314 2.84375H4.60534L4.27026 1.33594C4.22265 1.12122 4.03222 0.96875 3.8125 0.96875H0.96875C0.709717 0.96875 0.5 1.17847 0.5 1.4375C0.5 1.69665 0.709717 1.90625 0.96875 1.90625H3.43628L5.12902 9.52343C4.63098 9.73998 4.28125 10.2357 4.28125 10.8126C4.28125 11.588 4.91211 12.2189 5.6875 12.2189H14.1564C14.4155 12.2189 14.6251 12.0093 14.6251 11.7501C14.6251 11.4911 14.4155 11.2814 14.1564 11.2814H5.6875C5.42932 11.2814 5.21875 11.0713 5.21875 10.8126C5.21875 10.5539 5.42932 10.3439 5.6875 10.3439Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M5.21875 13.625C5.21875 14.4005 5.84961 15.0312 6.62512 15.0312C7.40051 15.0312 8.03137 14.4005 8.03137 13.625C8.03137 12.8496 7.40051 12.2188 6.62512 12.2188C5.84961 12.2188 5.21875 12.8496 5.21875 13.625Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M11.8125 13.625C11.8125 14.4005 12.4434 15.0312 13.2187 15.0312C13.9943 15.0312 14.625 14.4005 14.625 13.625C14.625 12.8496 13.9943 12.2188 13.2187 12.2188C12.4434 12.2188 11.8125 12.8496 11.8125 13.625Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2027_1658">
+                        <rect
+                          width="16"
+                          height="16"
+                          fill="white"
+                          transform="translate(0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <span>В корзину</span>
+                </a>
+              </div>
+            </div>
+            <div class="productcard">
+              <div class="productcard__like">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="20"
+                  viewBox="0 0 24 20"
+                  fill="none"
+                >
+                  <path
+                    d="M23.9958 6.46922C23.9958 11.3333 16.6528 17.2052 13.4555 19.5297C12.5963 20.1568 11.4037 20.1568 10.5445 19.5297C7.35191 17.2052 0.00415914 11.3333 0.00415914 6.46922C-0.131997 3.03838 3.09819 0.0599058 6.25796 0.00168004C9.03743 -0.0520668 10.9342 1.18859 12 3.02942C13.0658 1.18859 14.9626 -0.0520668 17.742 0.00168004C20.9018 0.0599058 24.132 3.03838 23.9958 6.46922Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M0.503906 6.44922C0.442479 4.89999 1.14131 3.42752 2.24805 2.3252C3.28764 1.28977 4.65234 0.616589 5.99805 0.514648L6.26758 0.501953C8.86813 0.451666 10.5942 1.59936 11.5674 3.28027L12 4.02734L12.4326 3.28027C13.345 1.70444 14.919 0.596701 17.2549 0.505859L17.7324 0.501953C19.1636 0.528326 20.643 1.22065 21.752 2.3252C22.8587 3.42752 23.5575 4.89999 23.4961 6.44922V6.46875C23.4961 7.56288 23.0807 8.75352 22.3662 9.9834C21.6539 11.2094 20.6637 12.4415 19.5615 13.6084C17.3569 15.9423 14.7494 17.9703 13.1611 19.125V19.126C12.5204 19.5936 11.6413 19.6229 10.9707 19.2139L10.8389 19.126C9.25266 17.9711 6.64568 15.9424 4.44043 13.6084C3.33787 12.4415 2.34751 11.2095 1.63477 9.9834C0.919789 8.75342 0.503906 7.56287 0.503906 6.46875V6.44922Z"
+                    stroke="#EF7F1B"
+                    stroke-opacity="0.5"
+                  />
+                </svg>
+              </div>
+              <a href="#" class="productcard__img">
+                <img src="src/img/productcard-1.png" />
+              </a>
+              <div class="productcard__content">
+                <a href="#" class="productcard__title"
+                  >Керамогранит Арт В12522 размеры 1200*600</a
+                >
+                <div class="productcard__pricebox">
+                  <div class="productcard__price_actual">200 000 тг</div>
+                  <div class="productcard__price_old"></div>
+                </div>
+                <div class="productcard__markdis">
+                  <img src="src/img/productcard__markdis.svg" />
+                  <span>Персональная скидка</span>
+                </div>
+              </div>
+              <div class="productcard__btnbox">
+                <a href="#" class="productcard__btn button add-to-card">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="16"
+                    viewBox="0 0 17 16"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_2027_1658)">
+                      <path
+                        d="M5.6875 10.3439H14.1564C14.3661 10.3439 14.55 10.2052 14.6068 10.0038L16.4819 3.44116C16.5222 3.29968 16.4946 3.1477 16.4059 3.03015C16.317 2.91296 16.1788 2.84375 16.0314 2.84375H4.60534L4.27026 1.33594C4.22265 1.12122 4.03222 0.96875 3.8125 0.96875H0.96875C0.709717 0.96875 0.5 1.17847 0.5 1.4375C0.5 1.69665 0.709717 1.90625 0.96875 1.90625H3.43628L5.12902 9.52343C4.63098 9.73998 4.28125 10.2357 4.28125 10.8126C4.28125 11.588 4.91211 12.2189 5.6875 12.2189H14.1564C14.4155 12.2189 14.6251 12.0093 14.6251 11.7501C14.6251 11.4911 14.4155 11.2814 14.1564 11.2814H5.6875C5.42932 11.2814 5.21875 11.0713 5.21875 10.8126C5.21875 10.5539 5.42932 10.3439 5.6875 10.3439Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M5.21875 13.625C5.21875 14.4005 5.84961 15.0312 6.62512 15.0312C7.40051 15.0312 8.03137 14.4005 8.03137 13.625C8.03137 12.8496 7.40051 12.2188 6.62512 12.2188C5.84961 12.2188 5.21875 12.8496 5.21875 13.625Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M11.8125 13.625C11.8125 14.4005 12.4434 15.0312 13.2187 15.0312C13.9943 15.0312 14.625 14.4005 14.625 13.625C14.625 12.8496 13.9943 12.2188 13.2187 12.2188C12.4434 12.2188 11.8125 12.8496 11.8125 13.625Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2027_1658">
+                        <rect
+                          width="16"
+                          height="16"
+                          fill="white"
+                          transform="translate(0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <span>В корзину</span>
+                </a>
+              </div>
+            </div>
+            <div class="productcard">
+              <div class="productcard__like">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="20"
+                  viewBox="0 0 24 20"
+                  fill="none"
+                >
+                  <path
+                    d="M23.9958 6.46922C23.9958 11.3333 16.6528 17.2052 13.4555 19.5297C12.5963 20.1568 11.4037 20.1568 10.5445 19.5297C7.35191 17.2052 0.00415914 11.3333 0.00415914 6.46922C-0.131997 3.03838 3.09819 0.0599058 6.25796 0.00168004C9.03743 -0.0520668 10.9342 1.18859 12 3.02942C13.0658 1.18859 14.9626 -0.0520668 17.742 0.00168004C20.9018 0.0599058 24.132 3.03838 23.9958 6.46922Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M0.503906 6.44922C0.442479 4.89999 1.14131 3.42752 2.24805 2.3252C3.28764 1.28977 4.65234 0.616589 5.99805 0.514648L6.26758 0.501953C8.86813 0.451666 10.5942 1.59936 11.5674 3.28027L12 4.02734L12.4326 3.28027C13.345 1.70444 14.919 0.596701 17.2549 0.505859L17.7324 0.501953C19.1636 0.528326 20.643 1.22065 21.752 2.3252C22.8587 3.42752 23.5575 4.89999 23.4961 6.44922V6.46875C23.4961 7.56288 23.0807 8.75352 22.3662 9.9834C21.6539 11.2094 20.6637 12.4415 19.5615 13.6084C17.3569 15.9423 14.7494 17.9703 13.1611 19.125V19.126C12.5204 19.5936 11.6413 19.6229 10.9707 19.2139L10.8389 19.126C9.25266 17.9711 6.64568 15.9424 4.44043 13.6084C3.33787 12.4415 2.34751 11.2095 1.63477 9.9834C0.919789 8.75342 0.503906 7.56287 0.503906 6.46875V6.44922Z"
+                    stroke="#EF7F1B"
+                    stroke-opacity="0.5"
+                  />
+                </svg>
+              </div>
+              <a href="#" class="productcard__img">
+                <img src="src/img/productcard-1.png" />
+              </a>
+              <div class="productcard__content">
+                <a href="#" class="productcard__title">Диван TESTRUT</a>
+                <div class="productcard__pricebox">
+                  <div
+                    class="productcard__price_actual productcard__price_has-discount"
+                  >
+                    200 000 тг
+                  </div>
+                  <div class="productcard__price_old">200 000 тг</div>
+                </div>
+                <div class="productcard__markdis">
+                  <img src="src/img/productcard__markdis.svg" />
+                  <span>Персональная скидка</span>
+                </div>
+              </div>
+              <div class="productcard__btnbox">
+                <a href="#" class="productcard__btn button add-to-card">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="16"
+                    viewBox="0 0 17 16"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_2027_1658)">
+                      <path
+                        d="M5.6875 10.3439H14.1564C14.3661 10.3439 14.55 10.2052 14.6068 10.0038L16.4819 3.44116C16.5222 3.29968 16.4946 3.1477 16.4059 3.03015C16.317 2.91296 16.1788 2.84375 16.0314 2.84375H4.60534L4.27026 1.33594C4.22265 1.12122 4.03222 0.96875 3.8125 0.96875H0.96875C0.709717 0.96875 0.5 1.17847 0.5 1.4375C0.5 1.69665 0.709717 1.90625 0.96875 1.90625H3.43628L5.12902 9.52343C4.63098 9.73998 4.28125 10.2357 4.28125 10.8126C4.28125 11.588 4.91211 12.2189 5.6875 12.2189H14.1564C14.4155 12.2189 14.6251 12.0093 14.6251 11.7501C14.6251 11.4911 14.4155 11.2814 14.1564 11.2814H5.6875C5.42932 11.2814 5.21875 11.0713 5.21875 10.8126C5.21875 10.5539 5.42932 10.3439 5.6875 10.3439Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M5.21875 13.625C5.21875 14.4005 5.84961 15.0312 6.62512 15.0312C7.40051 15.0312 8.03137 14.4005 8.03137 13.625C8.03137 12.8496 7.40051 12.2188 6.62512 12.2188C5.84961 12.2188 5.21875 12.8496 5.21875 13.625Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M11.8125 13.625C11.8125 14.4005 12.4434 15.0312 13.2187 15.0312C13.9943 15.0312 14.625 14.4005 14.625 13.625C14.625 12.8496 13.9943 12.2188 13.2187 12.2188C12.4434 12.2188 11.8125 12.8496 11.8125 13.625Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2027_1658">
+                        <rect
+                          width="16"
+                          height="16"
+                          fill="white"
+                          transform="translate(0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <span>В корзину</span>
+                </a>
+              </div>
+            </div>
+            <div class="productcard">
+              <div class="productcard__like">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="20"
+                  viewBox="0 0 24 20"
+                  fill="none"
+                >
+                  <path
+                    d="M23.9958 6.46922C23.9958 11.3333 16.6528 17.2052 13.4555 19.5297C12.5963 20.1568 11.4037 20.1568 10.5445 19.5297C7.35191 17.2052 0.00415914 11.3333 0.00415914 6.46922C-0.131997 3.03838 3.09819 0.0599058 6.25796 0.00168004C9.03743 -0.0520668 10.9342 1.18859 12 3.02942C13.0658 1.18859 14.9626 -0.0520668 17.742 0.00168004C20.9018 0.0599058 24.132 3.03838 23.9958 6.46922Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M0.503906 6.44922C0.442479 4.89999 1.14131 3.42752 2.24805 2.3252C3.28764 1.28977 4.65234 0.616589 5.99805 0.514648L6.26758 0.501953C8.86813 0.451666 10.5942 1.59936 11.5674 3.28027L12 4.02734L12.4326 3.28027C13.345 1.70444 14.919 0.596701 17.2549 0.505859L17.7324 0.501953C19.1636 0.528326 20.643 1.22065 21.752 2.3252C22.8587 3.42752 23.5575 4.89999 23.4961 6.44922V6.46875C23.4961 7.56288 23.0807 8.75352 22.3662 9.9834C21.6539 11.2094 20.6637 12.4415 19.5615 13.6084C17.3569 15.9423 14.7494 17.9703 13.1611 19.125V19.126C12.5204 19.5936 11.6413 19.6229 10.9707 19.2139L10.8389 19.126C9.25266 17.9711 6.64568 15.9424 4.44043 13.6084C3.33787 12.4415 2.34751 11.2095 1.63477 9.9834C0.919789 8.75342 0.503906 7.56287 0.503906 6.46875V6.44922Z"
+                    stroke="#EF7F1B"
+                    stroke-opacity="0.5"
+                  />
+                </svg>
+              </div>
+              <a href="#" class="productcard__img">
+                <img src="src/img/productcard-1.png" />
+              </a>
+              <div class="productcard__content">
+                <a href="#" class="productcard__title"
+                  >Керамогранит Арт В12522 размеры 1200*600</a
+                >
+                <div class="productcard__pricebox">
+                  <div class="productcard__price_actual">200 000 тг</div>
+                  <div class="productcard__price_old"></div>
+                </div>
+                <div class="productcard__markdis">
+                  <img src="src/img/productcard__markdis.svg" />
+                  <span>Персональная скидка</span>
+                </div>
+              </div>
+              <div class="productcard__btnbox">
+                <a href="#" class="productcard__btn button add-to-card">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="16"
+                    viewBox="0 0 17 16"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_2027_1658)">
+                      <path
+                        d="M5.6875 10.3439H14.1564C14.3661 10.3439 14.55 10.2052 14.6068 10.0038L16.4819 3.44116C16.5222 3.29968 16.4946 3.1477 16.4059 3.03015C16.317 2.91296 16.1788 2.84375 16.0314 2.84375H4.60534L4.27026 1.33594C4.22265 1.12122 4.03222 0.96875 3.8125 0.96875H0.96875C0.709717 0.96875 0.5 1.17847 0.5 1.4375C0.5 1.69665 0.709717 1.90625 0.96875 1.90625H3.43628L5.12902 9.52343C4.63098 9.73998 4.28125 10.2357 4.28125 10.8126C4.28125 11.588 4.91211 12.2189 5.6875 12.2189H14.1564C14.4155 12.2189 14.6251 12.0093 14.6251 11.7501C14.6251 11.4911 14.4155 11.2814 14.1564 11.2814H5.6875C5.42932 11.2814 5.21875 11.0713 5.21875 10.8126C5.21875 10.5539 5.42932 10.3439 5.6875 10.3439Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M5.21875 13.625C5.21875 14.4005 5.84961 15.0312 6.62512 15.0312C7.40051 15.0312 8.03137 14.4005 8.03137 13.625C8.03137 12.8496 7.40051 12.2188 6.62512 12.2188C5.84961 12.2188 5.21875 12.8496 5.21875 13.625Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M11.8125 13.625C11.8125 14.4005 12.4434 15.0312 13.2187 15.0312C13.9943 15.0312 14.625 14.4005 14.625 13.625C14.625 12.8496 13.9943 12.2188 13.2187 12.2188C12.4434 12.2188 11.8125 12.8496 11.8125 13.625Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2027_1658">
+                        <rect
+                          width="16"
+                          height="16"
+                          fill="white"
+                          transform="translate(0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <span>В корзину</span>
+                </a>
+              </div>
+            </div>
+            <div class="productcard">
+              <div class="productcard__like">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="20"
+                  viewBox="0 0 24 20"
+                  fill="none"
+                >
+                  <path
+                    d="M23.9958 6.46922C23.9958 11.3333 16.6528 17.2052 13.4555 19.5297C12.5963 20.1568 11.4037 20.1568 10.5445 19.5297C7.35191 17.2052 0.00415914 11.3333 0.00415914 6.46922C-0.131997 3.03838 3.09819 0.0599058 6.25796 0.00168004C9.03743 -0.0520668 10.9342 1.18859 12 3.02942C13.0658 1.18859 14.9626 -0.0520668 17.742 0.00168004C20.9018 0.0599058 24.132 3.03838 23.9958 6.46922Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M0.503906 6.44922C0.442479 4.89999 1.14131 3.42752 2.24805 2.3252C3.28764 1.28977 4.65234 0.616589 5.99805 0.514648L6.26758 0.501953C8.86813 0.451666 10.5942 1.59936 11.5674 3.28027L12 4.02734L12.4326 3.28027C13.345 1.70444 14.919 0.596701 17.2549 0.505859L17.7324 0.501953C19.1636 0.528326 20.643 1.22065 21.752 2.3252C22.8587 3.42752 23.5575 4.89999 23.4961 6.44922V6.46875C23.4961 7.56288 23.0807 8.75352 22.3662 9.9834C21.6539 11.2094 20.6637 12.4415 19.5615 13.6084C17.3569 15.9423 14.7494 17.9703 13.1611 19.125V19.126C12.5204 19.5936 11.6413 19.6229 10.9707 19.2139L10.8389 19.126C9.25266 17.9711 6.64568 15.9424 4.44043 13.6084C3.33787 12.4415 2.34751 11.2095 1.63477 9.9834C0.919789 8.75342 0.503906 7.56287 0.503906 6.46875V6.44922Z"
+                    stroke="#EF7F1B"
+                    stroke-opacity="0.5"
+                  />
+                </svg>
+              </div>
+              <a href="#" class="productcard__img">
+                <img src="src/img/productcard-1.png" />
+              </a>
+              <div class="productcard__content">
+                <a href="#" class="productcard__title">Диван TESTRUT</a>
+                <div class="productcard__pricebox">
+                  <div
+                    class="productcard__price_actual productcard__price_has-discount"
+                  >
+                    200 000 тг
+                  </div>
+                  <div class="productcard__price_old">200 000 тг</div>
+                </div>
+                <div class="productcard__markdis">
+                  <img src="src/img/productcard__markdis.svg" />
+                  <span>Персональная скидка</span>
+                </div>
+              </div>
+              <div class="productcard__btnbox">
+                <a href="#" class="productcard__btn button add-to-card">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="16"
+                    viewBox="0 0 17 16"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_2027_1658)">
+                      <path
+                        d="M5.6875 10.3439H14.1564C14.3661 10.3439 14.55 10.2052 14.6068 10.0038L16.4819 3.44116C16.5222 3.29968 16.4946 3.1477 16.4059 3.03015C16.317 2.91296 16.1788 2.84375 16.0314 2.84375H4.60534L4.27026 1.33594C4.22265 1.12122 4.03222 0.96875 3.8125 0.96875H0.96875C0.709717 0.96875 0.5 1.17847 0.5 1.4375C0.5 1.69665 0.709717 1.90625 0.96875 1.90625H3.43628L5.12902 9.52343C4.63098 9.73998 4.28125 10.2357 4.28125 10.8126C4.28125 11.588 4.91211 12.2189 5.6875 12.2189H14.1564C14.4155 12.2189 14.6251 12.0093 14.6251 11.7501C14.6251 11.4911 14.4155 11.2814 14.1564 11.2814H5.6875C5.42932 11.2814 5.21875 11.0713 5.21875 10.8126C5.21875 10.5539 5.42932 10.3439 5.6875 10.3439Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M5.21875 13.625C5.21875 14.4005 5.84961 15.0312 6.62512 15.0312C7.40051 15.0312 8.03137 14.4005 8.03137 13.625C8.03137 12.8496 7.40051 12.2188 6.62512 12.2188C5.84961 12.2188 5.21875 12.8496 5.21875 13.625Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M11.8125 13.625C11.8125 14.4005 12.4434 15.0312 13.2187 15.0312C13.9943 15.0312 14.625 14.4005 14.625 13.625C14.625 12.8496 13.9943 12.2188 13.2187 12.2188C12.4434 12.2188 11.8125 12.8496 11.8125 13.625Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2027_1658">
+                        <rect
+                          width="16"
+                          height="16"
+                          fill="white"
+                          transform="translate(0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <span>В корзину</span>
+                </a>
+              </div>
+            </div>
+            <div class="productcard">
+              <div class="productcard__like">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="20"
+                  viewBox="0 0 24 20"
+                  fill="none"
+                >
+                  <path
+                    d="M23.9958 6.46922C23.9958 11.3333 16.6528 17.2052 13.4555 19.5297C12.5963 20.1568 11.4037 20.1568 10.5445 19.5297C7.35191 17.2052 0.00415914 11.3333 0.00415914 6.46922C-0.131997 3.03838 3.09819 0.0599058 6.25796 0.00168004C9.03743 -0.0520668 10.9342 1.18859 12 3.02942C13.0658 1.18859 14.9626 -0.0520668 17.742 0.00168004C20.9018 0.0599058 24.132 3.03838 23.9958 6.46922Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M0.503906 6.44922C0.442479 4.89999 1.14131 3.42752 2.24805 2.3252C3.28764 1.28977 4.65234 0.616589 5.99805 0.514648L6.26758 0.501953C8.86813 0.451666 10.5942 1.59936 11.5674 3.28027L12 4.02734L12.4326 3.28027C13.345 1.70444 14.919 0.596701 17.2549 0.505859L17.7324 0.501953C19.1636 0.528326 20.643 1.22065 21.752 2.3252C22.8587 3.42752 23.5575 4.89999 23.4961 6.44922V6.46875C23.4961 7.56288 23.0807 8.75352 22.3662 9.9834C21.6539 11.2094 20.6637 12.4415 19.5615 13.6084C17.3569 15.9423 14.7494 17.9703 13.1611 19.125V19.126C12.5204 19.5936 11.6413 19.6229 10.9707 19.2139L10.8389 19.126C9.25266 17.9711 6.64568 15.9424 4.44043 13.6084C3.33787 12.4415 2.34751 11.2095 1.63477 9.9834C0.919789 8.75342 0.503906 7.56287 0.503906 6.46875V6.44922Z"
+                    stroke="#EF7F1B"
+                    stroke-opacity="0.5"
+                  />
+                </svg>
+              </div>
+              <a href="#" class="productcard__img">
+                <img src="src/img/productcard-1.png" />
+              </a>
+              <div class="productcard__content">
+                <a href="#" class="productcard__title"
+                  >Керамогранит Арт В12522 размеры 1200*600</a
+                >
+                <div class="productcard__pricebox">
+                  <div class="productcard__price_actual">200 000 тг</div>
+                  <div class="productcard__price_old"></div>
+                </div>
+                <div class="productcard__markdis">
+                  <img src="src/img/productcard__markdis.svg" />
+                  <span>Персональная скидка</span>
+                </div>
+              </div>
+              <div class="productcard__btnbox">
+                <a href="#" class="productcard__btn button add-to-card">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="16"
+                    viewBox="0 0 17 16"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_2027_1658)">
+                      <path
+                        d="M5.6875 10.3439H14.1564C14.3661 10.3439 14.55 10.2052 14.6068 10.0038L16.4819 3.44116C16.5222 3.29968 16.4946 3.1477 16.4059 3.03015C16.317 2.91296 16.1788 2.84375 16.0314 2.84375H4.60534L4.27026 1.33594C4.22265 1.12122 4.03222 0.96875 3.8125 0.96875H0.96875C0.709717 0.96875 0.5 1.17847 0.5 1.4375C0.5 1.69665 0.709717 1.90625 0.96875 1.90625H3.43628L5.12902 9.52343C4.63098 9.73998 4.28125 10.2357 4.28125 10.8126C4.28125 11.588 4.91211 12.2189 5.6875 12.2189H14.1564C14.4155 12.2189 14.6251 12.0093 14.6251 11.7501C14.6251 11.4911 14.4155 11.2814 14.1564 11.2814H5.6875C5.42932 11.2814 5.21875 11.0713 5.21875 10.8126C5.21875 10.5539 5.42932 10.3439 5.6875 10.3439Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M5.21875 13.625C5.21875 14.4005 5.84961 15.0312 6.62512 15.0312C7.40051 15.0312 8.03137 14.4005 8.03137 13.625C8.03137 12.8496 7.40051 12.2188 6.62512 12.2188C5.84961 12.2188 5.21875 12.8496 5.21875 13.625Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M11.8125 13.625C11.8125 14.4005 12.4434 15.0312 13.2187 15.0312C13.9943 15.0312 14.625 14.4005 14.625 13.625C14.625 12.8496 13.9943 12.2188 13.2187 12.2188C12.4434 12.2188 11.8125 12.8496 11.8125 13.625Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2027_1658">
+                        <rect
+                          width="16"
+                          height="16"
+                          fill="white"
+                          transform="translate(0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <span>В корзину</span>
+                </a>
+              </div>
+            </div>
+            <div class="productcard">
+              <div class="productcard__like">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="20"
+                  viewBox="0 0 24 20"
+                  fill="none"
+                >
+                  <path
+                    d="M23.9958 6.46922C23.9958 11.3333 16.6528 17.2052 13.4555 19.5297C12.5963 20.1568 11.4037 20.1568 10.5445 19.5297C7.35191 17.2052 0.00415914 11.3333 0.00415914 6.46922C-0.131997 3.03838 3.09819 0.0599058 6.25796 0.00168004C9.03743 -0.0520668 10.9342 1.18859 12 3.02942C13.0658 1.18859 14.9626 -0.0520668 17.742 0.00168004C20.9018 0.0599058 24.132 3.03838 23.9958 6.46922Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M0.503906 6.44922C0.442479 4.89999 1.14131 3.42752 2.24805 2.3252C3.28764 1.28977 4.65234 0.616589 5.99805 0.514648L6.26758 0.501953C8.86813 0.451666 10.5942 1.59936 11.5674 3.28027L12 4.02734L12.4326 3.28027C13.345 1.70444 14.919 0.596701 17.2549 0.505859L17.7324 0.501953C19.1636 0.528326 20.643 1.22065 21.752 2.3252C22.8587 3.42752 23.5575 4.89999 23.4961 6.44922V6.46875C23.4961 7.56288 23.0807 8.75352 22.3662 9.9834C21.6539 11.2094 20.6637 12.4415 19.5615 13.6084C17.3569 15.9423 14.7494 17.9703 13.1611 19.125V19.126C12.5204 19.5936 11.6413 19.6229 10.9707 19.2139L10.8389 19.126C9.25266 17.9711 6.64568 15.9424 4.44043 13.6084C3.33787 12.4415 2.34751 11.2095 1.63477 9.9834C0.919789 8.75342 0.503906 7.56287 0.503906 6.46875V6.44922Z"
+                    stroke="#EF7F1B"
+                    stroke-opacity="0.5"
+                  />
+                </svg>
+              </div>
+              <a href="#" class="productcard__img">
+                <img src="src/img/productcard-1.png" />
+              </a>
+              <div class="productcard__content">
+                <a href="#" class="productcard__title">Диван TESTRUT</a>
+                <div class="productcard__pricebox">
+                  <div
+                    class="productcard__price_actual productcard__price_has-discount"
+                  >
+                    200 000 тг
+                  </div>
+                  <div class="productcard__price_old">200 000 тг</div>
+                </div>
+                <div class="productcard__markdis">
+                  <img src="src/img/productcard__markdis.svg" />
+                  <span>Персональная скидка</span>
+                </div>
+              </div>
+              <div class="productcard__btnbox">
+                <a href="#" class="productcard__btn button add-to-card">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="16"
+                    viewBox="0 0 17 16"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_2027_1658)">
+                      <path
+                        d="M5.6875 10.3439H14.1564C14.3661 10.3439 14.55 10.2052 14.6068 10.0038L16.4819 3.44116C16.5222 3.29968 16.4946 3.1477 16.4059 3.03015C16.317 2.91296 16.1788 2.84375 16.0314 2.84375H4.60534L4.27026 1.33594C4.22265 1.12122 4.03222 0.96875 3.8125 0.96875H0.96875C0.709717 0.96875 0.5 1.17847 0.5 1.4375C0.5 1.69665 0.709717 1.90625 0.96875 1.90625H3.43628L5.12902 9.52343C4.63098 9.73998 4.28125 10.2357 4.28125 10.8126C4.28125 11.588 4.91211 12.2189 5.6875 12.2189H14.1564C14.4155 12.2189 14.6251 12.0093 14.6251 11.7501C14.6251 11.4911 14.4155 11.2814 14.1564 11.2814H5.6875C5.42932 11.2814 5.21875 11.0713 5.21875 10.8126C5.21875 10.5539 5.42932 10.3439 5.6875 10.3439Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M5.21875 13.625C5.21875 14.4005 5.84961 15.0312 6.62512 15.0312C7.40051 15.0312 8.03137 14.4005 8.03137 13.625C8.03137 12.8496 7.40051 12.2188 6.62512 12.2188C5.84961 12.2188 5.21875 12.8496 5.21875 13.625Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M11.8125 13.625C11.8125 14.4005 12.4434 15.0312 13.2187 15.0312C13.9943 15.0312 14.625 14.4005 14.625 13.625C14.625 12.8496 13.9943 12.2188 13.2187 12.2188C12.4434 12.2188 11.8125 12.8496 11.8125 13.625Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2027_1658">
+                        <rect
+                          width="16"
+                          height="16"
+                          fill="white"
+                          transform="translate(0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <span>В корзину</span>
+                </a>
+              </div>
+            </div>
+            <div class="productcard">
+              <div class="productcard__like">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="20"
+                  viewBox="0 0 24 20"
+                  fill="none"
+                >
+                  <path
+                    d="M23.9958 6.46922C23.9958 11.3333 16.6528 17.2052 13.4555 19.5297C12.5963 20.1568 11.4037 20.1568 10.5445 19.5297C7.35191 17.2052 0.00415914 11.3333 0.00415914 6.46922C-0.131997 3.03838 3.09819 0.0599058 6.25796 0.00168004C9.03743 -0.0520668 10.9342 1.18859 12 3.02942C13.0658 1.18859 14.9626 -0.0520668 17.742 0.00168004C20.9018 0.0599058 24.132 3.03838 23.9958 6.46922Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M0.503906 6.44922C0.442479 4.89999 1.14131 3.42752 2.24805 2.3252C3.28764 1.28977 4.65234 0.616589 5.99805 0.514648L6.26758 0.501953C8.86813 0.451666 10.5942 1.59936 11.5674 3.28027L12 4.02734L12.4326 3.28027C13.345 1.70444 14.919 0.596701 17.2549 0.505859L17.7324 0.501953C19.1636 0.528326 20.643 1.22065 21.752 2.3252C22.8587 3.42752 23.5575 4.89999 23.4961 6.44922V6.46875C23.4961 7.56288 23.0807 8.75352 22.3662 9.9834C21.6539 11.2094 20.6637 12.4415 19.5615 13.6084C17.3569 15.9423 14.7494 17.9703 13.1611 19.125V19.126C12.5204 19.5936 11.6413 19.6229 10.9707 19.2139L10.8389 19.126C9.25266 17.9711 6.64568 15.9424 4.44043 13.6084C3.33787 12.4415 2.34751 11.2095 1.63477 9.9834C0.919789 8.75342 0.503906 7.56287 0.503906 6.46875V6.44922Z"
+                    stroke="#EF7F1B"
+                    stroke-opacity="0.5"
+                  />
+                </svg>
+              </div>
+              <a href="#" class="productcard__img">
+                <img src="src/img/productcard-1.png" />
+              </a>
+              <div class="productcard__content">
+                <a href="#" class="productcard__title"
+                  >Керамогранит Арт В12522 размеры 1200*600</a
+                >
+                <div class="productcard__pricebox">
+                  <div class="productcard__price_actual">200 000 тг</div>
+                  <div class="productcard__price_old"></div>
+                </div>
+                <div class="productcard__markdis">
+                  <img src="src/img/productcard__markdis.svg" />
+                  <span>Персональная скидка</span>
+                </div>
+              </div>
+              <div class="productcard__btnbox">
+                <a href="#" class="productcard__btn button add-to-card">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="16"
+                    viewBox="0 0 17 16"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_2027_1658)">
+                      <path
+                        d="M5.6875 10.3439H14.1564C14.3661 10.3439 14.55 10.2052 14.6068 10.0038L16.4819 3.44116C16.5222 3.29968 16.4946 3.1477 16.4059 3.03015C16.317 2.91296 16.1788 2.84375 16.0314 2.84375H4.60534L4.27026 1.33594C4.22265 1.12122 4.03222 0.96875 3.8125 0.96875H0.96875C0.709717 0.96875 0.5 1.17847 0.5 1.4375C0.5 1.69665 0.709717 1.90625 0.96875 1.90625H3.43628L5.12902 9.52343C4.63098 9.73998 4.28125 10.2357 4.28125 10.8126C4.28125 11.588 4.91211 12.2189 5.6875 12.2189H14.1564C14.4155 12.2189 14.6251 12.0093 14.6251 11.7501C14.6251 11.4911 14.4155 11.2814 14.1564 11.2814H5.6875C5.42932 11.2814 5.21875 11.0713 5.21875 10.8126C5.21875 10.5539 5.42932 10.3439 5.6875 10.3439Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M5.21875 13.625C5.21875 14.4005 5.84961 15.0312 6.62512 15.0312C7.40051 15.0312 8.03137 14.4005 8.03137 13.625C8.03137 12.8496 7.40051 12.2188 6.62512 12.2188C5.84961 12.2188 5.21875 12.8496 5.21875 13.625Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M11.8125 13.625C11.8125 14.4005 12.4434 15.0312 13.2187 15.0312C13.9943 15.0312 14.625 14.4005 14.625 13.625C14.625 12.8496 13.9943 12.2188 13.2187 12.2188C12.4434 12.2188 11.8125 12.8496 11.8125 13.625Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2027_1658">
+                        <rect
+                          width="16"
+                          height="16"
+                          fill="white"
+                          transform="translate(0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <span>В корзину</span>
+                </a>
+              </div>
+            </div>
+            <div class="productcard">
+              <div class="productcard__like">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="20"
+                  viewBox="0 0 24 20"
+                  fill="none"
+                >
+                  <path
+                    d="M23.9958 6.46922C23.9958 11.3333 16.6528 17.2052 13.4555 19.5297C12.5963 20.1568 11.4037 20.1568 10.5445 19.5297C7.35191 17.2052 0.00415914 11.3333 0.00415914 6.46922C-0.131997 3.03838 3.09819 0.0599058 6.25796 0.00168004C9.03743 -0.0520668 10.9342 1.18859 12 3.02942C13.0658 1.18859 14.9626 -0.0520668 17.742 0.00168004C20.9018 0.0599058 24.132 3.03838 23.9958 6.46922Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M0.503906 6.44922C0.442479 4.89999 1.14131 3.42752 2.24805 2.3252C3.28764 1.28977 4.65234 0.616589 5.99805 0.514648L6.26758 0.501953C8.86813 0.451666 10.5942 1.59936 11.5674 3.28027L12 4.02734L12.4326 3.28027C13.345 1.70444 14.919 0.596701 17.2549 0.505859L17.7324 0.501953C19.1636 0.528326 20.643 1.22065 21.752 2.3252C22.8587 3.42752 23.5575 4.89999 23.4961 6.44922V6.46875C23.4961 7.56288 23.0807 8.75352 22.3662 9.9834C21.6539 11.2094 20.6637 12.4415 19.5615 13.6084C17.3569 15.9423 14.7494 17.9703 13.1611 19.125V19.126C12.5204 19.5936 11.6413 19.6229 10.9707 19.2139L10.8389 19.126C9.25266 17.9711 6.64568 15.9424 4.44043 13.6084C3.33787 12.4415 2.34751 11.2095 1.63477 9.9834C0.919789 8.75342 0.503906 7.56287 0.503906 6.46875V6.44922Z"
+                    stroke="#EF7F1B"
+                    stroke-opacity="0.5"
+                  />
+                </svg>
+              </div>
+              <a href="#" class="productcard__img">
+                <img src="src/img/productcard-1.png" />
+              </a>
+              <div class="productcard__content">
+                <a href="#" class="productcard__title">Диван TESTRUT</a>
+                <div class="productcard__pricebox">
+                  <div
+                    class="productcard__price_actual productcard__price_has-discount"
+                  >
+                    200 000 тг
+                  </div>
+                  <div class="productcard__price_old">200 000 тг</div>
+                </div>
+                <div class="productcard__markdis">
+                  <img src="src/img/productcard__markdis.svg" />
+                  <span>Персональная скидка</span>
+                </div>
+              </div>
+              <div class="productcard__btnbox">
+                <a href="#" class="productcard__btn button add-to-card">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="16"
+                    viewBox="0 0 17 16"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_2027_1658)">
+                      <path
+                        d="M5.6875 10.3439H14.1564C14.3661 10.3439 14.55 10.2052 14.6068 10.0038L16.4819 3.44116C16.5222 3.29968 16.4946 3.1477 16.4059 3.03015C16.317 2.91296 16.1788 2.84375 16.0314 2.84375H4.60534L4.27026 1.33594C4.22265 1.12122 4.03222 0.96875 3.8125 0.96875H0.96875C0.709717 0.96875 0.5 1.17847 0.5 1.4375C0.5 1.69665 0.709717 1.90625 0.96875 1.90625H3.43628L5.12902 9.52343C4.63098 9.73998 4.28125 10.2357 4.28125 10.8126C4.28125 11.588 4.91211 12.2189 5.6875 12.2189H14.1564C14.4155 12.2189 14.6251 12.0093 14.6251 11.7501C14.6251 11.4911 14.4155 11.2814 14.1564 11.2814H5.6875C5.42932 11.2814 5.21875 11.0713 5.21875 10.8126C5.21875 10.5539 5.42932 10.3439 5.6875 10.3439Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M5.21875 13.625C5.21875 14.4005 5.84961 15.0312 6.62512 15.0312C7.40051 15.0312 8.03137 14.4005 8.03137 13.625C8.03137 12.8496 7.40051 12.2188 6.62512 12.2188C5.84961 12.2188 5.21875 12.8496 5.21875 13.625Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M11.8125 13.625C11.8125 14.4005 12.4434 15.0312 13.2187 15.0312C13.9943 15.0312 14.625 14.4005 14.625 13.625C14.625 12.8496 13.9943 12.2188 13.2187 12.2188C12.4434 12.2188 11.8125 12.8496 11.8125 13.625Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2027_1658">
+                        <rect
+                          width="16"
+                          height="16"
+                          fill="white"
+                          transform="translate(0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <span>В корзину</span>
+                </a>
+              </div>
+            </div>
+            <div class="productcard">
+              <div class="productcard__like">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="20"
+                  viewBox="0 0 24 20"
+                  fill="none"
+                >
+                  <path
+                    d="M23.9958 6.46922C23.9958 11.3333 16.6528 17.2052 13.4555 19.5297C12.5963 20.1568 11.4037 20.1568 10.5445 19.5297C7.35191 17.2052 0.00415914 11.3333 0.00415914 6.46922C-0.131997 3.03838 3.09819 0.0599058 6.25796 0.00168004C9.03743 -0.0520668 10.9342 1.18859 12 3.02942C13.0658 1.18859 14.9626 -0.0520668 17.742 0.00168004C20.9018 0.0599058 24.132 3.03838 23.9958 6.46922Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M0.503906 6.44922C0.442479 4.89999 1.14131 3.42752 2.24805 2.3252C3.28764 1.28977 4.65234 0.616589 5.99805 0.514648L6.26758 0.501953C8.86813 0.451666 10.5942 1.59936 11.5674 3.28027L12 4.02734L12.4326 3.28027C13.345 1.70444 14.919 0.596701 17.2549 0.505859L17.7324 0.501953C19.1636 0.528326 20.643 1.22065 21.752 2.3252C22.8587 3.42752 23.5575 4.89999 23.4961 6.44922V6.46875C23.4961 7.56288 23.0807 8.75352 22.3662 9.9834C21.6539 11.2094 20.6637 12.4415 19.5615 13.6084C17.3569 15.9423 14.7494 17.9703 13.1611 19.125V19.126C12.5204 19.5936 11.6413 19.6229 10.9707 19.2139L10.8389 19.126C9.25266 17.9711 6.64568 15.9424 4.44043 13.6084C3.33787 12.4415 2.34751 11.2095 1.63477 9.9834C0.919789 8.75342 0.503906 7.56287 0.503906 6.46875V6.44922Z"
+                    stroke="#EF7F1B"
+                    stroke-opacity="0.5"
+                  />
+                </svg>
+              </div>
+              <a href="#" class="productcard__img">
+                <img src="src/img/productcard-1.png" />
+              </a>
+              <div class="productcard__content">
+                <a href="#" class="productcard__title"
+                  >Керамогранит Арт В12522 размеры 1200*600</a
+                >
+                <div class="productcard__pricebox">
+                  <div class="productcard__price_actual">200 000 тг</div>
+                  <div class="productcard__price_old"></div>
+                </div>
+                <div class="productcard__markdis">
+                  <img src="src/img/productcard__markdis.svg" />
+                  <span>Персональная скидка</span>
+                </div>
+              </div>
+              <div class="productcard__btnbox">
+                <a href="#" class="productcard__btn button add-to-card">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="17"
+                    height="16"
+                    viewBox="0 0 17 16"
+                    fill="none"
+                  >
+                    <g clip-path="url(#clip0_2027_1658)">
+                      <path
+                        d="M5.6875 10.3439H14.1564C14.3661 10.3439 14.55 10.2052 14.6068 10.0038L16.4819 3.44116C16.5222 3.29968 16.4946 3.1477 16.4059 3.03015C16.317 2.91296 16.1788 2.84375 16.0314 2.84375H4.60534L4.27026 1.33594C4.22265 1.12122 4.03222 0.96875 3.8125 0.96875H0.96875C0.709717 0.96875 0.5 1.17847 0.5 1.4375C0.5 1.69665 0.709717 1.90625 0.96875 1.90625H3.43628L5.12902 9.52343C4.63098 9.73998 4.28125 10.2357 4.28125 10.8126C4.28125 11.588 4.91211 12.2189 5.6875 12.2189H14.1564C14.4155 12.2189 14.6251 12.0093 14.6251 11.7501C14.6251 11.4911 14.4155 11.2814 14.1564 11.2814H5.6875C5.42932 11.2814 5.21875 11.0713 5.21875 10.8126C5.21875 10.5539 5.42932 10.3439 5.6875 10.3439Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M5.21875 13.625C5.21875 14.4005 5.84961 15.0312 6.62512 15.0312C7.40051 15.0312 8.03137 14.4005 8.03137 13.625C8.03137 12.8496 7.40051 12.2188 6.62512 12.2188C5.84961 12.2188 5.21875 12.8496 5.21875 13.625Z"
+                        fill="white"
+                      />
+                      <path
+                        d="M11.8125 13.625C11.8125 14.4005 12.4434 15.0312 13.2187 15.0312C13.9943 15.0312 14.625 14.4005 14.625 13.625C14.625 12.8496 13.9943 12.2188 13.2187 12.2188C12.4434 12.2188 11.8125 12.8496 11.8125 13.625Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2027_1658">
+                        <rect
+                          width="16"
+                          height="16"
+                          fill="white"
+                          transform="translate(0.5)"
+                        />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                  <span>В корзину</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="willfollow">
+        <div class="container">
+          <div class="willfollow__box">
+            <div class="willfollow__left">
+              <div class="willfollow__title">
+                Стань подписчиком — начни экономить 5% с каждой покупки
+              </div>
+              <div class="willfollow__desc">
+                Повышенный кэшбек для постоянных <br />
+                пользователей Novostroy
+              </div>
+              <a href="#" class="button button_white willfollow__btn">
+                Оформить подписку
+              </a>
+            </div>
+            <div class="willfollow__right">
+              <img src="src/img/willfollow-right.png" class="willfollow__img" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Секция История -->
+      <section id="history" class="history">
+        <div class="container">
+          <div class="history__inner">
+            <div class="swiper history-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">Слайд 1</div>
+                <div class="swiper-slide">Слайд 2</div>
+                <div class="swiper-slide">Слайд 3</div>
+                <div class="swiper-slide">Слайд 4</div>
+              </div>
+
+              <!-- Навигация (по желанию) -->
+              <div class="history-prev">Prev</div>
+              <div class="history-next">Next</div>
+
+              <!-- Пагинация (по желанию) -->
+              <div class="history-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <style>
+        /* Чтобы блок вел себя как «остановка» по скроллу — во весь экран */
+        .history {
+          position: relative;
+          min-height: 100vh; /* можно 100svh */
+          display: grid;
+          place-items: center;
+          scroll-margin-top: 60px; /* если есть фикс-хедер с якорем */
+        }
+
+        .history__inner,
+        .history-swiper {
+          width: min(1100px, 100%);
+          height: 80vh; /* комфортная зона для свайпера; можно 100% */
+        }
+
+        .swiper-slide {
+          display: grid;
+          place-items: center;
+          font-size: clamp(24px, 4vw, 48px);
+          padding: 2rem;
+          border-radius: 24px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          background: #fff;
+        }
+
+        /* Кнопки/пагинация по желанию */
+        .history-prev,
+        .history-next {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 5;
+          cursor: pointer;
+          user-select: none;
+          padding: 0.5rem 1rem;
+          background: rgba(0, 0, 0, 0.6);
+          color: #fff;
+          border-radius: 999px;
+        }
+        .history-prev {
+          left: 10px;
+        }
+        .history-next {
+          right: 10px;
+        }
+        .history-pagination {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 12px;
+        }
+      </style>
+
+      <section class="partners">
+        <div class="container">
+          <div class="swiper-partners">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="partnercard">
+                  <img src="src/img/partners-1.png" class="partnercard__img" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="partnercard">
+                  <img src="src/img/partners-2.png" class="partnercard__img" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="partnercard">
+                  <img src="src/img/partners-3.png" class="partnercard__img" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="partnercard">
+                  <img src="src/img/partners-4.png" class="partnercard__img" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="partnercard">
+                  <img src="src/img/partners-5.png" class="partnercard__img" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="partnercard">
+                  <img src="src/img/partners-1.png" class="partnercard__img" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="partnercard">
+                  <img src="src/img/partners-2.png" class="partnercard__img" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="partnercard">
+                  <img src="src/img/partners-3.png" class="partnercard__img" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="partnercard">
+                  <img src="src/img/partners-4.png" class="partnercard__img" />
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="partnercard">
+                  <img src="src/img/partners-5.png" class="partnercard__img" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews last-section">
+        <div class="container">
+          <div class="reviews__title t26">Отзывы</div>
+          <div class="swiper-reviews">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="review-card">
+                  <div class="review-card__title">Nuraddin Nursultanov</div>
+                  <div class="review-card__date">26 августа 2025</div>
+                  <div class="review-card__desc">
+                    Как уже неоднократно упомянуто, тщательные исследования
+                    конкурентов своевременно верифицированы.
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review-card">
+                  <div class="review-card__title">Nuraddin Nursultanov</div>
+                  <div class="review-card__date">26 августа 2025</div>
+                  <div class="review-card__desc">
+                    Как уже неоднократно упомянуто, тщательные исследования
+                    конкурентов своевременно верифицированы. Как уже
+                    неоднократно упомянуто, тщательные исследования конкурентов
+                    своевременно верифицированы.
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review-card">
+                  <div class="review-card__title">Nuraddin Nursultanov</div>
+                  <div class="review-card__date">26 августа 2025</div>
+                  <div class="review-card__desc">
+                    Как уже неоднократно упомянуто, тщательные исследования
+                    конкурентов своевременно верифицированы.
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review-card">
+                  <div class="review-card__title">Nuraddin Nursultanov</div>
+                  <div class="review-card__date">26 августа 2025</div>
+                  <div class="review-card__desc">
+                    Как уже неоднократно упомянуто, тщательные исследования
+                    конкурентов своевременно верифицированы. Как уже
+                    неоднократно упомянуто, тщательные исследования конкурентов
+                    своевременно верифицированы.
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review-card">
+                  <div class="review-card__title">Nuraddin Nursultanov</div>
+                  <div class="review-card__date">26 августа 2025</div>
+                  <div class="review-card__desc">
+                    Как уже неоднократно упомянуто, тщательные исследования
+                    конкурентов своевременно верифицированы.
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review-card">
+                  <div class="review-card__title">Nuraddin Nursultanov</div>
+                  <div class="review-card__date">26 августа 2025</div>
+                  <div class="review-card__desc">
+                    Как уже неоднократно упомянуто, тщательные исследования
+                    конкурентов своевременно верифицированы. Как уже
+                    неоднократно упомянуто, тщательные исследования конкурентов
+                    своевременно верифицированы.
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review-card">
+                  <div class="review-card__title">Nuraddin Nursultanov</div>
+                  <div class="review-card__date">26 августа 2025</div>
+                  <div class="review-card__desc">
+                    Как уже неоднократно упомянуто, тщательные исследования
+                    конкурентов своевременно верифицированы.
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="review-card">
+                  <div class="review-card__title">Nuraddin Nursultanov</div>
+                  <div class="review-card__date">26 августа 2025</div>
+                  <div class="review-card__desc">
+                    Как уже неоднократно упомянуто, тщательные исследования
+                    конкурентов своевременно верифицированы. Как уже
+                    неоднократно упомянуто, тщательные исследования конкурентов
+                    своевременно верифицированы.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="reviews__btn button">Перейти в 2ГИС</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__box">
+          <div class="footer__logosbox">
+            <a href="\" class="footer__logo">
+              <img src="src/img/footer__logo.svg" />
+            </a>
+            <div class="footer__desc">
+              Novastroy — качественные товары <br />
+              для стройки и дома
+            </div>
+            <div class="footer__socbox">
+              <a href="#" class="footer__soclink">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M6.92065 21.1856C8.42871 22.021 10.1608 22.5 12.0051 22.5C17.8027 22.5 22.5 17.7926 22.5 11.9949C22.5 6.19721 17.8027 1.5 12.0051 1.5C6.2074 1.5 1.49995 6.19721 1.49995 11.9949C1.49995 13.8595 1.98907 15.5917 2.83474 17.1099L1.49995 22.5L6.92065 21.1856ZM7.50146 7.35878C7.74595 7.12441 8.10264 7.03272 8.42871 7.10408L8.76489 7.1754C9.10116 7.24667 9.37628 7.47088 9.50875 7.77653L10.171 9.2438C10.3341 9.6004 10.273 10.0284 10.008 10.3238L9.6004 10.8028C9.46797 10.9556 9.43743 11.1899 9.53929 11.3734C10.7416 13.5335 12.3209 14.2365 13.024 14.4504C13.2278 14.5218 13.4622 14.4301 13.5742 14.2466L13.8697 13.7882C14.155 13.3501 14.7154 13.1972 15.337 13.5029L16.5597 14.1143C17.0284 14.3384 17.2424 14.8886 17.0691 15.3777C16.4476 17.1811 14.8581 16.957 14.8581 16.957C11.3326 16.8653 8.57129 13.6149 7.37919 11.944C6.82896 11.1594 6.49273 10.2118 6.59458 9.24379C6.69653 8.28598 7.14487 7.68485 7.50146 7.35878Z"
+                    fill="white"
+                    fill-opacity="0.8"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="footer__soclink">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M12 8.33203C9.976 8.33203 8.332 9.97603 8.332 12C8.332 14.024 9.976 15.672 12 15.672C14.024 15.672 15.672 14.024 15.672 12C15.672 9.97603 14.024 8.33203 12 8.33203Z"
+                    fill="white"
+                    fill-opacity="0.8"
+                  />
+                  <path
+                    d="M17.536 2H6.464C4.004 2 2 4.004 2 6.464V17.536C2 20 4.004 22 6.464 22H17.536C20 22 22 20 22 17.536V6.464C22 4.004 20 2 17.536 2ZM12 18.48C8.428 18.48 5.52 15.572 5.52 12C5.52 8.428 8.428 5.524 12 5.524C15.572 5.524 18.48 8.428 18.48 12C18.48 15.572 15.572 18.48 12 18.48ZM18.616 6.7C17.86 6.7 17.244 6.088 17.244 5.332C17.244 4.576 17.86 3.96 18.616 3.96C19.372 3.96 19.988 4.576 19.988 5.332C19.988 6.088 19.372 6.7 18.616 6.7Z"
+                    fill="white"
+                    fill-opacity="0.8"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="footer__soclink">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M23.0645 4.45933C22.1982 3.42281 20.5987 3 17.5441 3H6.45569C3.33112 3 1.70454 3.45008 0.841471 4.55362C0 5.62957 0 7.2149 0 9.40903V13.591C0 17.8418 0.9984 20 6.45569 20H17.5442C20.1931 20 21.661 19.6269 22.6106 18.7122C23.5845 17.7741 24 16.2426 24 13.591V9.40903C24 7.09513 23.9349 5.50045 23.0645 4.45933ZM15.4081 12.0774L10.3729 14.7261C10.2603 14.7853 10.1372 14.8147 10.0143 14.8147C9.87507 14.8147 9.73618 14.7769 9.61316 14.702C9.38152 14.5607 9.24008 14.308 9.24008 14.0354V8.75511C9.24008 8.483 9.38113 8.23053 9.61231 8.08918C9.84356 7.94783 10.1312 7.93817 10.3711 8.06363L15.4063 10.6952C15.6625 10.8291 15.8234 11.0953 15.8237 11.3857C15.8241 11.6763 15.6639 11.9429 15.4081 12.0774Z"
+                    fill="white"
+                    fill-opacity="0.8"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="footer__soclink">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_332_676)">
+                    <path
+                      d="M9.417 15.1814L9.02 20.7654C9.588 20.7654 9.834 20.5214 10.129 20.2284L12.792 17.6834L18.31 21.7244C19.322 22.2884 20.035 21.9914 20.308 20.7934L23.93 3.82141L23.931 3.82041C24.252 2.32441 23.39 1.73941 22.404 2.10641L1.114 10.2574C-0.338998 10.8214 -0.316998 11.6314 0.867002 11.9984L6.31 13.6914L18.953 5.78041C19.548 5.38641 20.089 5.60441 19.644 5.99841L9.417 15.1814Z"
+                      fill="white"
+                      fill-opacity="0.8"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_332_676">
+                      <rect width="24" height="24" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer__nabox">
+            <div class="footer__title">Информация</div>
+            <div class="footer__nav">
+              <a href="#" class="footer__link link">О компании</a>
+              <a href="#" class="footer__link link">Новости</a>
+              <a href="#" class="footer__link link">Программа подписки</a>
+              <a href="#" class="footer__link link">Покупка сертификата</a>
+            </div>
+          </div>
+          <div class="footer__nabox footer__nabox_2cols">
+            <div class="footer__title">Каталог</div>
+            <div class="footer__nav footer__nav_2cols">
+              <a href="#" class="footer__link link">Обои</a>
+              <a href="#" class="footer__link link">Фурнитура</a>
+              <a href="#" class="footer__link link">Электроника подписки</a>
+              <a href="#" class="footer__link link">Двери</a>
+              <a href="#" class="footer__link link">Кафель</a>
+              <a href="#" class="footer__link link">Обои</a>
+              <a href="#" class="footer__link link">Фурнитура</a>
+              <a href="#" class="footer__link link">Электроника подписки</a>
+              <a href="#" class="footer__link link">Двери</a>
+              <a href="#" class="footer__link link">Кафель</a>
+            </div>
+          </div>
+          <div class="footer__nabox">
+            <div class="footer__title">Контакты</div>
+            <div class="footer__nav">
+              <div class="footer__link">1500 колл.центр Астана</div>
+              <a href="tel:+7 777 777 25 12" class="footer__link link"
+                >+7 777 777 25 12 доставка Астана</a
+              >
+              <div class="footer__link">Адрес: Кенесары 4</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal" data-modal="modal-1">
+      <div class="modal-inner">
+        <div class="modal-inner__box">
+          <div class="modal__head">
+            <h2 class="modal__title">Оставить заявку</h2>
+            <div class="modal__close" data-modal-close="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+              >
+                <path
+                  d="M8.53366 25.3333L6.66699 23.4667L14.1337 16L6.66699 8.53333L8.53366 6.66667L16.0003 14.1333L23.467 6.66667L25.3337 8.53333L17.867 16L25.3337 23.4667L23.467 25.3333L16.0003 17.8667L8.53366 25.3333Z"
+                  fill="#1D1B20"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <div class="modal__body">
+            <form class="modal-form">
+              <input type="text" placeholder="Имя" class="modal-input" />
+              <input
+                type="text"
+                placeholder="Телефон"
+                class="modal-input tel-input"
+                required
+              />
+              <input type="text" placeholder="Почта" class="modal-input" />
+              <input
+                type="submit"
+                class="button modal-form__submit"
+                value="Отправить"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/imask.js"></script>
+    <script src="js/tabby.polyfills.min.js"></script>
+    <script src="js/fancybox.umd.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/swipers.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      // Инициализация Swiper
+      const historySwiper = new Swiper(".history-swiper", {
+        direction: "horizontal", // можно 'vertical', если хочется вертикального «слайд-джеккинга»
+        speed: 700,
+        resistanceRatio: 0.85,
+        slidesPerView: 1,
+        spaceBetween: 16,
+        allowTouchMove: true, // на мобилках пусть листается пальцем
+        keyboard: { enabled: true, onlyInViewport: true },
+
+        // Навигация/пагинация (если используете)
+        navigation: {
+          nextEl: ".history-next",
+          prevEl: ".history-prev",
+        },
+        pagination: {
+          el: ".history-pagination",
+          clickable: true,
+        },
+
+        // ВАЖНО: колесо мыши + «проброс» события на краях
+        mousewheel: {
+          enabled: false, // включим/выключим динамически через observer
+          forceToAxis: true, // игнорить диагональ трекпада, срабатывает по оси
+          releaseOnEdges: true, // КЛЮЧЕВОЕ: на первом/последнем слайде страница продолжит скролл
+          sensitivity: 1, // тонкая настройка под трекпады/мыши
+          thresholdDelta: 20, // минимум «колёсика» для срабатывания
+        },
+      });
+
+      // Активируем «режим перехвата скролла» только когда секция в кадре
+      const historySection = document.getElementById("history");
+      let locked = false; // просто флажок для дебага
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            // Сколько секции видно: entry.intersectionRatio (0..1)
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.6) {
+              // Секция реально «в фокусе» — ловим колёсико для свайпера
+              historySwiper.mousewheel.enable();
+              locked = true;
+            } else {
+              // Вышли из секции — отдаем колёсико странице
+              historySwiper.mousewheel.disable();
+              locked = false;
+            }
+          });
+        },
+        {
+          root: null,
+          threshold: [0, 0.3, 0.6, 0.9, 1], // включаем на ~60% видимости
+        }
+      );
+
+      observer.observe(historySection);
+
+      // Дополнительно: если вы используете вертикальное направление
+      // и хотите полностью имитировать «фуллпейдж» поведение —
+      // можно подсобрать контроль ручной «инерции» трекпада:
+      let wheelLock = false;
+      let wheelTimeout;
+
+      historySection.addEventListener(
+        "wheel",
+        (e) => {
+          // Если мышиное колесо уже «захвачено» свайпером — пусть он рулит
+          if (!locked) return; // не в зоне — ничего не делаем
+
+          // Когда Swiper не на краях — он сам preventDefault,
+          // а на краях — выпустит событие (releaseOnEdges:true), и страница поедет дальше.
+          // Дополнительное «смягчение»: throttle, чтобы за 1 жест не проскочить кучу слайдов.
+          if (wheelLock) return;
+          wheelLock = true;
+          clearTimeout(wheelTimeout);
+          wheelTimeout = setTimeout(() => (wheelLock = false), 350);
+        },
+        { passive: true }
+      ); // passive true, т.к. сам Swiper уже занимается preventDefault внутри себя
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+.banner
+    border-radius: wm(12)
+    background: linear-gradient(93deg, #C5D5CA 1.17%, #D1D9CE 50.37%, #E0DCD1 99.56%)
+    padding: wm(65) wm(65) wm(65) wm(36)
+    +flex-center
+    justify-content: space-between
+    gap: wm(60)
+
+    +media(m)
+        padding: wm(20)
+        flex-direction: column
+        gap: wm(30)
+
+    &__content
+        max-width: wm(500)
+        +flex-column
+        gap: wm(25)
+
+        +media(m)
+            max-width: 100%
+            gap: wm(15)
+
+    &__btn
+        width: fit-content
+        padding: wm(20) wm(24)
+        +r12
+        font-weight: 400
+
+        +media(m)
+            padding: wm(15)
+            width: 100%
+
+    &__right
+        max-width: wm(660)
+        height: 100%
+        object-fit: contain
+
+        +media(m)
+            max-width: 100%
+    

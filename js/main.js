@@ -125,11 +125,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   faq.forEach((el) => {
     el.addEventListener("click", function () {
-      this.classList.toggle("active");
-      let faqBody = this.querySelector(".faq-item__body");
-      if (faqBody.style.maxHeight) {
-        faqBody.style.maxHeight = null;
-      } else {
+      const isActive = this.classList.contains("active");
+
+      // Закрываем все элементы
+      faq.forEach((item) => {
+        item.classList.remove("active");
+        let body = item.querySelector(".faq-item__body");
+        body.style.maxHeight = null;
+      });
+
+      // Если элемент не был активен, открываем его
+      if (!isActive) {
+        this.classList.add("active");
+        let faqBody = this.querySelector(".faq-item__body");
         faqBody.style.maxHeight = faqBody.scrollHeight + "px";
       }
     });

@@ -1,0 +1,197 @@
+.about-banner
+
+    &__box
+        position: relative
+        +r12
+        overflow: hidden
+        min-height: wm(600)
+        display: flex
+        padding: wm(42)
+
+        +media(m)
+            min-height: wm(300)
+            padding: wm(12)
+
+
+    &__video
+        position: absolute
+        top: 0
+        left: 0
+        z-index: -2
+
+    &__title
+        text-align: center
+        color: $clr-white
+        font-size: wm(46)
+        font-weight: 600
+        line-height: 1.2
+        mix-blend-mode: exclusion
+        margin-top: auto
+        margin-inline: auto
+        max-width: wm(650)
+
+        +media(m)
+            font-size: wm(24)
+
+    &__desc
+        margin-inline: auto
+        max-width: wm(650)
+        text-align: center
+        color: $clr-dark
+        font-size: wm(24)
+        font-weight: 400
+        line-height: 1.2
+        margin-top: wm(46)
+
+        +media(m)
+            font-size: wm(16)
+            margin-top: wm(20)
+
+
+.history
+    &__title
+        +t-center
+        margin-bottom: wm(46)
+
+
+
+.whywe
+
+    &__box
+        +media(m)
+            grid-template-columns: 100%
+
+
+.whywe-card
+    +flex-column
+    justify-content: space-between
+    gap: wm(12)
+    min-height: wm(300)
+    padding: wm(24)    
+    +r12
+    background: rgba(0, 0, 0, 0.03)
+
+    +media(m)
+        min-height: wm(200)
+
+    &__icon
+        path
+            +transition
+
+    &__content
+        +flex-column
+        gap: wm(18)
+
+        +media(m)
+            gap: wm(6)
+
+    &__title
+        color: $clr-dark
+        font-size: wm(20)
+        font-weight: 500
+        line-height: 1.2
+
+        +media(m)
+            font-size: wm(16)
+
+    &__desc
+        color: rgba(0, 0, 0, 0.50)
+        font-size: wm(16)
+        font-weight: 400
+        line-height: 1.2
+
+        +media(m)
+            font-size: wm(14)
+
+    &:hover
+        .whywe-card__icon path
+            fill: $clr-primary
+
+
+.faq
+    padding-top: 0
+    
+    &__title
+        margin-bottom: wm(26)
+
+    &__box
+        +flex-column
+        gap: wm(12)
+
+        +media(m)
+            gap: wm(10)
+
+
+.faq-item
+    cursor: pointer
+    height: -moz-fit-content
+    height: fit-content
+
+.faq-item__head 
+    display: grid
+    align-items: center
+    grid-template-columns: 1fr wm(36)
+    gap: wm(12)
+    padding: wm(14)
+    border-radius: wm(12)
+    background: rgba(0, 0, 0, 0.03)
+
+    +media(m)
+        grid-template-columns: 1fr wm(28)
+
+.faq-item__title 
+    color: $clr-dark
+    font-size: wm(18)
+    font-weight: 500
+    line-height: 1.2
+    +transition(color)
+
+    +media(m)
+        font-size: wm(16)
+
+.faq-item__icon 
+    width: wm(36)
+    height: wm(36)
+    background: $clr-white
+    border-radius: 50%
+    padding: wm(5)
+    transition: rotate 0.3s ease
+
+    +media(m)
+        width: wm(28)
+        height: wm(28)
+        
+
+.faq-item__icon svg
+    width: 100%
+    height: 100%
+
+.faq-item__icon path
+    +transition(fill)
+
+.faq-item__body 
+    overflow: hidden
+    max-height: 0
+    transition: max-height 0.3s ease-out
+
+.faq-item__desc 
+    margin-top: wm(10)
+    padding: wm(24)
+    background: rgba(0, 0, 0, 0.03)
+    color: $clr-dark
+    font-size: wm(16)
+    font-weight: 400
+    line-height: 1.2
+    +r12
+
+    +media(m)
+        padding: wm(12)
+
+.faq-item.active .faq-item__icon 
+    rotate: 180deg
+
+.faq-item.active .faq-item__title
+    color: $clr-primary
+
+.faq-item.active .faq-item__icon path
+    fill: $clr-primary
