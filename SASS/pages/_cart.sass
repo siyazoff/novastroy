@@ -255,6 +255,14 @@
     +r12
     background: rgba(0, 0, 0, 0.03)
     padding: wm(20)
+    position: sticky
+    top: wm(20)
+    right: 0
+
+    +media(m)
+        position: relative
+        top: unset
+        right: unset
 
     &__title
         color: $clr-dark

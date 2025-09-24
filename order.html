@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novastroy</title>
+
+    <!-- FAVICON -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/src/icons/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/src/icons/favicon.svg" />
+    <link rel="shortcut icon" href="/src/icons/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/src/icons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/src/icons/site.webmanifest" />
+
+    <!-- FONTS -->
+    <!-- Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Involve -->
+    <link rel="stylesheet" href="src/fonts/Involve/stylesheet.css" />
+
+    <!-- FANCYBOX -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+
+    <!-- TABBY -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12.0.0/dist/css/tabby-ui.min.css"
+    />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="order first-section">
+        <div class="container">
+          <div class="order__title t26">Оформление заказа</div>
+          <div class="order__box">
+            <div class="order__left">
+              <div class="order-getmeth">
+                <div class="order-getmeth__title">Способ получения</div>
+                <div class="order-getmeth__desc">
+                  Выберите адрес доставки, пункт выдачи <br />
+                  или магазин самовывоза
+                </div>
+                <a href="#" class="order-getmeth__btn button button_white">
+                  Выбрать на карте
+                </a>
+              </div>
+              <div class="order-prods">
+                <div class="order-prods__title">2 добавленных товара</div>
+                <div class="order-prods__box">
+                  <a href="#" class="order-prods-card">
+                    <div class="order-prods-card__img">
+                      <img src="src/img/productcard-1.png" />
+                    </div>
+                    <div class="order-prods-card__count">1 шт</div>
+                  </a>
+                  <a href="#" class="order-prods-card">
+                    <div class="order-prods-card__img">
+                      <img src="src/img/productcard-1.png" />
+                    </div>
+                    <div class="order-prods-card__count">1 шт</div>
+                  </a>
+                </div>
+                <div class="order-prods__btm">
+                  <div class="order-prods__total">Итого 70 000 тг</div>
+                  <div class="order-prods__desc">
+                    2 позиции на сумму 70 000 тг
+                  </div>
+                </div>
+              </div>
+              <div class="order-recipient">
+                <div class="order-recipient__title">Получатель</div>
+                <div class="order-recipient__desc">
+                  Данные нужны для курьера и сообщений об изменениях <br />
+                  статуса вашего заказа
+                </div>
+                <div class="order-recipient__grid">
+                  <input
+                    type="text"
+                    class="order-recipient__input input"
+                    placeholder="Имя"
+                  />
+                  <input
+                    type="text"
+                    class="order-recipient__input input tel-input"
+                    placeholder="Телефон"
+                  />
+                  <input
+                    type="text"
+                    class="order-recipient__input input"
+                    placeholder="Фамилия"
+                  />
+                  <input
+                    type="text"
+                    class="order-recipient__input input"
+                    placeholder="Почта"
+                  />
+                </div>
+              </div>
+              <div class="order-payment">
+                <div class="order-payment__title">Способ оплаты</div>
+                <div class="order-payment__desc">Выберите способ оплаты</div>
+                <div class="order-payment__box">
+                  <a href="#" class="order-payment__btn button button_white">
+                    <div class="order-payment__btn-meth">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="31"
+                        height="19"
+                        viewBox="0 0 31 19"
+                        fill="none"
+                      >
+                        <path
+                          d="M21.5586 0.707031C26.5149 0.707151 30.5332 4.70696 30.5332 9.64062C30.5331 14.5742 26.5149 18.5731 21.5586 18.5732C19.3363 18.5732 17.3037 17.7683 15.7363 16.4365C14.1691 17.7678 12.1378 18.5732 9.91602 18.5732C4.95966 18.5732 0.941548 14.5742 0.941406 9.64062C0.941406 4.70688 4.95957 0.707031 9.91602 0.707031C12.1377 0.707072 14.1691 1.51262 15.7363 2.84375C17.3037 1.51213 19.3364 0.707031 21.5586 0.707031Z"
+                          fill="#ED0006"
+                        />
+                        <path
+                          d="M21.5586 0.707031C26.515 0.707046 30.5332 4.70689 30.5332 9.64062C30.5331 14.5742 26.5149 18.5732 21.5586 18.5732C19.3366 18.5732 17.3046 17.768 15.7373 16.4365C17.666 14.798 18.8905 12.3624 18.8906 9.64062C18.8906 6.91864 17.6662 4.48228 15.7373 2.84375C17.3046 1.51236 19.3367 0.707031 21.5586 0.707031Z"
+                          fill="#F9A000"
+                        />
+                        <path
+                          d="M15.7363 2.84375C17.6654 4.48228 18.8906 6.91843 18.8906 9.64062C18.8905 12.3626 17.6653 14.798 15.7363 16.4365C13.8079 14.7981 12.5841 12.3622 12.584 9.64062C12.584 6.91887 13.8077 4.48228 15.7363 2.84375Z"
+                          fill="#FF5E00"
+                        />
+                      </svg>
+                    </div>
+                    <div class="order-payment__btn-meth">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="12"
+                        viewBox="0 0 32 12"
+                        fill="none"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M8.22787 11.1451H5.50174L3.45748 3.05728C3.36045 2.68524 3.15443 2.35634 2.85138 2.20132C2.09508 1.81176 1.26169 1.50172 0.352539 1.34536V1.03398H4.74412C5.35022 1.03398 5.80479 1.50172 5.88056 2.04495L6.94124 7.87898L9.66603 1.03398H12.3164L8.22787 11.1451ZM13.8317 11.1451H11.2571L13.3771 1.03398H15.9517L13.8317 11.1451ZM19.2826 3.83507C19.3583 3.29049 19.8129 2.9791 20.3433 2.9791C21.1767 2.90092 22.0845 3.05729 22.8421 3.4455L23.2967 1.26853C22.5391 0.957146 21.7057 0.800781 20.9494 0.800781C18.4505 0.800781 16.6322 2.20132 16.6322 4.1451C16.6322 5.62383 17.9202 6.40026 18.8293 6.868C19.8129 7.3344 20.1917 7.64578 20.116 8.11218C20.116 8.81178 19.3583 9.12316 18.602 9.12316C17.6929 9.12316 16.7837 8.88996 15.9517 8.5004L15.4971 10.6787C16.4063 11.0669 17.3898 11.2233 18.299 11.2233C21.1009 11.3001 22.8421 9.90094 22.8421 7.8008C22.8421 5.15608 19.2826 5.00106 19.2826 3.83507ZM31.8525 11.1451L29.8083 1.03398H27.6125C27.1579 1.03398 26.7033 1.34536 26.5518 1.81176L22.7663 11.1451H25.4167L25.9457 9.66774H29.2022L29.5052 11.1451H31.8525ZM27.9913 3.75689L28.7476 7.56761H26.6276L27.9913 3.75689Z"
+                          fill="#172B85"
+                        />
+                      </svg>
+                    </div>
+                    <span>Выбрать на карте</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      class="arr"
+                    >
+                      <path d="M9 18L14.5 12L9 6.5" stroke="black" />
+                    </svg>
+                  </a>
+                  <a href="#" class="order-payment__btn button button_white">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_454_4786)">
+                        <path
+                          d="M0.799805 20.8004C0.80044 21.4367 1.0535 22.0468 1.50345 22.4967C1.9534 22.9467 2.56348 23.1998 3.1998 23.2004H20.3998C21.0361 23.1998 21.6462 22.9467 22.0962 22.4967C22.5461 22.0468 22.7992 21.4367 22.7998 20.8004V18.0004H19.9998C19.4694 18.0004 18.9607 17.7897 18.5856 17.4146C18.2105 17.0395 17.9998 16.5308 17.9998 16.0004C17.9998 15.47 18.2105 14.9613 18.5856 14.5862C18.9607 14.2111 19.4694 14.0004 19.9998 14.0004H22.7998V11.2004C22.7992 10.5641 22.5461 9.95399 22.0962 9.50404C21.6462 9.05409 21.0361 8.80103 20.3998 8.80039H3.1998C3.09372 8.80039 2.99198 8.75825 2.91696 8.68323C2.84195 8.60822 2.7998 8.50648 2.7998 8.40039C2.7998 8.2943 2.84195 8.19256 2.91696 8.11755C2.99198 8.04253 3.09372 8.00039 3.1998 8.00039H4.5826L4.4858 6.40039H3.1998C2.56348 6.40103 1.9534 6.65409 1.50345 7.10404C1.0535 7.55399 0.80044 8.16407 0.799805 8.80039V20.8004Z"
+                          fill="black"
+                        />
+                        <path
+                          d="M5.38412 7.99918H6.18692L6.03252 5.42358C6.01813 5.23785 6.06741 5.05276 6.17225 4.89877C6.27709 4.74478 6.43124 4.63108 6.60932 4.57638C6.75257 4.53597 6.88499 4.46409 6.99692 4.36598C7.19091 4.20239 7.31966 3.97456 7.35972 3.72398C7.39093 3.54031 7.48391 3.37278 7.62327 3.24913C7.76263 3.12548 7.94003 3.0531 8.12612 3.04398L10.5065 2.90118L10.7249 2.08398L5.04492 2.42638L5.38412 7.99918Z"
+                          fill="black"
+                        />
+                        <path
+                          d="M7.52038 4.9736C7.3216 5.1463 7.08726 5.27316 6.83398 5.3452L6.98918 7.9996H9.14478L10.29 3.7168L8.17558 3.8436C8.08861 4.28253 7.85812 4.68006 7.52038 4.9736Z"
+                          fill="black"
+                        />
+                        <path
+                          d="M20.4001 6.40039H20.3397L19.9121 8.00039H20.4001C20.8547 8.00065 21.3041 8.09807 21.718 8.28613C22.1319 8.47418 22.5009 8.74853 22.8001 9.09079V8.80039C22.7995 8.16407 22.5464 7.55399 22.0965 7.10404C21.6465 6.65409 21.0364 6.40103 20.4001 6.40039Z"
+                          fill="black"
+                        />
+                        <path
+                          d="M19.9998 14.8008C19.6815 14.8008 19.3763 14.9272 19.1513 15.1523C18.9262 15.3773 18.7998 15.6825 18.7998 16.0008C18.7998 16.319 18.9262 16.6243 19.1513 16.8493C19.3763 17.0744 19.6815 17.2008 19.9998 17.2008H23.1998V14.8008H19.9998ZM20.3998 16.4008H19.9998C19.8937 16.4008 19.792 16.3586 19.717 16.2836C19.6419 16.2086 19.5998 16.1069 19.5998 16.0008C19.5998 15.8947 19.6419 15.793 19.717 15.7179C19.792 15.6429 19.8937 15.6008 19.9998 15.6008H20.3998C20.5059 15.6008 20.6076 15.6429 20.6826 15.7179C20.7577 15.793 20.7998 15.8947 20.7998 16.0008C20.7998 16.1069 20.7577 16.2086 20.6826 16.2836C20.6076 16.3586 20.5059 16.4008 20.3998 16.4008Z"
+                          fill="black"
+                        />
+                        <path
+                          d="M17.4665 5.07326C17.1947 4.72364 17.056 4.28887 17.0749 3.84646L14.4157 3.13086C14.194 3.51902 13.8499 3.82284 13.4373 3.99486C13.1935 4.09444 12.9313 4.14121 12.6681 4.13206L11.6289 7.99966H17.4241L18.0641 5.60486C17.837 5.4617 17.6351 5.28209 17.4665 5.07326Z"
+                          fill="black"
+                        />
+                        <path
+                          d="M9.97266 8.00078H10.7999L11.8851 3.95398C11.9278 3.77206 12.0326 3.6107 12.1813 3.49757C12.33 3.38445 12.5135 3.32661 12.7003 3.33398C12.85 3.33729 12.9989 3.31008 13.1379 3.25398C13.3715 3.15937 13.5637 2.98448 13.6799 2.76078C13.7694 2.59734 13.9115 2.46892 14.0831 2.39632C14.2547 2.32372 14.4458 2.3112 14.6255 2.36078L17.2583 3.06358C17.4375 3.11136 17.5956 3.2178 17.7073 3.36591C17.8191 3.51403 17.878 3.69529 17.8747 3.88078C17.8634 4.13392 17.943 4.38274 18.0991 4.58238C18.1901 4.6991 18.3054 4.79464 18.4371 4.86238C18.6014 4.95234 18.7304 5.0953 18.803 5.26797C18.8756 5.44064 18.8876 5.63282 18.8371 5.81318L18.2523 8.00078H19.0839L20.3999 3.07438L11.8999 0.800781L9.97266 8.00078Z"
+                          fill="black"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_454_4786">
+                          <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <span> Наличными </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="order__right">
+              <div class="cart-total">
+                <div class="cart-total__title">Сумма заказа</div>
+                <div class="cart-total__box">
+                  <div class="cart-total__checkit">
+                    <div class="cart-total__checkit-left">
+                      Товары (2) - 5 кг
+                    </div>
+                    <div class="cart-total__checkit-right">50 000 тг</div>
+                  </div>
+                  <div class="cart-total__checkit">
+                    <div class="cart-total__checkit-left">Скидка</div>
+                    <div class="cart-total__checkit-right">20 000 тг</div>
+                  </div>
+                </div>
+                <div class="cart-total__itog">
+                  <div class="cart-total__itog-left">Итого</div>
+                  <div class="cart-total__itog-right">
+                    <span class="actual">70 000 тг</span>
+                    <span class="old">150 000 тг</span>
+                  </div>
+                </div>
+                <a href="#" class="cart-total__btn button">Оформить заказ</a>
+                <div class="cart-total__right">
+                  <span>*</span> Дата и стоимость доставки или самовывоза <br />
+                  определяются при оформлении заказа
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/imask.js"></script>
+    <script src="js/tabby.polyfills.min.js"></script>
+    <script src="js/fancybox.umd.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/swipers.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

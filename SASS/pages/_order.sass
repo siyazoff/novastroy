@@ -1,0 +1,225 @@
+.order
+    &__box
+        display: grid
+        grid-template-columns: 1fr wm(480)
+        gap: wm(24)
+
+        +media(m)
+            grid-template-columns: 100%
+            gap: wm(12)
+
+
+    &__left
+        +flex-column
+        gap: wm(12)
+
+
+    &__title
+        margin-bottom: wm(26)
+
+        +media(m)
+            margin-bottom: wm(20)
+
+
+=def-card
+    padding: wm(20)
+    border-radius: wm(12)
+    background: rgba(0, 0, 0, 0.03)
+    +flex-column
+    gap: wm(20)
+
+    +media(m)
+        gap: wm(15)
+
+.order-getmeth
+    +def-card
+
+    &__title
+        color: $clr-dark
+        font-size: wm(20)
+        font-weight: 500
+        line-height: 1
+
+        +media(m)
+            font-size: wm(18)
+
+    &__desc
+        color: $clr-dark
+        font-size: wm(16)
+        font-weight: 400
+        line-height: 1.2
+
+        +media(m)
+            font-size: wm(14)
+
+    &__btn
+        font-weight: 700
+        width: fit-content
+        padding-inline: wm(46)
+
+        +media(m)
+            width: 100%
+
+
+.order-prods
+    +def-card
+
+    &__title
+        color: $clr-dark-muted
+        font-size: wm(16)
+        font-weight: 500
+        line-height: 1.2
+
+    &__box
+        display: flex
+        flex-wrap: wrap
+        gap: wm(24)
+        margin-bottom: wm(12)
+
+        +media(m)
+            gap: wm(12)
+            margin-bottom: wm(0)
+
+    &__btm
+        +flex-column
+        gap: wm(14)
+
+        +media(m)
+            gap: wm(10)
+
+    &__total
+        color: $clr-dark
+        font-size: wm(20)
+        font-weight: 600
+        line-height: 1
+
+        +media(m)
+            font-size: wm(16)
+
+    &__desc
+        color: $clr-dark
+        font-size: wm(14)
+        font-weight: 400
+        line-height: 1
+
+        +media(m)
+            font-size: wm(12)
+
+.order-prods-card
+    +flex-column
+    gap: wm(14)
+    width: wm(124)
+
+    +media(m)
+        gap: wm(8)
+
+
+    &__img
+        height: wm(140)
+        width: 100%
+        border-radius: wm(6)
+        overflow: hidden
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+    &__count
+        color: $clr-dark
+        font-size: wm(14)
+        font-weight: 400
+        line-height: 1.2
+
+        +media(m)
+            font-size: wm(12)
+
+    
+
+    
+.order-recipient
+    +def-card
+    
+    &__title
+        color: $clr-dark
+        font-size: wm(20)
+        font-weight: 500
+        line-height: 1
+
+        +media(m)
+            font-size: wm(18)
+
+    &__desc
+        color: $clr-dark
+        font-size: wm(16)
+        font-weight: 400
+        line-height: 1.2
+
+        +media(m)
+            font-size: wm(14)
+
+    &__grid
+        +grid-columns(2, wm(14))
+        max-width: wm(646)
+
+        +media(m)
+            grid-template-columns: 100%
+            gap: wm(6)
+            max-width: 100%
+
+
+.order-payment
+    +def-card
+    
+    &__title
+        color: $clr-dark
+        font-size: wm(20)
+        font-weight: 500
+        line-height: 1
+
+        +media(m)
+            font-size: wm(18)
+
+    &__desc
+        color: $clr-dark
+        font-size: wm(16)
+        font-weight: 400
+        line-height: 1.2
+
+        +media(m)
+            font-size: wm(14)
+
+    &__box
+        display: flex
+        align-items: center
+        gap: wm(8)
+        
+        +media(m)
+            flex-direction: column
+            align-items: start
+
+    &__btn
+        width: fit-content
+        padding: 0 wm(12)
+        height: wm(48)
+        
+        +media(m)
+            gap: wm(4)
+
+
+        span
+            +media(m)
+                font-size: wm(14)
+
+        &-meth
+            height: wm(32)
+            width: wm(45)
+            border-radius: wm(4)
+            +flex-center
+            border: wm(1) solid #F2F4F7
+            background: $clr-white
+
+
+        &:hover
+            background: $clr-white
+            color: $clr-dark
