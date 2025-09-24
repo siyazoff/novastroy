@@ -1,0 +1,68 @@
+.ncheckbox
+    display: flex
+    cursor: pointer
+    width: fit-content
+
+    &__input
+        display: none
+
+        &:checked ~ .ncheckbox__label::before
+            transform: scale(1)
+
+        &:checked ~ .ncheckbox__label::after
+            background: $clr-primary
+    
+    &__label
+        position: relative
+        color: $clr-dark
+        font-size: wm(16)
+        font-weight: 400
+        line-height: 1
+        padding-left: wm(30)
+        +flex-center
+        height: wm(24)
+        flex-shrink: 0
+
+        &:hover
+            &::after
+                background: $clr-primary
+
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: wm(24)
+            height: wm(24)
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='10' viewBox='0 0 14 10' fill='none'%3E%3Cpath d='M4.3841 10C4.23682 10 4.09561 9.94293 3.99165 9.84072L0.162438 6.07598C-0.054146 5.86304 -0.054146 5.51808 0.162438 5.30514C0.379022 5.0922 0.729889 5.0922 0.946473 5.30514L4.3841 8.68404L13.0535 0.159704C13.2701 -0.0532345 13.621 -0.0532345 13.8376 0.159704C14.0541 0.372642 14.0541 0.717601 13.8376 0.93054L4.77568 9.83987C4.67172 9.94293 4.53137 10 4.3841 10Z' fill='white'/%3E%3C/svg%3E")
+            background-repeat: no-repeat
+            background-size: 70% 70%
+            background-position: center
+            transform: scale(0)
+            transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75)
+            z-index: 1
+
+            +media(m)
+                width: wm(20)
+                height: wm(20)
+
+        &::after
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            width: wm(24)
+            height: wm(24)
+            border-radius: wm(4)
+            border: wm(1) solid $clr-primary
+            display: flex
+            flex-shrink: 0
+            transition: background 0.3s ease
+
+            +media(m)   
+                width: wm(20)
+                height: wm(20)
+
+        &_notext
+            padding: 0
+            width: wm(24)

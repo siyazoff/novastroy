@@ -1,0 +1,340 @@
+.cart
+    &__title
+        margin-bottom: wm(26)
+
+        +media(m)
+            margin-bottom: wm(16)
+
+    &__subtitle
+        margin-bottom: wm(26)
+        color: $clr-dark-muted
+
+        +media(m)
+            margin-bottom: wm(16)
+
+
+    &__btns
+        display: flex
+        align-items: center
+        gap: wm(24)
+        margin-bottom: wm(26)
+
+        +media(m)
+            margin-bottom: wm(20)
+
+    &__box
+        display: grid
+        grid-template-columns: 1fr wm(480)
+        gap: wm(24)
+
+        +media(m)
+            grid-template-columns: 100%
+
+    &__left
+        +flex-column
+        gap: wm(24)
+
+        +media(m)
+            gap: wm(18)
+
+
+.cart-delete-all
+    cursor: pointer
+    +flex-center
+    gap: wm(4)
+    +bg-null
+    border: none
+    outline: none
+    padding: 0
+
+    svg
+        width: wm(24)
+        height: wm(24)
+
+        +media(m)
+            width: wm(20)
+            height: wm(20)
+
+
+    span
+        color: $clr-dark-muted
+        text-align: center
+        font-size: wm(14)
+        font-weight: 400
+        line-height: 1
+
+
+.cart-card
+    position: relative
+    display: grid
+    grid-template-columns: wm(205) 1fr
+    gap: wm(20)
+    width: 100%
+    +r12
+    background: #F7F7F7
+    padding: wm(20)
+
+    +media(m)
+        grid-template-columns: 100%
+        gap: wm(18)
+
+    &__imgbox
+        display: flex
+        align-items: start
+        gap: wm(20)
+
+        +media(m)
+            position: relative
+
+    &__img
+        height: wm(180)
+        width: wm(160)
+        border-radius: wm(6)
+        overflow: hidden
+
+        +media(m)
+            width: 100%
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+    &__checkbox
+        
+        +media(m)
+            position: absolute
+            top: wm(5)
+            left: wm(5)
+
+
+
+    &__delete
+        cursor: pointer
+        position: absolute
+        top: wm(20)
+        right: wm(20)
+        border: none
+        +bg-null
+        padding: 0
+        width: wm(24)
+        height: wm(24)
+        border-radius: wm(4)
+        +flex-center
+        +transition
+
+        +media(m)
+            top: wm(5)
+            right: wm(5)
+            width: wm(20)
+            height: wm(20)
+            background: #BE2D2D
+
+            path
+                fill: $clr-white
+
+            svg
+                width: wm(12)
+                height: wm(12)
+
+        path
+            +transition(fill)
+
+        &:hover
+            background: #BE2D2D
+
+            path
+                fill: $clr-white
+
+    &__content
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-template-rows: repeat(3, min-content)
+
+        +media(m)
+            grid-template-columns: 100%
+            grid-template-rows: unset
+
+
+    &__mark
+        grid-column: 1 / 2
+        grid-row: 1 / 2
+        height: fit-content
+        margin-bottom: wm(8)
+
+        +media(m)
+            grid-column: unset
+            grid-row: unset
+
+    &__title
+        grid-column: 1 / 2
+        grid-row: 2 / 3
+        color: $clr-dark
+        font-size: wm(18)
+        font-weight: 500
+        line-height: 1.2
+
+        +media(m)
+            grid-column: unset
+            grid-row: unset
+
+
+    &__count
+        grid-column: 1 / 2
+        grid-row: 3 / 4
+        +flex-center
+        width: fit-content
+        background: $clr-primary
+        border-radius: wm(4)
+        margin-top: wm(20)
+
+        +media(m)
+            grid-column: unset
+            grid-row: unset
+            margin-top: wm(10)
+            margin-left: auto
+            margin-bottom: wm(18)
+
+        &-btn
+            cursor: pointer
+            +flex-center
+            width: wm(32)
+            height: wm(32)
+            border: none
+            outline: none
+            padding: 0
+            flex-shrink: 0
+            color: $clr-white
+            background: $clr-primary
+            border-radius: wm(4)
+
+        &-input
+            width: wm(32)
+            height: wm(32)
+            text-align: center
+            appearance: none
+            -moz-appearance: textfield
+            color: $clr-white
+            font-size: wm(16)
+            font-weight: 400
+            line-height: 1
+
+            &::-webkit-outer-spin-button,
+            &::-webkit-inner-spin-button
+                -webkit-appearance: none
+                margin: 0
+
+    &__pricebox
+        grid-column: 2 / 3
+        grid-row: 2 / 3
+        display: flex
+        align-items: end
+        gap: wm(8)
+        justify-content: end
+
+        +media(m)
+            grid-column: unset
+            grid-row: unset
+        
+
+        .actual
+            color: $clr-dark
+            font-size: wm(18)
+            font-weight: 600
+            line-height: 1
+
+        .old
+            color: $clr-dark-muted
+            font-size: wm(16)
+            font-weight: 400
+            line-height: 1
+            text-decoration: line-through
+
+
+.cart-total
+    +r12
+    background: rgba(0, 0, 0, 0.03)
+    padding: wm(20)
+
+    &__title
+        color: $clr-dark
+        font-size: wm(20)
+        font-weight: 500
+        line-height: 1
+        margin-bottom: wm(36)
+
+        +media(m)
+            margin-bottom: wm(20)
+
+    &__box
+        +flex-column
+        gap: wm(20)
+        margin-bottom: wm(36)
+
+        +media(m)
+            margin-bottom: wm(20)
+            gap: wm(12)
+
+    &__checkit
+        +flex-between
+        gap: wm(12)
+        color: $clr-dark
+        font-size: wm(16)
+        font-weight: 400
+        line-height: 1
+
+    &__itog
+        +flex-between
+        gap: wm(12)
+        margin-bottom: wm(36)
+
+        +media(m)
+            margin-bottom: wm(20)
+
+        &-left
+            color: $clr-dark
+            font-size: wm(20)
+            font-weight: 600
+            line-height: 1
+
+            +media(m)
+                font-size: wm(18)
+
+        &-right
+            display: flex
+            align-items: end
+            gap: wm(14)
+            
+            +media(m)
+                gap: wm(6)
+                flex-wrap: wrap
+
+            .actual
+                color: $clr-dark
+                font-size: wm(20)
+                font-weight: 600
+                line-height: 1
+
+                +media(m)
+                    font-size: wm(18)
+
+            .old
+                color: $clr-dark-muted
+                font-size: wm(16)
+                font-weight: 400
+                text-decoration: line-through
+
+    &__btn
+        margin-bottom: wm(20)
+
+        +media(m)
+            margin-bottom: wm(12)
+
+    &__right
+        color: $clr-dark-muted
+        font-size: wm(12)
+        font-weight: 400
+        line-height: 1.2
+
+        span
+            color: $clr-primary
