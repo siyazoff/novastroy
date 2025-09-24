@@ -1,0 +1,158 @@
+.subscription
+
+
+.banner_subscription
+    padding: wm(100) wm(32)
+
+    +media(m)
+        padding: wm(20)
+    
+    &__right
+        position: absolute
+        top: 0
+        right: 0
+        max-width: wm(530)
+        height: 100%
+
+        +media(m)
+            max-width: 100%
+            display: none
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+
+.monthrate
+    &__wrapper
+        position: relative
+        padding: wm(46)
+        +r12
+        background: linear-gradient(93deg, #FA8D07 1.17%, #AE251F 50.37%, #1F0F02 99.56%)
+        z-index: 0
+        margin-bottom: wm(32)
+
+        +media(m)
+            padding: wm(20)
+
+        
+    &__heading
+        +flex-column
+        align-items: center
+        text-align: center
+        gap: wm(12)
+        margin-bottom: wm(72)
+
+        +media(m)
+            margin-bottom: wm(20)
+            gap: wm(6)
+
+    &__title
+        color: $clr-white
+        font-size: wm(38)
+        font-weight: 600
+        line-height: 1
+
+        +media(m)
+            font-size: wm(24)
+
+    &__desc
+        color: $clr-white
+        font-size: wm(16)
+        font-weight: 400
+        line-height: 1
+
+        +media(m)
+            font-size: wm(14)
+
+    &__box
+        +flex-column
+        gap: wm(24)
+        margin-bottom: wm(70)
+
+        +media(m)
+            margin-bottom: wm(30)
+
+    &__subtitle
+        color: $clr-white
+        text-align: center
+        font-size: wm(20)
+        font-weight: 400
+        line-height: 1
+
+        +media(m)
+            font-size: wm(18)
+
+    &__box-inner
+        +flex-center
+        gap: wm(8)
+
+        +media(m)
+            flex-wrap: wrap
+
+    &__mark
+        padding: wm(14)
+        +r12
+        background: rgba(0, 0, 0, 0.20)
+        color: $clr-white
+        font-size: wm(18)
+        font-weight: 400
+        line-height: 1
+        +flex-center
+        gap: wm(6)
+
+        +media(m)
+            background: rgba(0, 0, 0, 0.40)
+            padding: wm(12)
+
+        &::before
+            content: ''
+            width: wm(8)
+            height: wm(8)
+            background: $clr-white
+            border-radius: 50%
+
+    &__btn
+        width: fit-content
+        margin-inline: auto
+        padding: wm(19) wm(46)
+
+        +media(m)
+            padding: wm(17) wm(10)
+            width: 100%
+
+    &__bg-br
+        position: absolute
+        bottom: 0
+        right: 0
+        width: wm(300)
+        height: wm(300)
+        object-fit: contain
+        object-position: bottom right
+        z-index: -1
+
+        +media(m)
+            width: wm(200)
+            height: wm(200)
+
+    &__bg-bl
+        position: absolute
+        bottom: 0
+        left: 0
+        width: wm(320)
+        height: wm(320)
+        object-fit: contain
+        object-position: bottom left
+        z-index: -1
+        
+        +media(m)
+            width: wm(200)
+            height: wm(200)
+
+
+.banner_monthrate
+    padding: wm(90) wm(33)
+
+    +media(m)
+        padding: wm(20)

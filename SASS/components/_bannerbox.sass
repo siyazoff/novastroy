@@ -1,4 +1,5 @@
 .banner
+    position: relative
     border-radius: wm(12)
     background: linear-gradient(93deg, #C5D5CA 1.17%, #D1D9CE 50.37%, #E0DCD1 99.56%)
     padding: wm(65) wm(65) wm(65) wm(36)
@@ -32,8 +33,11 @@
 
     &__right
         max-width: wm(660)
-        height: 100%
-        object-fit: contain
+        
+        img
+            width: 100%
+            height: 100%
+            object-fit: contain
 
         +media(m)
             max-width: 100%

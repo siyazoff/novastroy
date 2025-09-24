@@ -202,7 +202,7 @@
         width: fit-content
         padding: 0 wm(12)
         height: wm(48)
-        
+
         +media(m)
             gap: wm(4)
 
@@ -223,3 +223,16 @@
         &:hover
             background: $clr-white
             color: $clr-dark
+
+.search
+    &__title
+        display: flex
+        align-items: end
+        gap: wm(6)
+        flex-wrap: wrap
+
+        span
+            color: $clr-dark-muted
+            font-size: wm(14)
+            font-weight: 400
+            line-height: 1
