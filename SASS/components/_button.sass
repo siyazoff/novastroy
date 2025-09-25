@@ -50,6 +50,19 @@
                 background: $clr-dark
                 color: $clr-white
 
+    &_dark
+        background: $clr-dark
+        color: $clr-white
+
+        +hover-only
+            &:hover
+                background: $clr-primary
+
+        +touch-only
+            &:active
+                background: $clr-dark
+                color: $clr-white
+
 
 .swiper-btn-arrow
     cursor: pointer

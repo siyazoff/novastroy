@@ -1,0 +1,42 @@
+.certsreg
+    &__box
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        gap: wm(24)
+
+        +media(m)
+            grid-template-columns: 100%
+            gap: wm(12)
+
+    &__title
+        margin-bottom: wm(32)
+
+        +media(m)
+            margin-bottom: wm(18)
+
+    &__form
+        +flex-column
+        gap: wm(13)
+
+        +media(m)
+            gap: wm(6)
+
+    &__input
+        background: #F5F4F1
+
+    &__right
+        height: 100%
+        +r12
+        overflow: hidden
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+    &__btn
+        border: none
+        padding: wm(21) wm(16)
+
+        +media(m)
+            padding: wm(16)
