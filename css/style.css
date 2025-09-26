@@ -4040,6 +4040,7 @@ a.contact-card:hover {
   .orderstory__box {
     overflow-x: auto;
     overflow-y: hidden;
+    gap: calc(12 * var(--width-multiplier));
   }
 }
 .orderstory__head {
