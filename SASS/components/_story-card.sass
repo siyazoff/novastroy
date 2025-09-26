@@ -1,0 +1,133 @@
+.story-card
+    +media(m)
+        width: wm(800)
+
+    &__head
+        cursor: pointer
+        display: grid
+        grid-template-columns: repeat(6, 1fr)
+        gap: wm(12)
+        align-items: center
+        border-radius: 12px
+        background: rgba(15, 14, 14, 0.03) 
+        padding: wm(14) wm(20)
+        color: $clr-dark
+        font-size: wm(16)
+        font-weight: 400
+        line-height: .87
+        
+        +media(m)
+            padding: wm(14)
+            font-size: wm(14)
+
+    &__num
+        display: flex
+        align-items: center
+        gap: wm(6)
+
+        svg
+            +transition
+
+    &__paystatus
+        padding: wm(8)
+        border-radius: wm(8)
+        background: #83DE9F
+        width: fit-content
+
+        +media(m)
+            padding: wm(6) wm(8)
+
+        &.not-paid
+            background: #EF787A
+    
+    &__waystatus
+        padding: wm(8)
+        border-radius: wm(8)
+        background: #FFFBF0
+        width: fit-content
+
+        +media(m)
+            padding: wm(6) wm(8)
+            
+        &.waiting
+            background: #FFFB8E
+
+        &.delivered
+            background: #83DE9F
+
+    &__body
+        overflow: hidden
+        max-height: 0
+        transition: max-height 0.3s ease-out
+
+    &__box
+        margin-top: wm(14)
+        padding: wm(20)
+        border-radius: wm(12)
+        background: rgba(15, 14, 14, 0.03)
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        gap: wm(23)
+
+        +media(m)
+            gap: wm(12)
+            padding: wm(14)
+
+    &__infos
+        +flex-column
+
+    &__title
+        color: $clr-dark
+        font-size: wm(20)
+        font-weight: 600
+        line-height: 1.2
+        margin-bottom: wm(32)
+
+        +media(m)
+            font-size: wm(18)
+            margin-bottom: wm(24)
+    
+    &__subtitle
+        color: $clr-dark
+        font-size: wm(18)
+        font-weight: 500
+        line-height: 1.2
+        margin-bottom: wm(16)
+
+        +media(m)
+            font-size: wm(16)
+            margin-bottom: wm(12)
+
+    &__mark
+        margin-bottom: wm(20)
+
+        +media(m)
+            margin-bottom: wm(10)
+
+    &__link
+        color: $clr-primary
+        font-size: wm(16)
+        font-weight: 600
+        line-height: 1
+        text-decoration: underline
+
+    &__datas
+        +flex-column
+        gap: wm(20)
+
+        +media(m)
+            gap: wm(12)
+
+    &__datatem
+        +flex-between
+        gap: wm(12)
+        color: $clr-dark
+        font-size: wm(16)
+        line-height: .87
+
+        span
+            text-align: right
+
+    &.active
+        .story-card__num svg
+            transform: rotate(-180deg)

@@ -24,6 +24,9 @@
     &__input
         background: #F5F4F1
 
+        &::placeholder
+            color: rgba(15, 14, 14, 0.50)
+
     &__right
         height: 100%
         +r12
@@ -40,3 +43,15 @@
 
         +media(m)
             padding: wm(16)
+
+    &__textarea
+        resize: none
+        height: wm(120)
+        border: none
+        outline: none
+
+        +media(m)
+            height: wm(80)
+
+        &::placeholder
+            color: rgba(15, 14, 14, 0.50)

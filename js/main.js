@@ -143,6 +143,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  //story-card
+  const storyCard = document.querySelectorAll(".story-card");
+
+  storyCard.forEach((el) => {
+    el.addEventListener("click", function () {
+      const isActive = this.classList.contains("active");
+
+      // Закрываем все элементы
+      storyCard.forEach((item) => {
+        item.classList.remove("active");
+        let body = item.querySelector(".story-card__body");
+        body.style.maxHeight = null;
+      });
+
+      // Если элемент не был активен, открываем его
+      if (!isActive) {
+        this.classList.add("active");
+        let storyCardBody = this.querySelector(".story-card__body");
+        storyCardBody.style.maxHeight = storyCardBody.scrollHeight + "px";
+      }
+    });
+  });
+
   //PRODUCT CARDS
   const productcard = document.querySelectorAll(".productcard");
 
