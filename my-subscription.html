@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novastroy</title>
+
+    <!-- FAVICON -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/src/icons/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/src/icons/favicon.svg" />
+    <link rel="shortcut icon" href="/src/icons/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/src/icons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/src/icons/site.webmanifest" />
+
+    <!-- FONTS -->
+    <!-- Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Involve -->
+    <link rel="stylesheet" href="src/fonts/Involve/stylesheet.css" />
+
+    <!-- FANCYBOX -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+
+    <!-- TABBY -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12.0.0/dist/css/tabby-ui.min.css"
+    />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="first-section my-subscription">
+        <div class="container">
+          <div class="account-links mb46">
+            <a href="#" class="account-link link">Персональные данные</a>
+            <a href="#" class="account-link link">История заказов</a>
+            <a href="#" class="account-link link">Текущие заказы</a>
+            <a href="#" class="account-link link active">Моя подписка</a>
+            <a href="#" class="account-link link">Выйти</a>
+          </div>
+          <div class="my-subscription__box">
+            <div class="my-subscard">
+              <div class="my-subscard__head">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_2140_328029)">
+                    <rect width="24" height="24" rx="12" fill="#F88600" />
+                    <path
+                      d="M0 24.0304V20.7327C0 20.5609 0.130309 20.4172 0.301216 20.4005L22.8853 18.1882C23.0815 18.169 23.2516 18.3232 23.2516 18.5204V24.0304C23.2516 24.2147 23.1022 24.3642 22.9178 24.3642H0.333755C0.149427 24.3642 0 24.2147 0 24.0304Z"
+                      fill="white"
+                      fill-opacity="0.8"
+                    />
+                    <path
+                      d="M0 18.395V15.1415C0 14.9851 0.108581 14.8497 0.261226 14.8157L22.8453 9.78784C23.0538 9.74143 23.2516 9.90005 23.2516 10.1136V15.5459C23.2516 15.7141 23.1265 15.856 22.9596 15.877L0.375529 18.7262C0.176204 18.7513 0 18.5959 0 18.395Z"
+                      fill="white"
+                      fill-opacity="0.8"
+                    />
+                    <path
+                      d="M0 12.669V9.58091C0 9.44468 0.0827904 9.32213 0.20917 9.27128L22.7932 0.184296C23.0126 0.0960492 23.2516 0.257517 23.2516 0.493927V6.09923C23.2516 6.24765 23.1536 6.37824 23.0111 6.4197L0.426981 12.9895C0.213428 13.0516 0 12.8914 0 12.669Z"
+                      fill="white"
+                      fill-opacity="0.8"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_2140_328029">
+                      <rect width="24" height="24" rx="12" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <span>NovaPlus</span>
+              </div>
+              <div class="my-subscard__body">
+                <div class="my-subscard__subtitle">
+                  Подписка: <b>активна до 15 октября</b>
+                </div>
+                <div class="my-subscard__title">Статус активный</div>
+                <a href="#" class="my-subscard__btn button button_dark">
+                  Продлить подписку
+                </a>
+              </div>
+            </div>
+            <div class="story-subscard">
+              <div class="story-subscard__title">История покупок подписки</div>
+              <div class="story-subscard__box">
+                <div class="story-subscard__line">
+                  <b>Дата</b>
+                  <b>Сумма</b>
+                  <b>Способ оплаты</b>
+                </div>
+                <div class="story-subscard__line">
+                  <span class="gray">15.06.24</span>
+                  <span>15 000 тг</span>
+                  <span>Банковская карта</span>
+                </div>
+                <div class="story-subscard__line">
+                  <span class="gray">15.01.24</span>
+                  <span>1 месяц</span>
+                  <span>PayPal</span>
+                </div>
+                <div class="story-subscard__line">
+                  <span class="gray">15.02.24</span>
+                  <span>1 месяц</span>
+                  <span>Google Pay</span>
+                </div>
+              </div>
+              <a href="#" class="story-subscard__link link">
+                Посмотреть всю историю
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="subrules">
+        <div class="container">
+          <div class="subrules__box">
+            <div class="subrules__title t26">Правила подписки</div>
+            <div class="subrules__desc">
+              Подписка предоставляет доступ к расширенным возможностям и
+              сервисам сайта, включая (но не ограничиваясь): персональные
+              предложения, приоритетное информирование об акциях, отслеживание
+              истории заказов, участие в бонусной программе и др.
+              <br />
+              <br />
+              Для оформления подписки необходимо создать личный кабинет и
+              авторизоваться на сайте. Пользователь несёт ответственность за
+              сохранность своих учётных данных и действий, совершённых под своей
+              учётной записью.
+              <br />
+              <br />
+              Администрация сайта NovoStroy оставляет за собой право вносить
+              изменения в условия подписки. Все изменения вступают в силу с
+              момента их публикации на сайте.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq">
+        <div class="container">
+          <div class="faq__title t26">Частые вопросы</div>
+          <div class="faq__box">
+            <div class="faq-item">
+              <div class="faq-item__head">
+                <div class="faq-item__title">
+                  Какие услуги предлагает Nova Stroy?
+                </div>
+                <div class="faq-item__icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M12.5713 16.7611L19.7642 9.41039C20.0791 9.08784 20.0791 8.56527 19.7642 8.24191C19.4493 7.91936 18.9377 7.91936 18.6228 8.24191L12.0006 15.0096L5.37838 8.24272C5.06345 7.92018 4.55192 7.92018 4.2362 8.24272C3.92127 8.56527 3.92127 9.08866 4.2362 9.4112L11.4291 16.7619C11.7407 17.0795 12.2603 17.0795 12.5713 16.7611Z"
+                      fill="black"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="faq-item__body">
+                <div class="faq-item__desc">
+                  Мы используем только проверенные и сертифицированные
+                  строительные материалы от надежных производителей. В
+                  зависимости от типа объекта и задач, применяются:
+                  <br />
+                  <br />
+                  Бетон и цементные смеси — для прочного фундамента и несущих
+                  конструкций;
+                  <br />
+                  Кирпич, блоки (газобетон, пенобетон) — для стен и перегородок;
+                  <br />
+                  Металл и арматура — для укрепления и каркасных работ; <br />
+                  Гидро- и теплоизоляционные материалы — для защиты от влаги и
+                  холода; <br />
+                  Кровельные и фасадные материалы — для долговечности и внешней
+                  отделки; <br />
+                  Сухие смеси, шпаклёвки, клеи — для отделочных и монтажных
+                  работ; <br />
+                  Дерево, фанера, ОСБ — при внутренней и наружной отделке, а
+                  также в каркасном строительстве.
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-item__head">
+                <div class="faq-item__title">
+                  Как долго длится процесс строительства?
+                </div>
+                <div class="faq-item__icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M12.5713 16.7611L19.7642 9.41039C20.0791 9.08784 20.0791 8.56527 19.7642 8.24191C19.4493 7.91936 18.9377 7.91936 18.6228 8.24191L12.0006 15.0096L5.37838 8.24272C5.06345 7.92018 4.55192 7.92018 4.2362 8.24272C3.92127 8.56527 3.92127 9.08866 4.2362 9.4112L11.4291 16.7619C11.7407 17.0795 12.2603 17.0795 12.5713 16.7611Z"
+                      fill="black"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="faq-item__body">
+                <div class="faq-item__desc">
+                  Мы используем только проверенные и сертифицированные
+                  строительные материалы от надежных производителей. В
+                  зависимости от типа объекта и задач, применяются:
+                  <br />
+                  <br />
+                  Бетон и цементные смеси — для прочного фундамента и несущих
+                  конструкций;
+                  <br />
+                  Кирпич, блоки (газобетон, пенобетон) — для стен и перегородок;
+                  <br />
+                  Металл и арматура — для укрепления и каркасных работ; <br />
+                  Гидро- и теплоизоляционные материалы — для защиты от влаги и
+                  холода; <br />
+                  Кровельные и фасадные материалы — для долговечности и внешней
+                  отделки;
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-item__head">
+                <div class="faq-item__title">
+                  Можно ли заказать индивидуальный проект?
+                </div>
+                <div class="faq-item__icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M12.5713 16.7611L19.7642 9.41039C20.0791 9.08784 20.0791 8.56527 19.7642 8.24191C19.4493 7.91936 18.9377 7.91936 18.6228 8.24191L12.0006 15.0096L5.37838 8.24272C5.06345 7.92018 4.55192 7.92018 4.2362 8.24272C3.92127 8.56527 3.92127 9.08866 4.2362 9.4112L11.4291 16.7619C11.7407 17.0795 12.2603 17.0795 12.5713 16.7611Z"
+                      fill="black"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="faq-item__body">
+                <div class="faq-item__desc">
+                  Мы используем только проверенные и сертифицированные
+                  строительные материалы от надежных производителей. В
+                  зависимости от типа объекта и задач, применяются:
+                  <br />
+                  <br />
+                  Бетон и цементные смеси — для прочного фундамента и несущих
+                  конструкций;
+                  <br />
+                  Кирпич, блоки (газобетон, пенобетон) — для стен и перегородок;
+                  <br />
+                  Металл и арматура — для укрепления и каркасных работ; <br />
+                  Гидро- и теплоизоляционные материалы — для защиты от влаги и
+                  холода;
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-item__head">
+                <div class="faq-item__title">
+                  Как происходит расчет стоимости строительства?
+                </div>
+                <div class="faq-item__icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M12.5713 16.7611L19.7642 9.41039C20.0791 9.08784 20.0791 8.56527 19.7642 8.24191C19.4493 7.91936 18.9377 7.91936 18.6228 8.24191L12.0006 15.0096L5.37838 8.24272C5.06345 7.92018 4.55192 7.92018 4.2362 8.24272C3.92127 8.56527 3.92127 9.08866 4.2362 9.4112L11.4291 16.7619C11.7407 17.0795 12.2603 17.0795 12.5713 16.7611Z"
+                      fill="black"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="faq-item__body">
+                <div class="faq-item__desc">
+                  Мы используем только проверенные и сертифицированные
+                  строительные материалы от надежных производителей. В
+                  зависимости от типа объекта и задач, применяются:
+                  <br />
+                  <br />
+                  Бетон и цементные смеси — для прочного фундамента и несущих
+                  конструкций;
+                  <br />
+                  Кирпич, блоки (газобетон, пенобетон) — для стен и перегородок;
+                  <br />
+                  Металл и арматура — для укрепления и каркасных работ; <br />
+                  Гидро
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-item__head">
+                <div class="faq-item__title">
+                  Какие материалы используете при строительстве?
+                </div>
+                <div class="faq-item__icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M12.5713 16.7611L19.7642 9.41039C20.0791 9.08784 20.0791 8.56527 19.7642 8.24191C19.4493 7.91936 18.9377 7.91936 18.6228 8.24191L12.0006 15.0096L5.37838 8.24272C5.06345 7.92018 4.55192 7.92018 4.2362 8.24272C3.92127 8.56527 3.92127 9.08866 4.2362 9.4112L11.4291 16.7619C11.7407 17.0795 12.2603 17.0795 12.5713 16.7611Z"
+                      fill="black"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="faq-item__body">
+                <div class="faq-item__desc">
+                  Мы используем только проверенные и сертифицированные
+                  строительные материалы от надежных производителей. В
+                  зависимости от типа объекта и задач, применяются:
+                  <br />
+                  <br />
+                  Бетон и цементные смеси — для прочного фундамента и несущих
+                  конструкций;
+                  <br />
+                  Кирпич, блоки (газобетон, пенобетон) — для стен и перегородок;
+                  <br />
+                  Металл и арматура — для укрепления и каркасных работ; <br />
+                  Гидро
+                  <br />
+                  Какие материалы используете при строительстве?
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="subconts last-section">
+        <div class="container">
+          <div class="subconts__title t26">Контакты</div>
+          <div class="contacts__box">
+            <div class="contacts__map">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3Aa5929baa631ad4c1b31c741ad35d561c80e0d4f941d8506e80f736199dc2bc5d&amp;source=constructor"
+                width="100%"
+                height="400"
+                frameborder="0"
+              ></iframe>
+            </div>
+            <div class="contacts__right">
+              <div class="contact-card contact-card_big">
+                <div class="contact-card__title">Адрес</div>
+                <div class="contact-card__desc">
+                  Промкомплекс, Доскей, Бухар-Жырауский район, Карагандинская
+                  область
+                </div>
+              </div>
+              <a href="#" class="contact-card">
+                <div class="contact-card__title">Instagram</div>
+                <div class="contact-card__desc">@novastory</div>
+              </a>
+              <a href="#" class="contact-card">
+                <div class="contact-card__title">WhatsApp</div>
+                <div class="contact-card__desc">+7 (747) 502 02 24</div>
+              </a>
+              <div class="contact-card">
+                <div class="contact-card__title">График работы</div>
+                <div class="contact-card__desc">Пн.-Пт 9:00 - 18:00</div>
+              </div>
+              <div class="contact-card">
+                <div class="contact-card__title">Выходной</div>
+                <div class="contact-card__desc">Сб.-Вс.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/imask.js"></script>
+    <script src="js/tabby.polyfills.min.js"></script>
+    <script src="js/fancybox.umd.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/swipers.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

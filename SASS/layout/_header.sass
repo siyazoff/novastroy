@@ -53,7 +53,19 @@
     gap: wm(4)
 
     &__icon
+        position: relative
         +flex-center
+
+        &::before
+            content: ''
+            position: absolute
+            top: wm(1)
+            right: wm(1)
+            width: wm(9)
+            height: wm(9)
+            border-radius: 50%
+            display: flex
+            background: $clr-primary
     
     span
         color: $clr-dark

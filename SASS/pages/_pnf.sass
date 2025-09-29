@@ -1,0 +1,32 @@
+.pnf
+    +flex-column
+    padding-inline: wm(16)
+    align-items: center
+    justify-content: center
+    text-align: center
+    gap: wm(26)
+
+    +media(m)
+        gap: wm(12)
+
+    &__title
+        color: #EF7F1B
+        +involve
+        font-size: wm(240)
+        font-weight: 700
+        line-height: 1
+
+        +media(m)
+            font-size: wm(180)
+
+    &__subtitle
+        color: $clr-dark
+        font-size: wm(28)
+        font-weight: 600
+        line-height: 1
+
+        +media(m)
+            font-size: wm(20)
+
+    &__btn
+        max-width: wm(350)

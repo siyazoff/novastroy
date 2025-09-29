@@ -38,8 +38,8 @@
         right: wm(25)
         top: wm(25)
         cursor: pointer
-        width: wm(34)
-        height: wm(34)
+        width: wm(25)
+        height: wm(25)
         display: flex
         align-items: center
         justify-content: center
@@ -62,19 +62,18 @@
             scale: .9
 
     &__title
-        font-size: wm(38)
+        font-size: wm(26)
         font-weight: 700
         line-height: 100%
         text-align: center
-
 
 
 .modal-inner
     position: relative
     display: flex
     background: #fff
-    border-radius: wm(8)
-    max-width: wm(480)
+    border-radius: wm(12)
+    max-width: wm(590)
     width: 100%
     margin: auto
     cursor: auto
@@ -89,7 +88,8 @@
         padding: wm(42)
         display: flex
         flex-direction: column
-        gap: wm(25)
+        gap: wm(50)
+        background: #F5F4F1
 
         +media(m)
             padding: wm(20)
@@ -98,27 +98,36 @@
 
 .modal-form
     +flex-column
-    gap: wm(8)
+    gap: wm(12)
+    margin-bottom: wm(12)
 
-    +media(m)
-        gap: wm(10)
+    &__ncheckbox
 
-    &__submit
-        margin-top: wm(26)
-        min-width: 100%
+        .ncheckbox__label
+            font-size: wm(14)
+
+    &__box
+        +flex-between
+        margin-top: wm(8)
+        margin-bottom: wm(38)
 
         +media(m)
-        margin-top: wm(12)
+            margin-bottom: wm(8)
 
 
-.modal-input
-    padding: wm(15) 0
-    color: $clr-dark
-    font-size: wm(16)
-    font-weight: 400
-    line-height: 1
-    border-bottom: wm(1) solid rgba(0, 0, 0, 0.1)
 
+
+.login-modal
+    &__rights
+        color: $clr-dark
+        font-size: wm(14)
+        font-weight: 400
+        line-height: 1
+        margin-top: wm(20)
+        text-align: center
+
+        a
+            color: $clr-primary
 
 
 @keyframes scaleModal

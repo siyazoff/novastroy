@@ -1,0 +1,61 @@
+.register
+    &__box
+        max-width: wm(650)
+        margin-inline: auto
+        text-align: center
+
+    &__title
+        color: $clr-dark
+        font-size: wm(28)
+        font-weight: 600
+        line-height: 1
+        margin-bottom: wm(26)
+
+    &__rights
+        text-align: left
+        color: $clr-dark
+        font-size: wm(14)
+        font-weight: 400
+        line-height: 1
+        margin-top: wm(14)
+        margin-bottom: wm(20)
+
+        +media(m)
+            margin-top: wm(6)
+            margin-bottom: wm(12)
+
+        a
+            color: $clr-primary
+
+    
+.register-form
+    +flex-column
+    gap: wm(12)
+
+    &__input
+        background: #F5F4F1
+    
+
+
+.password-box
+    position: relative
+
+    &__eyes
+        position: absolute
+        top: 50%
+        right: wm(14)
+        transform: translateY(-50%)
+        +flex-center
+        cursor: pointer
+        user-select: none
+
+        svg
+            display: none
+    
+    &.closed
+        svg.closed
+            display: flex
+
+    &.opened
+        svg.opened
+            display: flex

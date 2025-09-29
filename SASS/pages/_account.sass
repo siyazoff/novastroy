@@ -148,3 +148,166 @@
 
 
 
+.my-subscription
+    &__box
+        +flex-column
+        gap: wm(36)
+        max-width: wm(816)
+        margin-inline: auto
+
+        +media(m)
+            gap: wm(20)
+            max-width: 100%
+
+
+.my-subscard
+    padding: wm(36)
+    +r12
+    background: linear-gradient(93deg, #FA8D07 1.17%, #AE251F 50.37%, #1F0F02 99.56%)
+    +flex-column
+    gap: wm(14)
+
+    +media(m)
+        padding: wm(16)
+        gap: wm(12)
+
+    &__head
+        display: flex
+        align-items: center
+        gap: wm(10)
+        +r8
+        background: $clr-white
+        padding: wm(20)
+
+        +media(m)
+            padding: wm(12)
+
+        span
+            color: $clr-dark
+            font-size: wm(28)
+            font-weight: 600
+            line-height: 1
+
+            +media(m)
+                font-size: wm(20)
+
+        svg
+            width: wm(24)
+            height: wm(24)
+            flex-shrink: 0
+
+
+    &__body
+        padding: wm(20)
+        +r12
+        background: $clr-white
+        +flex-column
+        gap: wm(16)
+
+        +media(m)
+            gap: wm(12)
+            padding: wm(14)
+
+    &__subtitle
+        color: rgba(15, 14, 14, 0.50)
+        font-size: wm(14)
+        font-weight: 400
+        line-height: 1
+
+        b
+            color: $clr-dark
+
+    &__title
+        color: #AC251F
+        font-size: wm(24)
+        font-weight: 600
+        line-height: 1
+
+        +media(m)
+            font-size: wm(20)
+
+    
+.story-subscard
+    +r12
+    background: rgba(15, 14, 14, 0.03)
+    padding: wm(36)
+    +flex-column
+    gap: wm(36)
+
+    +media(m)
+        gap: wm(18)
+        padding: wm(16)
+
+    &__title
+        color: $clr-dark
+        font-size: wm(26)
+        font-weight: 600
+        line-height: 1
+
+        +media(m)
+            font-size: wm(21)
+
+    &__box
+        +flex-column
+        gap: wm(20)
+
+        +media(m)
+            gap: wm(12)
+    
+    &__line
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        gap: wm(12)
+
+        +media(m)
+            gap: wm(6)
+
+        b, span
+            color: $clr-dark
+            font-size: wm(16)
+            line-height: 1
+
+            +media(m)
+                font-size: wm(14)
+
+        span.gray
+            color: $clr-dark-muted
+
+    &__link
+        color: $clr-primary
+        font-size: wm(16)
+        font-weight: 600
+        line-height: 1
+        text-decoration: underline
+    
+
+.subrules
+    &__title
+        margin-bottom: wm(26)
+
+        +media(m)
+            margin-bottom: wm(20)
+
+
+    &__box
+        max-width: wm(985)
+
+        +media(m)
+            max-width: 100%
+
+    &__desc
+        color: rgba(15, 14, 14, 0.80)
+        font-size: wm(18)
+        font-weight: 400
+        line-height: 1.2
+
+        +media(m)
+            font-size: wm(16)
+
+
+.subconts
+    &__title
+        margin-bottom: wm(26)
+
+        +media(m)
+            margin-bottom: wm(20)

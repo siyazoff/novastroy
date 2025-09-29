@@ -205,4 +205,29 @@ document.addEventListener("DOMContentLoaded", () => {
       this.classList.add("hidden");
     });
   }
+
+  //REG-PASSWORD_INPUTS
+
+  const passwordBox = document.querySelectorAll(".password-box");
+
+  passwordBox.forEach((box) => {
+    const passwordInput = box.querySelector("input");
+    const eyes = box.querySelector(".password-box__eyes");
+
+    box.classList.add("closed");
+
+    eyes.addEventListener("click", () => {
+      if (box.classList.contains("closed")) {
+        box.classList.remove("closed");
+        box.classList.add("opened");
+        passwordInput.type = "text";
+        passwordInput.focus();
+      } else {
+        box.classList.remove("opened");
+        box.classList.add("closed");
+        passwordInput.type = "password";
+        passwordInput.focus();
+      }
+    });
+  });
 });

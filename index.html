@@ -120,13 +120,13 @@
                 <div class="user-link__icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="14"
-                    viewBox="0 0 16 14"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
                     fill="none"
                   >
                     <path
-                      d="M8 14C7.85457 14 7.709 13.9436 7.59771 13.8308L1.257 7.41314C0.446429 6.59299 0 5.50155 0 4.34068C0 3.17952 0.446429 2.08822 1.257 1.26778C2.92714 -0.422107 5.64429 -0.422983 7.31443 1.26807L8 1.96177L8.68557 1.26807C10.356 -0.422399 13.0731 -0.422983 14.743 1.26807C15.5536 2.08822 16 3.17952 16 4.34068C16 5.50155 15.5536 6.59284 14.743 7.41328L8.40229 13.8308C8.291 13.9436 8.14543 14 8 14ZM4.28571 1.16583C3.48014 1.16583 2.67471 1.47606 2.06171 2.09654C1.469 2.69615 1.14286 3.49325 1.14286 4.34068C1.14286 5.18796 1.469 5.98491 2.06171 6.58438L8 12.595L13.9383 6.58467C14.5309 5.98506 14.8571 5.18796 14.8571 4.34068C14.8571 3.49311 14.531 2.69615 13.9383 2.09668C12.7123 0.855154 10.7161 0.855446 9.49014 2.09639L8.40229 3.19746C8.17957 3.4231 7.82029 3.4231 7.59757 3.19746L6.50971 2.09639C5.89671 1.47606 5.09129 1.16583 4.28571 1.16583Z"
+                      d="M12 19C11.8546 19 11.709 18.9436 11.5977 18.8308L5.257 12.4131C4.44643 11.593 4 10.5015 4 9.34068C4 8.17952 4.44643 7.08822 5.257 6.26778C6.92714 4.57789 9.64429 4.57702 11.3144 6.26807L12 6.96177L12.6856 6.26807C14.356 4.5776 17.0731 4.57702 18.743 6.26807C19.5536 7.08822 20 8.17952 20 9.34068C20 10.5015 19.5536 11.5928 18.743 12.4133L12.4023 18.8308C12.291 18.9436 12.1454 19 12 19ZM8.28571 6.16583C7.48014 6.16583 6.67471 6.47606 6.06171 7.09654C5.469 7.69615 5.14286 8.49325 5.14286 9.34068C5.14286 10.188 5.469 10.9849 6.06171 11.5844L12 17.595L17.9383 11.5847C18.5309 10.9851 18.8571 10.188 18.8571 9.34068C18.8571 8.49311 18.531 7.69615 17.9383 7.09668C16.7123 5.85515 14.7161 5.85545 13.4901 7.09639L12.4023 8.19746C12.1796 8.4231 11.8203 8.4231 11.5976 8.19746L10.5097 7.09639C9.89671 6.47606 9.09129 6.16583 8.28571 6.16583Z"
                       fill="#0F0E0E"
                     />
                   </svg>
@@ -150,7 +150,11 @@
                 </div>
                 <span>Корзина</span>
               </a>
-              <a href="#" class="user-link account-link">
+              <a
+                href="#"
+                class="user-link account-link"
+                data-modal-target="login-modal"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -171,7 +175,7 @@
                     fill="#0F0E0E"
                   />
                 </svg>
-                <span>Дмитрий К.</span>
+                <span>Войти</span>
               </a>
             </div>
           </div>
@@ -1402,42 +1406,68 @@
       </div>
     </footer>
 
-    <div class="modal" data-modal="modal-1">
+    <div class="modal login-modal is_active" data-modal="login-modal">
       <div class="modal-inner">
         <div class="modal-inner__box">
           <div class="modal__head">
-            <h2 class="modal__title">Оставить заявку</h2>
+            <h2 class="modal__title">Вход в личный кабинет</h2>
             <div class="modal__close" data-modal-close="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
                 fill="none"
               >
                 <path
-                  d="M8.53366 25.3333L6.66699 23.4667L14.1337 16L6.66699 8.53333L8.53366 6.66667L16.0003 14.1333L23.467 6.66667L25.3337 8.53333L17.867 16L25.3337 23.4667L23.467 25.3333L16.0003 17.8667L8.53366 25.3333Z"
-                  fill="#1D1B20"
-                ></path>
+                  d="M7.2 18L6 16.8L10.8 12L6 7.2L7.2 6L12 10.8L16.8 6L18 7.2L13.2 12L18 16.8L16.8 18L12 13.2L7.2 18Z"
+                  fill="black"
+                />
               </svg>
             </div>
           </div>
           <div class="modal__body">
             <form class="modal-form">
-              <input type="text" placeholder="Имя" class="modal-input" />
+              <input type="text" placeholder="Имя" class="modal-input input" />
               <input
                 type="text"
                 placeholder="Телефон"
-                class="modal-input tel-input"
+                class="modal-input tel-input input"
                 required
               />
-              <input type="text" placeholder="Почта" class="modal-input" />
+              <input
+                type="text"
+                placeholder="Почта"
+                class="modal-input input"
+              />
+              <div class="modal-form__box">
+                <label
+                  class="ncheckbox modal-form__ncheckbox"
+                  for="ncheckbox-1"
+                >
+                  <input
+                    type="checkbox"
+                    class="ncheckbox__input"
+                    id="ncheckbox-1"
+                    name="ncheckbox-1"
+                  />
+                  <span class="ncheckbox__label">Запомнить меня</span>
+                </label>
+                <a href="#" class="modal-form__link link">Забыли пароль ?</a>
+              </div>
               <input
                 type="submit"
                 class="button modal-form__submit"
-                value="Отправить"
+                value="Войти"
               />
             </form>
+            <a href="#" class="button button_outline login-modal__reg">
+              Регистрация
+            </a>
+            <div class="login-modal__rights">
+              Продолжая, вы соглашаетесь с
+              <a href="" class="link"> политикой конфиденциальности</a>
+            </div>
           </div>
         </div>
       </div>
