@@ -4559,4 +4559,102 @@ a.contact-card:hover {
 }
 .password-box.opened svg.opened {
   display: flex;
+}
+
+.catanav {
+  position: fixed;
+  top: calc(150 * var(--width-multiplier));
+  left: 0;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: #FFFFFF;
+  padding: calc(32 * var(--width-multiplier)) 0;
+  min-height: 40vh;
+}
+.catanav__box {
+  max-width: calc(1352 * var(--width-multiplier));
+  padding-inline: calc(16 * var(--width-multiplier));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: calc(36 * var(--width-multiplier));
+}
+
+.catanav-parent {
+  display: grid;
+  grid-template-columns: calc(44 * var(--width-multiplier)) 1fr;
+  gap: calc(20 * var(--width-multiplier));
+}
+.catanav-parent__icon {
+  width: calc(44 * var(--width-multiplier));
+  height: calc(44 * var(--width-multiplier));
+  border-radius: calc(6 * var(--width-multiplier));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFFBF0;
+}
+.catanav-parent__title {
+  color: #0F0E0E;
+  font-size: calc(16 * var(--width-multiplier));
+  font-weight: 500;
+  line-height: 1;
+}
+.catanav-parent__box {
+  display: flex;
+  flex-direction: column;
+  gap: calc(20 * var(--width-multiplier));
+}
+.catanav-parent__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.catanav-son {
+  padding: calc(10 * var(--width-multiplier)) 0;
+}
+.catanav-son__box {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(20 * var(--width-multiplier));
+  padding: calc(24 * var(--width-multiplier));
+  border-radius: 6px;
+  background: #FFFBF0;
+  min-width: calc(240 * var(--width-multiplier));
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc(300 * var(--width-multiplier));
+  opacity: 0;
+  transform: translateX(0);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.catanav-son__box:hover {
+  opacity: 1;
+  transform: translateX(calc(-10 * var(--width-multiplier)));
+}
+@media (max-width: 768px) {
+  .catanav-son__box {
+    display: none;
+  }
+}
+.catanav-son__title {
+  color: #0F0E0E;
+  font-size: calc(14 * var(--width-multiplier));
+  font-weight: 400;
+  line-height: 1;
+  display: flex;
+}
+.catanav-son:hover .catanav-son__box {
+  opacity: 1;
+  transform: translateX(calc(-10 * var(--width-multiplier)));
+  pointer-events: auto;
+}
+.catanav-son:hover .catanav-son__title {
+  color: #EF7F1B;
 }/*# sourceMappingURL=style.css.map */
