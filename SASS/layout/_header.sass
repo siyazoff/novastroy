@@ -14,6 +14,10 @@
             +flex-between
             gap: wm(12)
             padding: wm(16) 0
+            +transition
+
+            +media(m)
+                padding: wm(12) 0    
 
     &__phonecall
         color: $clr-dark
@@ -27,15 +31,30 @@
     &__box
         padding: wm(24) 0
         background: $clr-white
+        +transition
+
+        +media(m)
+            padding: wm(10) 0
 
     &__box-inner
         display: flex
         align-items: center
 
+        +media(m)
+            display: grid
+            gap: wm(8)
+
     &__logo
         max-width: wm(180)
         height: wm(50)
+        +transition
         margin-right: wm(24)
+
+        +media(m)
+            max-width: wm(170)
+            height: auto
+            margin: 0
+            grid-column: 1 / 2
 
         img
             width: 100%
@@ -46,6 +65,12 @@
         display: flex
         align-items: center
         gap: wm(10)
+
+        +media(m)
+            gap: wm(8)
+            grid-column: 2 / 3
+            grid-row: 1 / 2
+            justify-content: end
 
 
 .user-link
@@ -73,12 +98,25 @@
         font-weight: 400
         line-height: 1
 
+        +media(m)
+            display: none
+
 
 .catalog-call
     width: fit-content
     padding: wm(19) wm(30)
     gap: wm(8)
     margin-right: wm(8)
+    color: $clr-white
+    font-size: wm(16)
+    font-weight: 400
+    line-height: 1
+
+    +media(m)
+        padding: wm(14)
+        width: 100%
+        margin: 0
+        font-size: wm(14)
 
     &__burger
         +flex-column
@@ -87,6 +125,9 @@
         width: wm(18)
         z-index: 101
 
+        +media(m)
+            width: wm(14)
+
         span
             height: wm(1.5)
             width: 100%
@@ -94,6 +135,18 @@
             border-radius: wm(4)
             font-weight: 400
             +transition
+
+    &.is-active
+        .catalog-call__burger span
+            &:first-child
+                transform: rotate(45deg) translateY(wm(6))
+
+            &:nth-child(2)
+                opacity: 0
+
+            &:last-child
+                transform: rotate(-45deg) translateY(wm(-7))
+
         
 .search-form
     display: flex
@@ -105,6 +158,11 @@
     height: wm(54)
     margin-right: auto
 
+    +media(m)
+        width: 100%
+        height: wm(42)
+        max-width: fit-content
+
     input
         height: 100%
         flex-grow: 1
@@ -112,6 +170,9 @@
         font-size: wm(16)
         font-weight: 400
         line-height: 1
+
+        +media(m)
+            font-size: wm(14)
 
     &__submit
         cursor: pointer
@@ -196,3 +257,21 @@
         &:last-child
             transform: rotate(-45deg) translateY(wm(-9))
             
+
+.header.scrolled
+    .header__box
+        +media(xl)
+            padding: wm(12) 0
+
+    .header__logo
+        +media(m)
+            max-width: wm(100)
+
+    .header__top-box
+        +media(xl)
+            padding: wm(6) 0
+
+        +media(m)
+
+.header.scroll-down
+    top: wm(-300)
