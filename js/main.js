@@ -1,56 +1,190 @@
 document.addEventListener("DOMContentLoaded", () => {
-  //HEADER LOGIC
-  (() => {
-    const header = document.querySelector(".header");
-    const menu = document.querySelector(".menu");
+  // ===== SHARED HELPERS (header + catanav) =====
+  (function () {
     const body = document.body;
-    if (!header) return;
 
-    /* ───  БУРГЕР  ─────────────────────────────────────────────── */
-    header.querySelector(".burger")?.addEventListener("click", () => {
-      header.classList.toggle("menu-active");
-      body.classList.toggle("menu-active");
-    });
+    // HEADER
+    const header = document.querySelector(".header");
+    const headerBurger = header?.querySelector(".burger");
 
-    /* ───  ПРОКРУТКА  ──────────────────────────────────────────── */
-    const raf =
-      window.requestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
-      ((cb) => setTimeout(cb, 1000 / 60));
+    // CATANAV
+    const catalogBtn = document.getElementById("catalog-call");
+    const catanav = document.getElementById("catanav");
+    const mobileson = catanav?.querySelector(".catanav-mobileson");
+    const mobilesonClose = catanav?.querySelector(".catanav-mobileson__close");
+    const mobilesonParentName = catanav?.querySelector(
+      ".catanav-mobileson__parent-name"
+    );
+    const mobilesonBox = catanav?.querySelector(".catanav-mobileson__box");
+    const parents = catanav?.querySelectorAll(".catanav-parent");
 
-    let lastScroll = window.scrollY; // предыдущее положение
-    const DELTA = 10; // «шум» прокрутки, пикселей
-    const hideAfter = header.offsetHeight; // не прятать, пока хедер в зоне видимости
+    const isMobile = () => window.matchMedia("(max-width: 767.98px)").matches;
 
-    function checkScroll() {
-      const cur = window.scrollY;
+    // ---- state helpers
+    const isHeaderOpen = () => header?.classList.contains("menu-active");
+    const isCatanavOpen = () => catanav?.classList.contains("is-active");
 
-      /* — состояние «страница не вверху» ———————————————— */
-      if (cur > 0) header.classList.add("scrolled");
-      else header.classList.remove("scrolled");
+    const updateBodyLock = () => {
+      // body.menu-active включён, если открыт хотя бы один из «бургеров»
+      const anyOpen = !!(isHeaderOpen() || isCatanavOpen());
+      body.classList.toggle("menu-active", anyOpen);
+    };
 
-      /* — состояние «скроллим вниз» ———————————————— */
-      if (Math.abs(cur - lastScroll) > DELTA) {
-        if (cur > lastScroll && cur > hideAfter) {
-          header.classList.add("scroll-down"); // можно анимировать убирание
-        } else {
-          header.classList.remove("scroll-down");
-        }
-        lastScroll = cur;
+    // ---- header controls
+    const openHeader = () => {
+      header?.classList.add("menu-active");
+      updateBodyLock();
+    };
+    const closeHeader = () => {
+      header?.classList.remove("menu-active");
+      updateBodyLock();
+    };
+    const toggleHeader = () => {
+      if (isHeaderOpen()) closeHeader();
+      else {
+        // взаимоисключаемость: закрыть каталог, затем открыть хедер
+        closeCatanav();
+        openHeader();
       }
+    };
+
+    // ---- catanav controls
+    const resetCatanavInner = () => {
+      mobileson?.classList.remove("is-active");
+      parents?.forEach((p) => p.classList.remove("is-active"));
+      if (mobilesonParentName) mobilesonParentName.textContent = "";
+      if (mobilesonBox) mobilesonBox.innerHTML = "";
+    };
+    const openCatanav = () => {
+      catanav?.classList.add("is-active");
+      catalogBtn?.classList.add("is-active");
+      updateBodyLock();
+    };
+    const closeCatanav = () => {
+      catanav?.classList.remove("is-active");
+      catalogBtn?.classList.remove("is-active");
+      resetCatanavInner();
+      updateBodyLock();
+    };
+    const toggleCatanav = () => {
+      if (isCatanavOpen()) closeCatanav();
+      else {
+        // взаимоисключаемость: закрыть хедер, затем открыть каталог
+        closeHeader();
+        openCatanav();
+      }
+    };
+
+    // ===== HEADER LOGIC =====
+    if (header) {
+      // бургер
+      headerBurger?.addEventListener("click", (e) => {
+        e.preventDefault();
+        toggleHeader();
+      });
+
+      // прятать/показывать при скролле (как у тебя)
+      const raf =
+        window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        ((cb) => setTimeout(cb, 1000 / 60));
+
+      let lastScroll = window.scrollY;
+      const DELTA = 10;
+      const hideAfter = header.offsetHeight;
+
+      function checkScroll() {
+        const cur = window.scrollY;
+        if (cur > 0) header.classList.add("scrolled");
+        else header.classList.remove("scrolled");
+
+        if (Math.abs(cur - lastScroll) > DELTA) {
+          if (cur > lastScroll && cur > hideAfter) {
+            header.classList.add("scroll-down");
+          } else {
+            header.classList.remove("scroll-down");
+          }
+          lastScroll = cur;
+        }
+      }
+
+      window.addEventListener("scroll", () => raf(checkScroll));
+      checkScroll();
+
+      // клик по ссылкам меню — закрыть хедер (и body-лок сам обновится)
+      document.querySelectorAll(".menu__nav-link").forEach((link) =>
+        link.addEventListener("click", () => {
+          closeHeader();
+        })
+      );
     }
 
-    window.addEventListener("scroll", () => raf(checkScroll));
-    checkScroll(); // вызвать при загрузке
+    // ===== CATANAV LOGIC =====
+    if (catalogBtn && catanav) {
+      catalogBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        toggleCatanav();
+      });
+    }
 
-    /* ───  ЗАКРЫВАЕМ БУРГЕР ПО КЛИКУ ПО ССЫЛКАМ  ──────────────── */
-    document.querySelectorAll(".menu__nav-link").forEach((link) =>
-      link.addEventListener("click", () => {
-        header.classList.remove("menu-active");
-        body.classList.remove("menu-active");
-      })
-    );
+    // клик по родителю — только на мобиле
+    if (parents && mobileson && mobilesonParentName && mobilesonBox) {
+      parents.forEach((parent) => {
+        parent.addEventListener("click", (e) => {
+          if (!isMobile()) return; // на десктопе — игнор
+          e.preventDefault();
+          e.stopPropagation();
+
+          parents.forEach((p) => p.classList.remove("is-active"));
+          parent.classList.add("is-active");
+
+          const titleEl = parent.querySelector(".catanav-parent__title");
+          mobilesonParentName.textContent = titleEl
+            ? titleEl.textContent.trim()
+            : "";
+
+          mobilesonBox.innerHTML = "";
+          parent
+            .querySelectorAll(".catanav-son .catanav-son__title")
+            .forEach((son) => {
+              const a = document.createElement("a");
+              a.className = "catanav-mobileson__item link";
+              a.href = son.getAttribute("href") || "#";
+              a.textContent = son.textContent.trim();
+              mobilesonBox.appendChild(a);
+            });
+
+          mobileson.classList.add("is-active");
+        });
+      });
+    }
+
+    // закрытие мобильной панели
+    if (mobileson && mobilesonClose) {
+      mobilesonClose.addEventListener("click", (e) => {
+        if (e.target !== mobilesonClose) return;
+        mobileson.classList.remove("is-active");
+        parents?.forEach((p) => p.classList.remove("is-active"));
+      });
+    }
+
+    // ресайз: при выходе из мобилки — сброс внутренних состояний
+    window.addEventListener("resize", () => {
+      if (!isMobile()) {
+        mobileson?.classList.remove("is-active");
+        parents?.forEach((p) => p.classList.remove("is-active"));
+        if (mobilesonParentName) mobilesonParentName.textContent = "";
+        if (mobilesonBox) mobilesonBox.innerHTML = "";
+      }
+    });
+
+    // (опционально) закрытие по ESC, чтобы не конфликтовало: закрываем тот, что открыт
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Escape") return;
+      if (isCatanavOpen()) closeCatanav();
+      else if (isHeaderOpen()) closeHeader();
+    });
   })();
 
   if (document.querySelector("[data-fancybox]")) {
@@ -229,94 +363,5 @@ document.addEventListener("DOMContentLoaded", () => {
         passwordInput.focus();
       }
     });
-  });
-
-  //CATANAV
-  const catalogBtn = document.getElementById("catalog-call");
-  const catanav = document.getElementById("catanav");
-  const mobileson = catanav?.querySelector(".catanav-mobileson");
-  const mobilesonClose = catanav?.querySelector(".catanav-mobileson__close");
-  const mobilesonParentName = catanav?.querySelector(
-    ".catanav-mobileson__parent-name"
-  );
-  const mobilesonBox = catanav?.querySelector(".catanav-mobileson__box");
-  const parents = catanav?.querySelectorAll(".catanav-parent");
-
-  const isMobile = () => window.matchMedia("(max-width: 767.98px)").matches;
-
-  // 1) Тоггл основной кнопки каталога
-  if (catalogBtn && catanav) {
-    catalogBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      catalogBtn.classList.toggle("is-active");
-      catanav.classList.toggle("is-active");
-      document.body.classList.toggle("menu-active");
-
-      // При закрытии каталога — закрыть и мобильную панель и сбросить активных родителей
-      if (!catanav.classList.contains("is-active")) {
-        mobileson?.classList.remove("is-active");
-        parents?.forEach((p) => p.classList.remove("is-active"));
-        mobilesonParentName && (mobilesonParentName.textContent = "");
-        mobilesonBox && (mobilesonBox.innerHTML = "");
-      }
-    });
-  }
-
-  // 2) Логика клика по родителю — только на мобиле
-  if (parents && mobileson && mobilesonParentName && mobilesonBox) {
-    parents.forEach((parent) => {
-      parent.addEventListener("click", (e) => {
-        if (!isMobile()) return; // на десктопе — игнор
-        e.preventDefault();
-        e.stopPropagation();
-
-        // активируем текущего родителя, снимаем с соседей
-        parents.forEach((p) => p.classList.remove("is-active"));
-        parent.classList.add("is-active");
-
-        // Заголовок родителя
-        const titleEl = parent.querySelector(".catanav-parent__title");
-        const parentTitle = titleEl ? titleEl.textContent.trim() : "";
-        mobilesonParentName.textContent = parentTitle;
-
-        // Список SONS (игнорим grandson)
-        mobilesonBox.innerHTML = "";
-        const sons = parent.querySelectorAll(
-          ".catanav-son .catanav-son__title"
-        );
-        sons.forEach((son) => {
-          const text = son.textContent.trim();
-          const href = son.getAttribute("href") || "#";
-          const a = document.createElement("a");
-          a.className = "catanav-mobileson__item link";
-          a.href = href;
-          a.textContent = text;
-          mobilesonBox.appendChild(a);
-        });
-
-        // показать мобильную панель
-        mobileson.classList.add("is-active");
-      });
-    });
-  }
-
-  // 3) Закрытие мобильной панели
-  if (mobileson && mobilesonClose) {
-    mobilesonClose.addEventListener("click", (e) => {
-      // Закрываем ТОЛЬКО если клик по самомy .catanav-mobileson__close (а не по его детям)
-      if (e.target !== mobilesonClose) return;
-      mobileson.classList.remove("is-active");
-      parents?.forEach((p) => p.classList.remove("is-active"));
-    });
-  }
-
-  // 4) На ресайз: если вышли из мобилки — гасим мобильные состояния
-  window.addEventListener("resize", () => {
-    if (!isMobile()) {
-      mobileson?.classList.remove("is-active");
-      parents?.forEach((p) => p.classList.remove("is-active"));
-      mobilesonParentName && (mobilesonParentName.textContent = "");
-      mobilesonBox && (mobilesonBox.innerHTML = "");
-    }
   });
 });
