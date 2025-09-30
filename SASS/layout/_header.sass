@@ -14,7 +14,6 @@
             +flex-between
             gap: wm(12)
             padding: wm(16) 0
-            +transition
 
             +media(m)
                 padding: wm(12) 0    
@@ -259,6 +258,8 @@
             
 
 .header.scrolled
+    top: wm(-48)
+
     .header__box
         +media(xl)
             padding: wm(12) 0
@@ -267,11 +268,24 @@
         +media(m)
             max-width: wm(100)
 
-    .header__top-box
-        +media(xl)
-            padding: wm(6) 0
-
-        +media(m)
 
 .header.scroll-down
     top: wm(-300)
+
+
+.bg-curtain
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    pointer-events: none
+    opacity: 0
+    background: rgba(15, 14, 14, 0.50)
+    z-index: 100
+    +transition
+
+
+body.menu-active
+    .bg-curtain
+        opacity: 1

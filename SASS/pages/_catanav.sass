@@ -11,7 +11,6 @@
     opacity: 0
     pointer-events: none
     transform: translateY(wm(-10))
-    box-shadow: 0px 9px 10px 0px rgba(0, 0, 0, 0.2)
     +transition
 
     &.is-active
@@ -132,7 +131,6 @@
     background: $clr-white
     padding: 0 wm(16)
     border-radius: 0 0 wm(12) wm(12)
-    box-shadow: 0px 9px 10px 0px rgba(0, 0, 0, 0.2)
     +transition
 
     &.is-active
@@ -151,8 +149,9 @@
     &__box
         +flex-column
         gap: wm(6)
-        padding-bottom: wm(10)
+        padding-bottom: wm(20)
         max-height: 50vh
+        min-height: 25vh
         overflow-y: auto
         overflow-x: hidden
         width: 100%
@@ -175,12 +174,11 @@
 
 
     &__item
-        color: $clr-primary
-        font-size: wm(16)
-        font-weight: 600
+        color: $clr-dark
+        font-size: wm(14)
+        font-weight: 400
         line-height: 1
-        background: #FFFBF0
-        padding: wm(10) wm(20)
+        padding: wm(5) 0
         width: 100%
         +r8
 

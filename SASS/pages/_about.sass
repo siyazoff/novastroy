@@ -48,12 +48,6 @@
             margin-top: wm(20)
 
 
-.history
-    &__title
-        +t-center
-        margin-bottom: wm(46)
-
-
 
 .whywe
 
@@ -193,3 +187,148 @@
 
 .faq-item.active .faq-item__icon path
     fill: $clr-primary
+
+    
+
+.history
+    overflow: hidden
+
+    &__title
+        +t-center
+        margin-bottom: wm(46)
+
+    &__box
+        +flex-column
+        gap: wm(50)
+
+        +media(m)
+            gap: wm(12)
+
+
+
+.thumbs-history
+    position: relative
+
+    &::before
+        content: ''
+        width: 100%
+        height: wm(1)
+        background: #F5F4F1
+        position: absolute
+        top: wm(5)
+        left: 0
+
+    .swiper-slide
+        +flex-column
+        align-items: center
+        text-align: center
+        gap: wm(24)
+        cursor: pointer
+
+        +media(m)
+            gap: wm(12)
+            width: fit-content
+
+    &__circle
+        background: #FFB878
+        width: wm(12)
+        height: wm(12)
+        border-radius: 50%
+        +transition
+
+    &__year
+        color: $clr-dark
+        font-size: wm(52)
+        font-weight: 500
+        line-height: 1
+        +transition
+
+        +media(m)
+            font-size: wm(24)
+
+    .swiper-slide-thumb-active
+        .thumbs-history__circle
+            background: $clr-primary
+
+        .thumbs-history__year
+            color: $clr-primary
+
+
+.swiper-history
+    position: relative
+    +r12
+    overflow: hidden
+
+    .swiper-slide
+        display: grid
+        grid-template-columns: wm(480) 1fr
+        gap: wm(28)
+        height: auto
+
+        +media(m)
+            +flex-column
+            gap: wm(12)
+
+    &__left
+        +r12
+        width: 100%
+        height: 100%
+        overflow: hidden
+
+        +media(m)
+            max-height: wm(180)
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+    &__right
+        +r12
+        background: rgba(0, 0, 0, 0.03)
+        +flex-column
+        gap: wm(23)
+        padding: wm(32)
+
+        +media(m)
+            padding: wm(16)
+            gap: wm(12)
+            height: 100%
+            flex-grow: 1
+
+    &__title
+        color: $clr-dark
+        font-size: wm(20)
+        font-weight: 500
+        line-height: 1.2
+
+        +media(m)
+            font-size: wm(18)
+
+    &__desc
+        color: $clr-dark
+        font-size: wm(14)
+        font-weight: 400
+        line-height: 1.2
+
+    &__btn
+        display: none
+
+        +media(m)
+            +flex-center
+            width: wm(30)
+            height: wm(30)
+
+        &-next
+            right: 0
+
+        &-prev
+            left: 0
+
+.history-nav
+    +flex-center
+    gap: wm(6)
+    border-radius: wm(24)
+    background: rgba(0, 0, 0, 0.03)
+    width: fit-content
+    margin-inline: auto

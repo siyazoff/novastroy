@@ -1,0 +1,107 @@
+@font-face {
+  font-family: "Zona Pro";
+  src: url("ZonaPro-Regular.eot");
+  src: local("Zona Pro Regular"), local("ZonaPro-Regular"),
+    url("ZonaPro-Regular.eot?#iefix") format("embedded-opentype"),
+    url("ZonaPro-Regular.woff2") format("woff2"),
+    url("ZonaPro-Regular.woff") format("woff"),
+    url("ZonaPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zona Pro";
+  src: url("ZonaPro-Bold.eot");
+  src: local("Zona Pro Bold"), local("ZonaPro-Bold"),
+    url("ZonaPro-Bold.eot?#iefix") format("embedded-opentype"),
+    url("ZonaPro-Bold.woff2") format("woff2"),
+    url("ZonaPro-Bold.woff") format("woff"),
+    url("ZonaPro-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zona Pro";
+  src: url("ZonaPro-SemiBold.eot");
+  src: local("Zona Pro SemiBold"), local("ZonaPro-SemiBold"),
+    url("ZonaPro-SemiBold.eot?#iefix") format("embedded-opentype"),
+    url("ZonaPro-SemiBold.woff2") format("woff2"),
+    url("ZonaPro-SemiBold.woff") format("woff"),
+    url("ZonaPro-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zona Pro Ultra";
+  src: url("ZonaPro-Ultra.eot");
+  src: local("Zona Pro Ultra"), local("ZonaPro-Ultra"),
+    url("ZonaPro-Ultra.eot?#iefix") format("embedded-opentype"),
+    url("ZonaPro-Ultra.woff2") format("woff2"),
+    url("ZonaPro-Ultra.woff") format("woff"),
+    url("ZonaPro-Ultra.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zona Pro";
+  src: url("ZonaPro-Black.eot");
+  src: local("Zona Pro Black"), local("ZonaPro-Black"),
+    url("ZonaPro-Black.eot?#iefix") format("embedded-opentype"),
+    url("ZonaPro-Black.woff2") format("woff2"),
+    url("ZonaPro-Black.woff") format("woff"),
+    url("ZonaPro-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zona Pro";
+  src: url("ZonaPro-Light.eot");
+  src: local("Zona Pro Light"), local("ZonaPro-Light"),
+    url("ZonaPro-Light.eot?#iefix") format("embedded-opentype"),
+    url("ZonaPro-Light.woff2") format("woff2"),
+    url("ZonaPro-Light.woff") format("woff"),
+    url("ZonaPro-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zona Pro Hairline";
+  src: url("ZonaPro-Hairline.eot");
+  src: local("Zona Pro Hairline"), local("ZonaPro-Hairline"),
+    url("ZonaPro-Hairline.eot?#iefix") format("embedded-opentype"),
+    url("ZonaPro-Hairline.woff2") format("woff2"),
+    url("ZonaPro-Hairline.woff") format("woff"),
+    url("ZonaPro-Hairline.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zona Pro";
+  src: url("ZonaPro-ExtraBold.eot");
+  src: local("Zona Pro ExtraBold"), local("ZonaPro-ExtraBold"),
+    url("ZonaPro-ExtraBold.eot?#iefix") format("embedded-opentype"),
+    url("ZonaPro-ExtraBold.woff2") format("woff2"),
+    url("ZonaPro-ExtraBold.woff") format("woff"),
+    url("ZonaPro-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zona Pro";
+  src: url("ZonaPro-Thin.eot");
+  src: local("Zona Pro Thin"), local("ZonaPro-Thin"),
+    url("ZonaPro-Thin.eot?#iefix") format("embedded-opentype"),
+    url("ZonaPro-Thin.woff2") format("woff2"),
+    url("ZonaPro-Thin.woff") format("woff"),
+    url("ZonaPro-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
