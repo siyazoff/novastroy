@@ -59,27 +59,21 @@
             <div class="register__title">Регистрация</div>
             <form class="register-form">
               <input
+                required
                 type="text"
                 class="input register-form__input"
-                placeholder="Имя*"
+                placeholder="ФИО*"
               />
+
               <input
-                type="text"
-                class="input register-form__input"
-                placeholder="Фамилия*"
-              />
-              <input
-                type="text"
-                class="input register-form__input"
-                placeholder="E-mail*"
-              />
-              <input
+                required
                 type="text"
                 class="input register-form__input tel-input"
                 placeholder="Телефон"
               />
               <div class="password-box">
                 <input
+                  required
                   type="password"
                   class="input register-form__input input-password"
                   placeholder="Пароль*"
@@ -121,6 +115,7 @@
               </div>
               <div class="password-box">
                 <input
+                  required
                   type="password"
                   class="input register-form__input input-password"
                   placeholder="Подтверждение пароля*"
@@ -167,7 +162,7 @@
               <input
                 type="submit"
                 value="Зарегистрироваться"
-                class="button button_dark register-form__btn"
+                class="button register-form__btn"
               />
             </form>
           </div>
@@ -175,11 +170,247 @@
       </section>
     </main>
 
+    <div class="modal register-modal" data-modal="register-modal">
+      <div class="modal-inner">
+        <div class="modal-inner__box">
+          <div class="modal__head">
+            <h2 class="modal__title">Введите код</h2>
+            <div class="modal__desc">
+              Мы отправили код подтверждения на номер <br />
+              +7 (700) 123-45-52 <a href="#" class="link">Изменить</a>
+            </div>
+            <div class="modal__close" data-modal-close="">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M7.2 18L6 16.8L10.8 12L6 7.2L7.2 6L12 10.8L16.8 6L18 7.2L13.2 12L18 16.8L16.8 18L12 13.2L7.2 18Z"
+                  fill="black"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="modal__body">
+            <form class="modal-form">
+              <input
+                type="text"
+                placeholder="Код подтверждения"
+                class="modal-input input"
+              />
+              <div class="modal-form__timer">
+                Получить новый код можно через <span>00:15</span>
+              </div>
+              <input
+                type="submit"
+                class="button modal-form__submit"
+                value="Готово"
+              />
+            </form>
+            <a href="#" class="button button_outline login-modal__reg">
+              Отправить код повторно
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="js/imask.js"></script>
     <script src="js/tabby.polyfills.min.js"></script>
     <script src="js/fancybox.umd.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/swipers.js"></script>
     <script src="js/main.js"></script>
+
+    <script>
+      (() => {
+        // ====== НАСТРОЙКИ ======
+        const FORM_SELECTOR = ".register-form";
+        const SUBMIT_SELECTOR = '.register-form__btn[type="submit"]';
+        const MODAL_ID = "register-modal"; // значение data-modal у нужной модалки
+        const MODAL_SELECTOR = `[data-modal="${MODAL_ID}"]`;
+        const TIMER_TOTAL_SECONDS = 60;
+
+        // ====== УТИЛЫ ======
+        function openModalById(modalId) {
+          const el = document.querySelector(`[data-modal="${modalId}"]`);
+          if (!el) return;
+          el.classList.add("is_active");
+          document.body.classList.add("noscroll");
+        }
+
+        function closeModalByEl(el) {
+          if (!el) return;
+          el.classList.remove("is_active");
+          if (!document.querySelector(".modal.is_active")) {
+            document.body.classList.remove("noscroll");
+          }
+        }
+
+        function formatMMSS(totalSec) {
+          const m = String(Math.floor(totalSec / 60)).padStart(2, "0");
+          const s = String(totalSec % 60).padStart(2, "0");
+          return `${m}:${s}`;
+        }
+
+        function findTimerElements(modalEl) {
+          return {
+            timerWrap: modalEl.querySelector(".modal-form__timer"),
+            timerSpan: modalEl.querySelector(".modal-form__timer span"),
+            resendBtn: modalEl.querySelector(".login-modal__reg"),
+          };
+        }
+
+        function setResendState(resendBtn, disabled) {
+          if (!resendBtn) return;
+          resendBtn.toggleAttribute("disabled", !!disabled);
+          resendBtn.classList.toggle("is-disabled", !!disabled);
+        }
+
+        // ====== ТАЙМЕР ======
+        function startConfirmTimer(modalEl, seconds = TIMER_TOTAL_SECONDS) {
+          // если уже есть — очистим
+          stopConfirmTimer(modalEl);
+
+          const { timerWrap, timerSpan, resendBtn } =
+            findTimerElements(modalEl);
+          if (!timerSpan) return;
+
+          let left = seconds;
+          setResendState(resendBtn, true);
+          if (timerWrap) timerWrap.style.display = ""; // на всякий случай показать
+          timerSpan.textContent = formatMMSS(left);
+
+          const id = setInterval(() => {
+            left -= 1;
+            if (left <= 0) {
+              clearInterval(id);
+              modalEl.dataset.timerId = "";
+              setResendState(resendBtn, false);
+              if (timerSpan) timerSpan.textContent = "00:00";
+              return;
+            }
+            if (timerSpan) timerSpan.textContent = formatMMSS(left);
+          }, 1000);
+
+          modalEl.dataset.timerId = String(id);
+        }
+
+        function stopConfirmTimer(modalEl) {
+          const id = modalEl?.dataset?.timerId;
+          if (id) {
+            clearInterval(Number(id));
+            modalEl.dataset.timerId = "";
+          }
+        }
+
+        // будем чистить таймер, когда модалка закрывается (теряет класс is_active)
+        function observeModalOpenClose(modalEl) {
+          const obs = new MutationObserver((mutations) => {
+            for (const m of mutations) {
+              if (m.type === "attributes" && m.attributeName === "class") {
+                const isOpen = modalEl.classList.contains("is_active");
+                if (!isOpen) {
+                  stopConfirmTimer(modalEl);
+                }
+              }
+            }
+          });
+          obs.observe(modalEl, { attributes: true });
+        }
+
+        // ====== ЛОГИКА ОТПРАВКИ ФОРМЫ ======
+        function initRegisterFlow() {
+          const form = document.querySelector(FORM_SELECTOR);
+          const submitBtn = document.querySelector(SUBMIT_SELECTOR);
+          const modalEl = document.querySelector(MODAL_SELECTOR);
+          if (!form || !submitBtn || !modalEl) return;
+
+          // 1) чтобы data-modal-target на submit не открывал модалку "раньше времени",
+          //   гасим всплытие клика именно на кнопке submit.
+          submitBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            // Не отменяем дефолт — пусть форма сабмитится как обычно
+          });
+
+          // 2) ловим сам submit формы: делаем валидацию и отправку (пример через fetch/AJAX)
+          form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            // простая фронт-валидация (пример, при необходимости расширь)
+            const fio = form.querySelector('input[placeholder="ФИО*"]');
+            const pass = form.querySelectorAll("input.input-password")[0];
+            const pass2 = form.querySelectorAll("input.input-password")[1];
+
+            if (!fio?.value?.trim()) {
+              alert("Введите ФИО");
+              return;
+            }
+            if (!pass?.value) {
+              alert("Введите пароль");
+              return;
+            }
+            if (pass.value !== pass2.value) {
+              alert("Пароли не совпадают");
+              return;
+            }
+
+            // имитация запроса на бэкенд
+            // ЗАМЕНИ на реальный fetch('/api/register', {method:'POST', body: FormData})
+            let ok = true;
+            try {
+              // пример: показ “загрузка”
+              submitBtn.toggleAttribute("disabled", true);
+              // await new Promise(r => setTimeout(r, 600)); // имитация сети
+              // const resp = await fetch('/api/register', { method:'POST', body: new FormData(form) });
+              // ok = resp.ok;
+              ok = true; // эмуляция успеха
+            } catch (err) {
+              ok = false;
+            } finally {
+              submitBtn.toggleAttribute("disabled", false);
+            }
+
+            if (!ok) {
+              alert("Ошибка при регистрации. Попробуйте позже.");
+              return;
+            }
+
+            // успешная отправка → открываем модалку и запускаем таймер
+            openModalById(MODAL_ID);
+            startConfirmTimer(modalEl, TIMER_TOTAL_SECONDS);
+          });
+
+          // 3) обработчик «Отправить код повторно»
+          const { resendBtn } = findTimerElements(modalEl);
+          if (resendBtn) {
+            resendBtn.addEventListener("click", async (e) => {
+              e.preventDefault();
+              e.stopPropagation(); // на всякий случай
+
+              if (resendBtn.hasAttribute("disabled")) return;
+
+              // Здесь делай реальный запрос на повторную отправку кода
+              // await fetch('/api/resend-code', { method:'POST' })
+
+              startConfirmTimer(modalEl, TIMER_TOTAL_SECONDS);
+            });
+          }
+
+          // 4) следим за открытием/закрытием модалки, чтобы чистить таймер
+          observeModalOpenClose(modalEl);
+        }
+
+        // ИНИЦИАЛИЗАЦИЯ
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", initRegisterFlow);
+        } else {
+          initRegisterFlow();
+        }
+      })();
+    </script>
   </body>
 </html>

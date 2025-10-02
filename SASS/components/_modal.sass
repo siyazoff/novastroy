@@ -130,6 +130,37 @@
             color: $clr-primary
 
 
+.register-modal
+    .modal-inner__box
+        gap: wm(28)
+
+    .modal__head
+        +flex-column
+        gap: wm(28)
+        text-align: center
+
+    .modal__title
+        font-family: Inter
+        font-size: wm(28)
+
+    .modal__desc
+        color: $clr-dark
+        font-size: wm(16)
+        font-weight: 400
+        line-height: 1.2
+
+        a
+            color: $clr-primary
+
+    .modal-form__timer
+        color: rgba(15, 14, 14, 0.50)
+        text-align: center
+        font-size: wm(14)
+        font-weight: 400
+        line-height: 1
+        margin: wm(16) 0
+
+
 @keyframes scaleModal
     0%
         opacity: 0
