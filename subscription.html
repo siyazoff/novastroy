@@ -53,7 +53,7 @@
   </head>
   <body>
     <main>
-      <section class="subscription first-section">
+      <section class="subscription first-section" animated>
         <div class="container">
           <div class="banner banner_subscription">
             <div class="banner__content">
@@ -80,8 +80,10 @@
 
       <section class="whywe">
         <div class="container">
-          <div class="whywe__title t26 t-center mb46">Что даёт подписка</div>
-          <div class="whywe__box gr-4-24">
+          <div class="whywe__title t26 t-center mb46" animated>
+            Что даёт подписка
+          </div>
+          <div class="whywe__box gr-4-24" animated>
             <div class="whywe-card">
               <div class="whywe-card__icon">
                 <svg
@@ -281,42 +283,48 @@
               class="monthrate__bg-bl"
             />
             <div class="monthrate__heading">
-              <div class="monthrate__title">Месячный Тариф</div>
-              <div class="monthrate__desc">Продлеваете каждый месяц</div>
-            </div>
-            <div class="monthrate__box">
-              <div class="monthrate__subtitle">Что входит в подписку</div>
-              <div class="monthrate__box-inner">
-                <div class="monthrate__mark">Приоритетная доставка</div>
-                <div class="monthrate__mark">Повышенный кэшбек 5%</div>
-                <div class="monthrate__mark">Эксклюзивные цены</div>
+              <div class="monthrate__title" animated>Месячный Тариф</div>
+              <div class="monthrate__desc" animated>
+                Продлеваете каждый месяц
               </div>
             </div>
-            <a href="#" class="button button_white monthrate__btn">
+            <div class="monthrate__box">
+              <div class="monthrate__subtitle" animated>
+                Что входит в подписку
+              </div>
+              <div class="monthrate__box-inner">
+                <div class="monthrate__mark" animated>
+                  Приоритетная доставка
+                </div>
+                <div class="monthrate__mark" animated>Повышенный кэшбек 5%</div>
+                <div class="monthrate__mark" animated>Эксклюзивные цены</div>
+              </div>
+            </div>
+            <a href="#" class="button button_white monthrate__btn" animated>
               Подключить за <b>2 500 тг/мес.</b>
             </a>
           </div>
           <div class="banner banner_monthrate">
             <div class="banner__content">
-              <div class="banner__title t46">
+              <div class="banner__title t46" animated>
                 Подписка, которая строит выгоду
               </div>
-              <div class="banner__desc t16">
+              <div class="banner__desc t16" animated>
                 Экономьте на каждом заказе стройматериалов, получайте бонусы и
                 сервис, созданный для ремонта без лишних затрат.
               </div>
-              <a href="#" class="banner__btn button button_white"
+              <a href="#" class="banner__btn button button_white" animated
                 >Получить сейчас</a
               >
             </div>
-            <div class="banner__right banner_subscription__right">
+            <div class="banner__right banner_subscription__right" animated>
               <img src="src/img/banner.png" class="catalog-banner__img" />
             </div>
           </div>
         </div>
       </section>
 
-      <section class="faq last-section">
+      <section class="faq last-section" animated>
         <div class="container">
           <div class="faq__title t26">Частые вопросы</div>
           <div class="faq__box">
@@ -523,6 +531,7 @@
       </section>
     </main>
 
+    <script src="js/scrollreveal.js"></script>
     <script src="js/imask.js"></script>
     <script src="js/tabby.polyfills.min.js"></script>
     <script src="js/fancybox.umd.js"></script>

@@ -366,4 +366,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.classList.toggle("active");
     });
   });
+
+  //SCROLL-REVEAL
+  ScrollReveal().reveal("[animated]", { delay: 300 });
 });
