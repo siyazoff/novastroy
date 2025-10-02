@@ -6,11 +6,25 @@
         gap: wm(10)
     
     &__btn
+        cursor: pointer
         width: wm(26)
         height: wm(26)
         +flex-center
         background: $clr-primary
         border-radius: wm(4)
+        user-select: none
+        +transition
+
+        +hover-only
+            &:hover
+                scale: 1.05
+
+            &:active
+                scale: .9
+
+        +touch-only
+            &:active
+                scale: .9
 
     &__pages
         +flex-center
@@ -21,7 +35,11 @@
         font-size: wm(16)
         font-weight: 400
         line-height: 1
+        +transition
 
         &.active
             font-weight: 600
             color: $clr-primary
+
+        &:hover
+            transform: translateY(wm(-1))

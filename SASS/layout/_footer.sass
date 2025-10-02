@@ -1,20 +1,19 @@
 .footer
     background: #222
-    padding: wm(60) 0 wm(120)
     overflow: hidden
 
     +media(m)
-        padding: wm(30) 0 wm(60)
-
 
     &__box
         display: grid
         grid-template-columns: wm(330) 1fr 1fr 1fr 1fr
         gap: wm(20)
+        padding: wm(60) 0 wm(120)
 
         +media(m)
             grid-template-columns: 100%
             gap: wm(30)
+            padding: wm(30) 0 wm(60)
 
     &__logosbox
         +flex-column
@@ -99,3 +98,34 @@
         font-weight: 400
         line-height: 1
 
+
+    &__btm
+        background: #2A2A2A
+        padding: wm(28) 0
+
+        &-box
+            display: flex
+            align-items: center
+
+            +media(m)
+                flex-direction: column
+                justify-content: center
+                gap: wm(12)
+
+        &-link
+            color: #FFFFFF80
+            font-size: wm(14)
+            line-height: 1
+            font-weight: 400
+
+            &.polit
+                margin-left: auto
+
+                +media(m)
+                    margin-left: 0
+
+            &.madein
+                margin-left: wm(110)
+
+                +media(m)
+                    margin-left: 0

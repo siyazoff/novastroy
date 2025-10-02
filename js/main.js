@@ -305,7 +305,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   productcard.forEach((card) => {
     let addToCard = card.querySelector(".add-to-card");
-    let span = addToCard.querySelector("span");
     let likeBtn = card.querySelector(".productcard__like");
 
     likeBtn.addEventListener("click", function (e) {
@@ -318,13 +317,6 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       this.classList.toggle("in-cart");
       card.classList.toggle("in-cart");
-
-      // Меняем текст в зависимости от состояния
-      if (this.classList.contains("in-cart")) {
-        span.textContent = "В корзине";
-      } else {
-        span.textContent = "В корзину";
-      }
     });
   });
 
@@ -341,7 +333,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //REG-PASSWORD_INPUTS
-
   const passwordBox = document.querySelectorAll(".password-box");
 
   passwordBox.forEach((box) => {
@@ -362,6 +353,17 @@ document.addEventListener("DOMContentLoaded", () => {
         passwordInput.type = "password";
         passwordInput.focus();
       }
+    });
+  });
+
+  //singleFavIcon
+
+  const favsSingles = document.querySelectorAll(".single__fav");
+
+  favsSingles.forEach((e) => {
+    e.addEventListener("click", (a) => {
+      a.preventDefault();
+      e.classList.toggle("active");
     });
   });
 });
