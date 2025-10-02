@@ -367,6 +367,118 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  //FILTER SORTING
+
+  if (document.querySelector(".category__sorting")) {
+    const filterItems = document.querySelectorAll(".filter-item");
+
+    filterItems.forEach((el) => {
+      const filterItemHead = el.querySelector(".filter-item__head");
+
+      filterItemHead.addEventListener("click", function () {
+        // Закрываем все остальные элементы
+        filterItems.forEach((item) => {
+          if (item !== el) {
+            item.classList.remove("active");
+            const body = item.querySelector(".filter-item__body");
+            body.style.maxHeight = null;
+          }
+        });
+
+        // Открываем/закрываем текущий элемент
+        el.classList.toggle("active");
+        const filterItemBody = el.querySelector(".filter-item__body");
+
+        if (el.classList.contains("active")) {
+          filterItemBody.style.maxHeight = filterItemBody.scrollHeight + "px";
+        } else {
+          filterItemBody.style.maxHeight = null;
+        }
+      });
+    });
+
+    const nativeSelect = document.querySelector(".filter-select-tag");
+    const customSelect = document.querySelector(".filter-select");
+
+    const customOptions = document.querySelector(".filter-select__box");
+
+    nativeSelect.querySelectorAll("option").forEach((option) => {
+      const customOption = document.createElement("div");
+      customOption.classList.add("filter-select__option");
+      customOption.textContent = option.textContent;
+      customOption.dataset.value = option.value;
+
+      customOption.addEventListener("click", () => {
+        nativeSelect.value = option.value;
+
+        customOptions
+          .querySelectorAll(".filter-select__option")
+          .forEach((opt) => {
+            opt.classList.remove("active");
+          });
+
+        customOption.classList.add("active");
+
+        customSelect.classList.remove("active");
+      });
+
+      customOptions.appendChild(customOption);
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!customSelect.contains(e.target)) {
+        customSelect.classList.remove("active");
+      }
+    });
+
+    if (nativeSelect.selectedIndex >= 0) {
+      const defaultOption = customOptions.children[nativeSelect.selectedIndex];
+      defaultOption.classList.add("active");
+    }
+
+    const filterBtn = document.querySelector(".filter-btn");
+    const filter = document.querySelector(".filter");
+
+    // Открытие/закрытие фильтра
+    filterBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      filterBtn.classList.toggle("active");
+      filter.classList.toggle("active");
+    });
+
+    // Закрытие при клике вне фильтра
+    document.addEventListener("click", (e) => {
+      const isClickInsideFilter = filter.contains(e.target);
+      const isClickOnFilterBtn = filterBtn.contains(e.target);
+
+      if (!isClickInsideFilter && !isClickOnFilterBtn) {
+        filterBtn.classList.remove("active");
+        filter.classList.remove("active");
+      }
+    });
+
+    const sortingBtn = document.querySelector(".sorting-btn");
+    const sorting = document.querySelector(".sorting");
+
+    // Открытие/закрытие фильтра
+    sortingBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      sortingBtn.classList.toggle("active");
+      sorting.classList.toggle("active");
+    });
+
+    // Закрытие при клике вне фильтра
+    document.addEventListener("click", (e) => {
+      const isClickInsideFilter = sorting.contains(e.target);
+      const isClickOnFilterBtn = sortingBtn.contains(e.target);
+
+      if (!isClickInsideFilter && !isClickOnFilterBtn) {
+        sortingBtn.classList.remove("active");
+        sorting.classList.remove("active");
+      }
+    });
+  }
+
   //SCROLL-REVEAL
   ScrollReveal().reveal("[animated]", { delay: 300 });
 });

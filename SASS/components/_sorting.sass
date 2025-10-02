@@ -1,0 +1,75 @@
+.sorting-btn
+    cursor: pointer
+    padding: wm(4) wm(10)
+    border-radius: wm(36)
+    border: wm(1) solid $clr-dark
+    background: $clr-white
+    +flex-center
+    color: $clr-dark
+    font-size: wm(16)
+    font-weight: 400
+    line-height: 1
+    gap: wm(60)    
+    +transition
+
+    svg
+        +transition
+
+    +hover-only
+        &:hover
+            border-color: $clr-primary
+
+    +touch-only
+        &:active
+            scale: .96
+
+    &.active
+        border-color: $clr-primary
+
+        svg
+            transform: rotate(180deg)
+
+
+.sorting
+    position: relative
+
+.sorting-container
+    position: absolute
+    top: calc(100% + wm(8))
+    left: 0
+    +flex-column
+    border-radius: wm(20)
+    border: wm(1) solid $clr-dark
+    background: $clr-white
+    overflow: hidden
+    z-index: -1
+    width: 100%
+    opacity: 0
+    transform: translateY(wm(20))
+    pointer-events: none
+    +transition
+
+
+.sorting-radio
+    padding: wm(14)
+    font-size: wm(16)
+
+    &:not(:last-child)
+        border-bottom: wm(1) solid rgba(37, 35, 35, 0.20)
+
+    .filter-radio__label
+        border-color: rgba(37, 35, 35, 0.20)
+
+        &::before
+            background: $clr-primary
+
+    .filter-radio__input:checked + label
+        border-color: $clr-primary
+
+
+.sorting.active
+    .sorting-container
+        pointer-events: auto
+        opacity: 1
+        transform: translateY(0)
+        z-index: 10

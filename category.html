@@ -57,7 +57,370 @@
         <div class="container">
           <div class="category__heading mb46" animated>
             <div class="category__title t26">Фурнитура</div>
-            <div class="sortingbox"></div>
+            <form class="category__sorting">
+              <div class="filter">
+                <div class="filter-btn">
+                  <span>Фильтр</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M4.5 6.82561H12.1127C12.3421 7.86894 13.2747 8.65221 14.387 8.65221C15.4992 8.65221 16.4318 7.86897 16.6613 6.82561H19.5C19.7761 6.82561 20 6.60195 20 6.32609C20 6.05023 19.7761 5.82657 19.5 5.82657H16.661C16.4312 4.78377 15.4972 4 14.387 4C13.2761 4 12.3426 4.78365 12.1128 5.82657H4.5C4.22387 5.82657 4 6.05023 4 6.32609C4 6.60195 4.22387 6.82561 4.5 6.82561ZM13.0587 6.3274C13.0587 6.32562 13.0587 6.32381 13.0587 6.32203C13.0609 5.59252 13.6567 4.99906 14.387 4.99906C15.1162 4.99906 15.7121 5.59171 15.7152 6.32088L15.7153 6.32821C15.7142 7.05897 15.1187 7.65321 14.387 7.65321C13.6555 7.65321 13.0603 7.05957 13.0586 6.32924L13.0587 6.3274ZM19.5 17.1744H16.661C16.4311 16.1316 15.4972 15.3478 14.387 15.3478C13.2761 15.3478 12.3426 16.1315 12.1128 17.1744H4.5C4.22387 17.1744 4 17.398 4 17.6739C4 17.9498 4.22387 18.1734 4.5 18.1734H12.1127C12.3421 19.2167 13.2747 20 14.387 20C15.4992 20 16.4318 19.2167 16.6613 18.1734H19.5C19.7761 18.1734 20 17.9498 20 17.6739C20 17.398 19.7761 17.1744 19.5 17.1744ZM14.387 19.001C13.6555 19.001 13.0603 18.4073 13.0586 17.677L13.0587 17.6752C13.0587 17.6734 13.0587 17.6716 13.0587 17.6698C13.0609 16.9403 13.6567 16.3468 14.387 16.3468C15.1162 16.3468 15.7121 16.9395 15.7152 17.6686L15.7153 17.6759C15.7143 18.4068 15.1188 19.001 14.387 19.001ZM19.5 11.5005H11.8873C11.6579 10.4572 10.7253 9.67391 9.61303 9.67391C8.50078 9.67391 7.56816 10.4572 7.33872 11.5005H4.5C4.22387 11.5005 4 11.7241 4 12C4 12.2759 4.22387 12.4995 4.5 12.4995H7.33897C7.56888 13.5423 8.50275 14.3261 9.61303 14.3261C10.7239 14.3261 11.6574 13.5424 11.8872 12.4995H19.5C19.7761 12.4995 20 12.2759 20 12C20 11.7241 19.7761 11.5005 19.5 11.5005ZM10.9413 11.9987C10.9413 12.0005 10.9413 12.0023 10.9413 12.0041C10.9391 12.7336 10.3433 13.327 9.61303 13.327C8.88381 13.327 8.28794 12.7344 8.28478 12.0052L8.28469 11.9979C8.28578 11.2671 8.88125 10.6729 9.61303 10.6729C10.3445 10.6729 10.9397 11.2666 10.9414 11.9969L10.9413 11.9987Z"
+                      fill="black"
+                    />
+                  </svg>
+                </div>
+
+                <div class="filter-container">
+                  <div class="filter-item">
+                    <div class="filter-item__head">
+                      <div class="filter-item__circle"></div>
+                      <div class="filter-item__title">Цена</div>
+                    </div>
+                    <div class="filter-item__body">
+                      <div class="filter-item__body-inner">
+                        <div class="filter-price">
+                          <div class="filter-price__column">
+                            <div class="filter-price__inputs">
+                              <input
+                                class="filter-price__input"
+                                type="number"
+                                min="0"
+                                placeholder="170 000"
+                                onwheel="this.blur()"
+                              />
+                              <span>-</span>
+                              <input
+                                class="filter-price__input"
+                                type="number"
+                                min="0"
+                                placeholder="330 000"
+                                onwheel="this.blur()"
+                              />
+                            </div>
+                            <div class="filter-price-slider">
+                              <div class="filter-price-slider__circle"></div>
+                              <div class="filter-price-slider__line"></div>
+                              <div class="filter-price-slider__circle"></div>
+                            </div>
+                            <div class="filter-price__nums">
+                              <span>170 000</span>
+                              <span>330 000</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter-item">
+                    <div class="filter-item__head">
+                      <div class="filter-item__circle"></div>
+                      <div class="filter-item__title">Производители</div>
+                    </div>
+                    <div class="filter-item__body">
+                      <div class="filter-item__body-inner">
+                        <div class="filter__column">
+                          <label for="checkbox-1" class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              id="checkbox-1"
+                              class="filter-checkbox__input"
+                            />
+                            <label
+                              for="checkbox-1"
+                              class="filter-checkbox__label"
+                            ></label>
+                            <label
+                              for="checkbox-1"
+                              class="filter-checkbox__desc"
+                            >
+                              AltaiClinker Co.
+                            </label>
+                          </label>
+                          <label for="checkbox-2" class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              id="checkbox-2"
+                              class="filter-checkbox__input"
+                            />
+                            <label
+                              for="checkbox-2"
+                              class="filter-checkbox__label"
+                            ></label>
+                            <label
+                              for="checkbox-2"
+                              class="filter-checkbox__desc"
+                            >
+                              Eurasia BuildMaterials
+                            </label>
+                          </label>
+                          <label for="checkbox-3" class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              id="checkbox-3"
+                              class="filter-checkbox__input"
+                            />
+                            <label
+                              for="checkbox-3"
+                              class="filter-checkbox__label"
+                            ></label>
+                            <label
+                              for="checkbox-3"
+                              class="filter-checkbox__desc"
+                            >
+                              Almex
+                            </label>
+                          </label>
+                          <label for="checkbox-4" class="filter-checkbox">
+                            <input
+                              type="checkbox"
+                              id="checkbox-4"
+                              class="filter-checkbox__input"
+                            />
+                            <label
+                              for="checkbox-4"
+                              class="filter-checkbox__label"
+                            ></label>
+                            <label
+                              for="checkbox-4"
+                              class="filter-checkbox__desc"
+                            >
+                              Silk Road Cement
+                            </label>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter-item">
+                    <div class="filter-item__head">
+                      <div class="filter-item__circle"></div>
+                      <div class="filter-item__title">Материал</div>
+                    </div>
+                    <div class="filter-item__body">
+                      <div class="filter-item__body-inner">
+                        <div class="filter__column">
+                          <label for="radio-1" class="filter-radio">
+                            <input
+                              type="radio"
+                              id="radio-1"
+                              class="filter-radio__input"
+                              name="material"
+                            />
+                            <label
+                              for="radio-1"
+                              class="filter-radio__label"
+                            ></label>
+                            <label for="radio-1" class="filter-radio__desc">
+                              Клинкер цементный М-500
+                            </label>
+                          </label>
+                          <label for="radio-2" class="filter-radio">
+                            <input
+                              type="radio"
+                              id="radio-2"
+                              class="filter-radio__input"
+                              name="material"
+                            />
+                            <label
+                              for="radio-2"
+                              class="filter-radio__label"
+                            ></label>
+                            <label for="radio-2" class="filter-radio__desc">
+                              Белый клинкер
+                            </label>
+                          </label>
+                          <label for="radio-3" class="filter-radio">
+                            <input
+                              type="radio"
+                              id="radio-3"
+                              class="filter-radio__input"
+                              name="material"
+                            />
+                            <label
+                              for="radio-3"
+                              class="filter-radio__label"
+                            ></label>
+                            <label for="radio-3" class="filter-radio__desc">
+                              Клинкер для масонита
+                            </label>
+                          </label>
+                          <label for="radio-4" class="filter-radio">
+                            <input
+                              type="radio"
+                              id="radio-4"
+                              class="filter-radio__input"
+                              name="material"
+                            />
+                            <label
+                              for="radio-4"
+                              class="filter-radio__label"
+                            ></label>
+                            <label for="radio-4" class="filter-radio__desc">
+                              Шлакопортландцемент
+                            </label>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter-item">
+                    <div class="filter-item__head">
+                      <div class="filter-item__circle"></div>
+                      <div class="filter-item__title">Вид</div>
+                    </div>
+                    <div class="filter-item__body">
+                      <div
+                        class="filter-item__body-inner filter-item__body-inner_0"
+                      >
+                        <select
+                          name="view"
+                          id="filter-select-tag"
+                          class="filter-select-tag"
+                        >
+                          <option value="filter-select-1">
+                            Сульфатостойкий клинкер
+                          </option>
+                          <option value="filter-select-2">
+                            Глиноземистый клинкер
+                          </option>
+                          <option value="filter-select-3">
+                            Быстротвердеющий клинкер
+                          </option>
+                          <option value="filter-select-4">
+                            Пуццолановый клинкер
+                          </option>
+                          <option value="filter-select-5">
+                            Крутой клинкер
+                          </option>
+                          <option value="filter-select-6">
+                            Слабый клинкер
+                          </option>
+                          <option value="filter-select-7">
+                            Сложный клинкер
+                          </option>
+                        </select>
+
+                        <div class="filter-select">
+                          <div class="filter-select__box"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="filter-submits">
+                    <input
+                      type="submit"
+                      class="button filter-submits__btn"
+                      value="Применить"
+                    />
+                    <input
+                      type="reset"
+                      class="button button_outline filter-submits__btn"
+                      value="Сбросить"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="sorting">
+                <div class="sorting-btn">
+                  <span>Сортировка по</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M12 7C12.186 7 12.3721 7.07331 12.5141 7.21975L19.7869 14.7197C20.071 15.0128 20.071 15.4873 19.7869 15.7802C19.5027 16.0731 19.0425 16.0733 18.7585 15.7802L12 8.81049L5.24143 15.7802C4.95725 16.0733 4.49707 16.0733 4.21307 15.7802C3.92907 15.4871 3.92889 15.0126 4.21307 14.7197L11.4858 7.21975C11.6278 7.07331 11.814 7 12 7Z"
+                      fill="#252323"
+                    />
+                  </svg>
+                </div>
+                <div class="sorting-container">
+                  <label for="sort-radio-1" class="filter-radio sorting-radio">
+                    <input
+                      type="radio"
+                      id="sort-radio-1"
+                      class="filter-radio__input"
+                      name="material"
+                    />
+                    <label
+                      for="sort-radio-1"
+                      class="filter-radio__label"
+                    ></label>
+                    <label for="sort-radio-1" class="filter-radio__desc">
+                      По популярности
+                    </label>
+                  </label>
+                  <label for="sort-radio-2" class="filter-radio sorting-radio">
+                    <input
+                      type="radio"
+                      id="sort-radio-2"
+                      class="filter-radio__input"
+                      name="material"
+                    />
+                    <label
+                      for="sort-radio-2"
+                      class="filter-radio__label"
+                    ></label>
+                    <label for="sort-radio-2" class="filter-radio__desc">
+                      По скидке
+                    </label>
+                  </label>
+                  <label for="sort-radio-3" class="filter-radio sorting-radio">
+                    <input
+                      type="radio"
+                      id="sort-radio-3"
+                      class="filter-radio__input"
+                      name="material"
+                    />
+                    <label
+                      for="sort-radio-3"
+                      class="filter-radio__label"
+                    ></label>
+                    <label for="sort-radio-3" class="filter-radio__desc">
+                      По возрастанию цены
+                    </label>
+                  </label>
+                  <label for="radio-4" class="filter-radio sorting-radio">
+                    <input
+                      type="radio"
+                      id="sort-radio-4"
+                      class="filter-radio__input"
+                      name="material"
+                    />
+                    <label
+                      for="sort-radio-4"
+                      class="filter-radio__label"
+                    ></label>
+                    <label for="sort-radio-4" class="filter-radio__desc">
+                      По убыванию цены
+                    </label>
+                  </label>
+                  <label for="radio-5" class="filter-radio sorting-radio">
+                    <input
+                      type="radio"
+                      id="sort-radio-5"
+                      class="filter-radio__input"
+                      name="material"
+                    />
+                    <label
+                      for="sort-radio-5"
+                      class="filter-radio__label"
+                    ></label>
+                    <label for="sort-radio-5" class="filter-radio__desc">
+                      По рейтингу
+                    </label>
+                  </label>
+                </div>
+              </div>
+            </form>
           </div>
           <div class="category__box gr-5-24 mb46">
             <div class="productcard" animated>

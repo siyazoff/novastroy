@@ -1,0 +1,306 @@
+.filter-btn
+    cursor: pointer
+    user-select: none
+    +flex-center
+    gap: wm(6)
+    border-radius: wm(36)
+    padding: wm(4) wm(10)
+    border: wm(1) solid $clr-dark
+    color: $clr-dark
+    font-size: wm(16)
+    font-weight: 400
+    line-height: 1
+    +transition
+
+    +hover-only
+        &:hover
+            border-color: $clr-primary
+
+    +touch-only
+        &:active
+            scale: .96
+
+    &.active
+        border-color: $clr-primary
+
+.filter
+    position: relative
+
+    &__column
+        padding-left: wm(22)
+        +flex-column
+        gap: wm(12)
+
+
+
+.filter-container
+    position: absolute
+    top: calc(100% + wm(8))
+    left: 0
+    +flex-column
+    border-radius: wm(20)
+    border: wm(1) solid $clr-dark
+    background: $clr-white
+    overflow: hidden
+    z-index: -1
+    width: wm(313)
+    opacity: 0
+    transform: translateY(wm(20))
+    pointer-events: none
+    +transition
+
+.filter-item 
+    cursor: pointer
+    background: $clr-white
+    height: -moz-fit-content
+    height: fit-content
+
+    &__head 
+        +flex-start
+        gap: wm(6)
+        padding: wm(14)
+        border-bottom: wm(1) solid rgba(37, 35, 35, 0.20)
+
+    &__circle
+        position: relative
+        width: wm(16)
+        height: wm(16)
+        border-radius: 50%
+        border: wm(1) solid rgba(37, 35, 35, 0.20)
+        flex-shrink: 0
+        +flex-center
+
+        &::before
+            content: ''
+            width: wm(8)
+            height: wm(8)
+            background: $clr-primary
+            border-radius: 50%
+            transform: scale(0)
+            transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75)
+
+    &__title 
+        color: $clr-dark
+        font-size: wm(16)
+        font-weight: 400
+        line-height: 1
+
+    &__body
+        overflow: hidden
+        max-height: 0
+        transition: max-height 0.3s ease-out
+
+        &-inner
+            padding: wm(14)
+
+            &_0
+                padding: 0
+
+    &.active
+        .filter-item__circle
+            &::before
+                transform: scale(1)
+        .filter-item__body
+            border-bottom: wm(1) solid rgba(37, 35, 35, 0.20)
+
+.filter-price
+    &__column
+        +flex-column
+        
+    &__inputs
+        +flex-between
+        gap: wm(10)
+        margin-bottom: wm(7)
+
+    &__input
+        flex: 1
+        padding: wm(8) wm(10)
+        border-radius: wm(4)
+        border: wm(1) solid rgba(37, 35, 35, 0.20)
+        background: $clr-light-gray
+        color: $clr-dark
+        font-size: wm(16)
+        font-weight: 400
+        line-height: 1
+        
+        -moz-appearance: textfield
+
+        &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+            -webkit-appearance: none
+            margin: 0
+
+        &::placeholder
+            color: $clr-dark-muted
+
+    &__nums
+        +flex-between
+
+        span
+            color: $clr-dark
+            font-size: wm(14)
+            font-weight: 400
+            line-height: 1
+
+.filter-price-slider
+    +flex-center
+    margin-bottom: wm(12)
+    
+    &__circle
+        width: wm(16)
+        height: wm(16)
+        border-radius: 50%
+        border: wm(1) solid $clr-primary
+        flex-shrink: 0
+        +flex-center
+
+        &::before
+            content: ''
+            width: wm(8)
+            height: wm(8)
+            border-radius: 50%
+            background: $clr-primary
+            display: flex
+
+    &__line
+        flex: 1
+        height: wm(2) 
+        width: 100%
+        background: $clr-primary
+
+
+
+.filter-checkbox
+    display: flex
+    align-items: center
+    gap: wm(6)
+    cursor: pointer
+
+    &__input
+        display: none
+
+        &:checked + label::before
+            transform: scale(1)
+
+    &__label
+        width: wm(14)
+        height: wm(14)
+        border-radius: wm(2)
+        border: wm(1) solid $clr-dark
+        flex-shrink: 0
+        +flex-center
+
+        &::before
+            content: ''
+            width: wm(10)
+            height: wm(10)            
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10' fill='none'%3E%3Cg clip-path='url(%23clip0_1248_1309)'%3E%3Cpath d='M9.76764 1.63463C9.45824 1.32482 8.95582 1.32501 8.64601 1.63463L3.59787 6.68296L1.35419 4.4393C1.04438 4.12949 0.542174 4.12949 0.23236 4.4393C-0.0774534 4.74912 -0.0774534 5.25132 0.23236 5.56113L3.03684 8.36561C3.19165 8.52042 3.39464 8.59802 3.59765 8.59802C3.80067 8.59802 4.00386 8.52061 4.15867 8.36561L9.76764 2.75644C10.0775 2.44684 10.0775 1.94443 9.76764 1.63463Z' fill='%23252323'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1248_1309'%3E%3Crect width='10' height='10' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E")
+            background-repeat: no-repeat
+            background-position: center
+            background-size: contain
+            transform: scale(0)
+            transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75)
+
+
+    &__desc
+        color: $clr-dark
+        font-size: wm(14)
+        font-weight: 400
+        line-height: 1
+        cursor: pointer
+
+
+.filter-radio
+    display: flex
+    align-items: center
+    gap: wm(6)
+    cursor: pointer
+
+    &__input
+        display: none
+
+        &:checked + label::before
+            transform: scale(1)
+
+    &__label
+        width: wm(14)
+        height: wm(14)
+        border-radius: 50%
+        border: wm(1) solid $clr-dark
+        flex-shrink: 0
+        +flex-center
+
+        &::before
+            content: ''
+            width: wm(8)
+            height: wm(8)
+            background: $clr-dark
+            border-radius: 50%
+            transform: scale(0)
+            transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75)
+
+
+    &__desc
+        color: $clr-dark
+        font-size: wm(14)
+        font-weight: 400
+        line-height: 1
+        cursor: pointer
+
+
+.filter-select-tag
+    display: none
+
+.filter-select
+    &__box
+        +flex-column
+        max-height: wm(110)
+        overflow-y: auto
+        overflow-x: hidden
+
+    &__option
+        cursor: pointer
+        padding: wm(6) wm(14) wm(6) wm(35)
+        display: flex
+        align-items: center
+
+        color: $clr-dark
+        font-size: wm(14)
+        font-weight: 400
+        line-height: 1
+
+        &::after
+            content: ''
+            width: wm(14)
+            height: wm(14)
+            margin-left: auto
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14' fill='none'%3E%3Cpath d='M12.7212 3.25825C12.3499 2.91381 11.747 2.91402 11.3752 3.25825L5.31744 8.87088L2.62503 6.37643C2.25325 6.03198 1.65061 6.03198 1.27883 6.37643C0.907056 6.72087 0.907056 7.27921 1.27883 7.62365L4.6442 10.7416C4.82998 10.9137 5.07357 11 5.31718 11C5.5608 11 5.80463 10.9139 5.9904 10.7416L12.7212 4.50546C13.0929 4.16125 13.0929 3.60267 12.7212 3.25825Z' fill='%23F85B27'/%3E%3C/svg%3E")
+            background-repeat: no-repeat
+            background-size: contain
+            transform: scale(0)
+            transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75)
+
+        &.active
+            background: $clr-primary-light
+            &::after
+                transform: scale(1)
+
+
+
+
+.filter-submits
+    padding: wm(14)
+    +flex-column
+    gap: wm(7)
+    border-top: wm(1) solid rgba(37, 35, 35, 0.2)
+
+    &__btn
+        min-width: 100%
+        font-size: wm(16)
+
+
+.filter.active
+    .filter-container
+        pointer-events: auto
+        opacity: 1
+        transform: translateY(0)
+        z-index: 10
