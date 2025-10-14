@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Novastroy</title>
+
+    <!-- FAVICON -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="/src/icons/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/src/icons/favicon.svg" />
+    <link rel="shortcut icon" href="/src/icons/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/src/icons/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/src/icons/site.webmanifest" />
+
+    <!-- FONTS -->
+    <!-- Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Involve -->
+    <link rel="stylesheet" href="src/fonts/Involve/stylesheet.css" />
+
+    <!-- FANCYBOX -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+
+    <!-- TABBY -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/cferdinandi/tabby@12.0.0/dist/css/tabby-ui.min.css"
+    />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="order first-section last-section">
+        <div class="container">
+          <div class="order__title t26">Оформление заказа</div>
+          <div class="order__box">
+            <div class="order__left">
+              <div class="order-recipient">
+                <div class="order-recipient__heading">
+                  <div class="order-recipient__title">Получатель</div>
+                  <ul
+                    class="order-recipient__tabs tabs"
+                    data-tabs="order-recipient"
+                  >
+                    <li>
+                      <a data-tabby-default href="#individual"
+                        >Физическое лицо</a
+                      >
+                    </li>
+                    <li><a href="#legal-entity">Юридическое лицо</a></li>
+                  </ul>
+                </div>
+                <div id="individual">
+                  <div class="order-recipient__grid">
+                    <input
+                      type="text"
+                      class="order-recipient__input input"
+                      placeholder="Имя"
+                      id="input-order-individ-name"
+                    />
+                    <input
+                      type="text"
+                      class="order-recipient__input input tel-input"
+                      placeholder="Телефон"
+                      id="input-order-individ-phone"
+                    />
+                    <input
+                      type="text"
+                      class="order-recipient__input input"
+                      placeholder="Фамилия"
+                      id="input-order-individ-surname"
+                    />
+                    <input
+                      type="email"
+                      class="order-recipient__input input"
+                      placeholder="Почта"
+                      id="input-order-individ-email"
+                    />
+                    <button class="order-recipient__go button">
+                      Продолжить
+                    </button>
+                  </div>
+
+                  <div class="visitkas">
+                    <label class="visitka" for="visitka-individ-1">
+                      <div class="visitka__title" id="visitka-individ-name">
+                        Гончарова
+                      </div>
+                      <div class="visitka__content">
+                        <div class="visitka__mail" id="visitka-individ-mail">
+                          lg56@bk.ru
+                        </div>
+                        <div class="visitka__tel" id="visitka-individ-tel">
+                          +7 777 987 20 16
+                        </div>
+                      </div>
+                      <input type="checkbox" id="visitka-individ-1" />
+                      <div class="visitka__circle"></div>
+                      <div class="visitka__change">Изменить</div>
+                    </label>
+                  </div>
+                </div>
+                <div id="legal-entity">
+                  <div class="order-recipient__grid">
+                    <input
+                      type="text"
+                      class="order-recipient__input input"
+                      placeholder="Название компании"
+                      id="input-order-company-name"
+                    />
+                    <input
+                      type="text"
+                      class="order-recipient__input input"
+                      placeholder="Юридический адрес"
+                      id="input-order-company-adres"
+                    />
+                    <input
+                      type="text"
+                      class="order-recipient__input input"
+                      placeholder="БИН"
+                      id="input-order-company-bin"
+                    />
+                    <input
+                      type="text"
+                      class="order-recipient__input input"
+                      placeholder="КПП"
+                      id="input-order-company-kpp"
+                    />
+                    <input
+                      type="text"
+                      class="order-recipient__input input"
+                      placeholder="Контактное лицо"
+                      id="input-order-company-kontperson"
+                    />
+                    <input
+                      type="email"
+                      class="order-recipient__input input"
+                      placeholder="E-Mail"
+                      id="input-order-company-email"
+                    />
+                    <input
+                      type="text"
+                      class="order-recipient__input tel-input input"
+                      placeholder="Телефон"
+                      id="input-order-company-phone"
+                    />
+                    <input
+                      type="text"
+                      class="order-recipient__input input"
+                      placeholder="Факс"
+                      id="input-order-company-fax"
+                    />
+                    <button class="order-recipient__go button">
+                      Продолжить
+                    </button>
+                  </div>
+                  <div class="visitkas">
+                    <label
+                      class="visitka visitka-company"
+                      for="visitka-company-1"
+                    >
+                      <div class="visitka__title" id="visitka-company-bin">
+                        0012001020
+                      </div>
+                      <div class="visitka__content">
+                        <div class="visitka__mail" id="visitka-company-email">
+                          lg56@bk.ru
+                        </div>
+                        <div class="visitka__tel" id="visitka-company-tel">
+                          +7 777 987 20 16
+                        </div>
+                      </div>
+                      <input type="checkbox" id="visitka-company-1" />
+                      <div class="visitka__circle"></div>
+                      <div class="visitka__change">Изменить</div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="delivery-method">
+                <div class="delivery-method__title">Способ доставки</div>
+                <div class="delivery-method__box">
+                  <label class="delivery-method-card" for="courier">
+                    <input type="checkbox" id="courier" />
+                    <div class="delivery-method-card__heading">
+                      <div class="delivery-method-card__title">
+                        <span> Доставка курьером </span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                          fill="none"
+                        >
+                          <path
+                            d="M14.9969 7.50002C14.9422 5.52274 12.0505 5.52313 11.9961 7.50006C12.0508 9.4773 14.9425 9.4769 14.9969 7.50002Z"
+                            fill="#0F0E0E"
+                          />
+                          <path
+                            d="M13.1624 15.52C13.3529 15.6925 13.642 15.6927 13.8325 15.52C14.0226 15.35 18.4988 11.28 18.4988 7.5C18.4988 4.74499 16.2532 2.5 13.4974 2.5C10.7417 2.5 8.49609 4.74499 8.49609 7.5C8.49609 11.28 12.9723 15.35 13.1624 15.52ZM10.9968 7.49999C11.0998 4.19566 15.8956 4.19643 15.9981 7.50005C15.8951 10.8043 11.0993 10.8036 10.9968 7.49999Z"
+                            fill="#0F0E0E"
+                          />
+                          <path
+                            d="M29.4149 17.205L26.294 14.085C25.9189 13.715 25.4038 13.5 24.8786 13.5H21.9979C21.4477 13.5 20.9976 13.95 20.9976 14.5V24C20.9824 24.6544 20.0124 24.6598 19.9973 24V13.5C19.9973 12.5 19.2621 11.67 18.2968 11.525C16.8615 14.13 14.6359 16.145 14.4958 16.265C14.2208 16.515 13.8657 16.65 13.4956 16.65C13.1255 16.65 12.7704 16.515 12.4953 16.265C12.3553 16.145 10.1147 14.115 8.68428 11.5H2.49263C1.84208 11.5138 1.82952 12.4848 2.49266 12.5C2.49263 12.5 6.4937 12.5 6.4937 12.5C7.15499 12.5151 7.14725 13.4884 6.49368 13.5C6.4937 13.5 3.4929 13.505 3.4929 13.505C2.84203 13.5143 2.82975 14.4907 3.49292 14.505C3.4929 14.505 6.99383 14.505 6.99383 14.505C7.2689 14.505 7.49397 14.73 7.49397 15.005C7.49397 15.28 7.2689 15.505 6.99383 15.505H4.49316C3.84189 15.5134 3.83064 16.4914 4.49319 16.505C4.49316 16.505 7.49397 16.505 7.49397 16.505C8.15417 16.519 8.14836 17.4926 7.49395 17.505H5.99356V24.5C5.99356 25.605 6.88879 26.5 7.9941 26.5H8.99437C8.99437 28.155 10.3397 29.5 11.9952 29.5C13.6506 29.5 14.996 28.155 14.996 26.5H21.4977C21.6319 30.4634 27.3597 30.4754 27.4993 26.5C27.4993 26.5 28.4996 26.5 28.4996 26.5C29.3298 26.5 30 25.83 30 25V18.62C30 18.095 29.7849 17.58 29.4149 17.205ZM11.6051 28.465C9.27533 27.9617 9.58343 24.54 11.9952 24.5C14.8861 24.6352 14.4987 28.8806 11.6051 28.465ZM24.4985 28.5C21.8614 28.4217 21.8467 24.5858 24.4986 24.5C27.1509 24.5861 27.1351 28.4221 24.4985 28.5ZM27.4993 20.5H24.4985C23.6733 20.5 22.9981 19.825 22.9981 19V16.5C23.011 15.8442 23.9853 15.8422 23.9984 16.5C23.9984 16.5 23.9984 19 23.9984 19C23.9984 19.275 24.2235 19.5 24.4985 19.5H27.4993C28.1545 19.5115 28.1576 20.4877 27.4993 20.5Z"
+                            fill="#0F0E0E"
+                          />
+                        </svg>
+                      </div>
+                      <div class="delivery-method-card__circle"></div>
+                    </div>
+                    <div class="delivery-method-card__desc">
+                      Доставка осуществляется <i>в течение дня</i> в удобное для
+                      вас время
+                    </div>
+                  </label>
+                  <label class="delivery-method-card" for="pickup">
+                    <input type="checkbox" id="pickup" />
+                    <div class="delivery-method-card__heading">
+                      <div class="delivery-method-card__title">
+                        <span> Самовывоз </span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 32 32"
+                          fill="none"
+                        >
+                          <path
+                            d="M28.3209 8.44063L24.6797 10.2973L12.5078 4.07295L16.0019 2.34399L28.3209 8.44063Z"
+                            fill="#0F0E0E"
+                          />
+                          <path
+                            d="M24.1013 10.5907L21.1269 12.1069L9.02734 5.79456L11.9211 4.36224L24.1013 10.5907Z"
+                            fill="#0F0E0E"
+                          />
+                          <path
+                            d="M20.5542 12.3984L15.9987 14.7206L3.67969 8.44063L8.44545 6.08191L20.5542 12.3984Z"
+                            fill="#0F0E0E"
+                          />
+                          <path
+                            d="M15.7376 15.1747V29.5437L3.35938 23.6534V8.86462L15.7376 15.1747Z"
+                            fill="#0F0E0E"
+                          />
+                          <path
+                            d="M28.64 8.86401V23.6535L16.2617 29.544V15.176L20.864 12.8282V17.6791C20.864 17.7227 20.875 17.7656 20.8959 17.804C20.9167 17.8423 20.9468 17.8748 20.9834 17.8986C21.0201 17.9223 21.062 17.9365 21.1055 17.9399C21.1491 17.9433 21.1927 17.9358 21.2326 17.9181L24.7846 16.3261C24.8307 16.3055 24.8699 16.2719 24.8973 16.2295C24.9248 16.1871 24.9393 16.1376 24.9392 16.0871V10.752L28.64 8.86401Z"
+                            fill="#0F0E0E"
+                          />
+                          <path
+                            d="M24.4146 11.0179V15.9178L21.3867 17.2752V12.5616L24.4146 11.0179Z"
+                            fill="#0F0E0E"
+                          />
+                        </svg>
+                      </div>
+                      <div class="delivery-method-card__circle"></div>
+                    </div>
+                    <div class="delivery-method-card__desc">
+                      Вы можете <i>самостоятельно</i> забрать заказ из нашего
+                      магазина
+                    </div>
+                  </label>
+                </div>
+
+                <div class="delivery-courier">
+                  <div class="delivery-courier__title">
+                    Выберите адрес доставки
+                  </div>
+                  <div class="delivery-courier__grid">
+                    <input
+                      type="text"
+                      class="delivery-courier__input input"
+                      placeholder="Адрес доставки"
+                    />
+                    <input
+                      type="text"
+                      class="delivery-courier__input input"
+                      placeholder="Индекс"
+                    />
+                    <input
+                      type="text"
+                      class="delivery-courier__input input"
+                      placeholder="Комментарии к заказу"
+                    />
+                  </div>
+                </div>
+
+                <div class="delivery-pickup">
+                  <div class="delivery-pickup__title">Пункты самовывоза</div>
+                  <div class="delivery-pickup__box">
+                    <div class="delivery-pickup__addresses">
+                      <div class="delivery-pickup-card">
+                        <div class="delivery-pickup-card__left">
+                          <div class="delivery-pickup-card__title">
+                            г. Астана, ул. Казыбек би, 11
+                          </div>
+                          <div class="delivery-pickup-card__content">
+                            <span>Телефон: +7 707 000-00-00</span>
+                            <span>Режим работы: Пн - Вс: 9.00 - 18.00</span>
+                          </div>
+                        </div>
+                        <div class="delivery-pickup-card__right">
+                          <input type="checkbox" id="delivery-pickup-1" />
+                          <label
+                            for="delivery-pickup-1"
+                            class="delivery-pickup-card__btn"
+                          >
+                          </label>
+                        </div>
+                      </div>
+                      <div class="delivery-pickup-card">
+                        <div class="delivery-pickup-card__left">
+                          <div class="delivery-pickup-card__title">
+                            г. Астана, ул. Нура, 52
+                          </div>
+                          <div class="delivery-pickup-card__content">
+                            <span>Телефон: +7 707 000-00-00</span>
+                            <span>Режим работы: Пн - Вс: 9.00 - 18.00</span>
+                          </div>
+                        </div>
+                        <div class="delivery-pickup-card__right">
+                          <input type="checkbox" id="delivery-pickup-2" />
+                          <label
+                            for="delivery-pickup-2"
+                            class="delivery-pickup-card__btn"
+                          >
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="delivery-pickup__map">
+                      <iframe
+                        src="https://yandex.ru/map-widget/v1/?um=constructor%3A51052096ee6eb6f6894154e2a19b5e7e89f0299706c3b1496ef97ace422887a1&amp;source=constructor"
+                        width="380"
+                        height="340"
+                        frameborder="0"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="order-payment">
+                <div class="order-payment__title">Способ оплаты</div>
+                <div class="order-payment__desc">Выберите способ оплаты</div>
+                <div class="order-payment__variants">
+                  <label for="order-payment-1" class="order-payment-var">
+                    <input type="checkbox" id="order-payment-1" />
+                    <span>Сразу</span>
+                  </label>
+                  <label for="order-payment-2" class="order-payment-var">
+                    <input type="checkbox" id="order-payment-2" />
+                    <span>Счет на оплату</span>
+                  </label>
+                  <label for="order-payment-3" class="order-payment-var">
+                    <input type="checkbox" id="order-payment-3" />
+                    <span>При получении</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="order__right">
+              <div class="cart-total">
+                <div class="cart-total__title">Сумма заказа</div>
+                <div class="cart-total__box">
+                  <div class="cart-total__checkit">
+                    <div class="cart-total__checkit-left">
+                      Товары (2) - 5 кг
+                    </div>
+                    <div class="cart-total__checkit-right">50 000 тг</div>
+                  </div>
+                  <div class="cart-total__checkit">
+                    <div class="cart-total__checkit-left">Скидка</div>
+                    <div class="cart-total__checkit-right">20 000 тг</div>
+                  </div>
+                </div>
+                <div class="cart-total__itog">
+                  <div class="cart-total__itog-left">Итого</div>
+                  <div class="cart-total__itog-right">
+                    <span class="actual">70 000 тг</span>
+                    <span class="old">150 000 тг</span>
+                  </div>
+                </div>
+                <a href="#" class="cart-total__btn button">Оформить заказ</a>
+                <div class="cart-total__right">
+                  <span>*</span> Дата и стоимость доставки или самовывоза <br />
+                  определяются при оформлении заказа
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/imask.js"></script>
+    <script src="js/tabby.polyfills.min.js"></script>
+    <script src="js/fancybox.umd.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/swipers.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // общая инициализация двух секций
+        initSection({
+          root: "#individual",
+          grid: "#individual .order-recipient__grid",
+          card: "#individual .visitka",
+          continueBtn: "#individual .order-recipient__go",
+          changeBtn: "#individual .visitka__change",
+          inputs: [
+            "#input-order-individ-name",
+            "#input-order-individ-phone",
+            "#input-order-individ-surname",
+            "#input-order-individ-email",
+          ],
+          // что и куда выводить на визитке
+          mapping: {
+            "#input-order-individ-surname": "#visitka-individ-name", // заголовок
+            "#input-order-individ-email": "#visitka-individ-mail",
+            "#input-order-individ-phone": "#visitka-individ-tel",
+          },
+          validators: {
+            "#input-order-individ-email": isEmail,
+            "#input-order-individ-phone": isPhone,
+          },
+        });
+
+        initSection({
+          root: "#legal-entity",
+          grid: "#legal-entity .order-recipient__grid",
+          card: "#legal-entity .visitka",
+          continueBtn: "#legal-entity .order-recipient__go",
+          changeBtn: "#legal-entity .visitka__change",
+          inputs: [
+            "#input-order-company-name",
+            "#input-order-company-adres",
+            "#input-order-company-bin",
+            "#input-order-company-kpp",
+            "#input-order-company-kontperson",
+            "#input-order-company-email",
+            "#input-order-company-phone",
+            "#input-order-company-fax",
+          ],
+          mapping: {
+            // В твоей верстке заголовком визитки компании стоит BIN
+            "#input-order-company-bin": "#visitka-company-bin",
+            "#input-order-company-email": "#visitka-company-email",
+            "#input-order-company-phone": "#visitka-company-tel",
+          },
+          validators: {
+            "#input-order-company-email": isEmail,
+            "#input-order-company-phone": isPhone,
+            "#input-order-company-bin": onlyDigits(10, 14), // при необходимости подправь длину
+          },
+        });
+      });
+
+      /* ================= helpers ================= */
+
+      function initSection(cfg) {
+        const grid = qs(cfg.grid);
+        const card = qs(cfg.card);
+        const continueBtn = qs(cfg.continueBtn);
+        const changeBtn = qs(cfg.changeBtn);
+
+        // по умолчанию — показываем инпуты, прячем визитку
+        show(grid);
+        hide(card);
+
+        // live-валидация по вводу
+        cfg.inputs.forEach((sel) => {
+          const el = qs(sel);
+          el.addEventListener("input", () => clearError(el));
+        });
+
+        continueBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          const { ok, errors } = validateInputs(cfg.inputs, cfg.validators);
+          if (!ok) {
+            showErrors(errors);
+            return;
+          }
+
+          // заполнить визитку из mapping
+          Object.entries(cfg.mapping).forEach(([inputSel, cardSel]) => {
+            const val = (qs(inputSel).value || "").trim();
+            qs(cardSel).textContent = val;
+          });
+
+          hide(grid);
+          show(card);
+        });
+
+        changeBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          show(grid);
+          hide(card);
+        });
+      }
+
+      function validateInputs(inputSelectors, validators = {}) {
+        let ok = true;
+        const errors = [];
+        inputSelectors.forEach((sel) => {
+          const el = qs(sel);
+          const val = (el.value || "").trim();
+
+          // пустые — ошибка
+          if (!val) {
+            ok = false;
+            setError(el, "Заполните поле");
+            errors.push(labelFor(el) + ": поле обязательно");
+            return;
+          }
+
+          // кастомные валидаторы (email, телефон и т.п.)
+          const v = validators[sel];
+          if (typeof v === "function") {
+            const msg = v(val);
+            if (msg) {
+              ok = false;
+              setError(el, msg);
+              errors.push(labelFor(el) + ": " + msg);
+            } else {
+              clearError(el);
+            }
+          } else {
+            clearError(el);
+          }
+        });
+        return { ok, errors };
+      }
+
+      function isEmail(v) {
+        // простой валидатор email
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(v) ? "" : "Некорректный e-mail";
+      }
+
+      function isPhone(v) {
+        // допустим: минимум 6 цифр
+        const digits = v.replace(/\D/g, "");
+        return digits.length >= 6 ? "" : "Некорректный телефон";
+      }
+
+      function onlyDigits(min = 1, max = Infinity) {
+        return (v) => {
+          const d = v.replace(/\D/g, "");
+          if (!/^\d+$/.test(d)) return "Только цифры";
+          if (d.length < min) return `Слишком коротко (мин. ${min})`;
+          if (d.length > max) return `Слишком длинно (макс. ${max})`;
+          return "";
+        };
+      }
+
+      /* ============== UI мелочи ============== */
+
+      function setError(el, msg) {
+        el.classList.add("input-error");
+        el.setAttribute("data-error", msg);
+        // по желанию можно показать тултип/подсказку под полем
+      }
+
+      function clearError(el) {
+        el.classList.remove("input-error");
+        el.removeAttribute("data-error");
+      }
+
+      function showErrors(errors) {
+        // минималистично: alert. Хочешь — сделаю блок под формой.
+        if (errors.length) {
+          alert("Проверьте поля:\n\n" + errors.join("\n"));
+        }
+      }
+
+      function show(node) {
+        node.style.display = "";
+      }
+      function hide(node) {
+        node.style.display = "none";
+      }
+
+      function labelFor(el) {
+        // берём placeholder как подпись
+        return el.getAttribute("placeholder") || "Поле";
+      }
+
+      function qs(sel, root = document) {
+        const el = root.querySelector(sel);
+        if (!el) console.warn("Элемент не найден:", sel);
+        return el;
+      }
+    </script>
+  </body>
+</html>

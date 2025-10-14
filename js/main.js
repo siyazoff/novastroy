@@ -480,5 +480,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //SCROLL-REVEAL
-  ScrollReveal().reveal("[animated]", { delay: 300 });
+  if (document.querySelector("[animated]")) {
+    ScrollReveal().reveal("[animated]", { delay: 300 });
+  }
 });
